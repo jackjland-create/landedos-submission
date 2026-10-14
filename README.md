@@ -6,6 +6,12 @@ The product will help teams discover and manage creators, build campaign baskets
 
 ## Submission prototype — October 2026
 
+**Hosted app:** https://landedos-submission.vercel.app/projects/demo/overview
+
+Use the judge account supplied privately with the submission. Credentials are never included in this repository. The app requires sign-in and project access; no Vercel account is needed on the production URL.
+
+**Technical walkthrough:** follow the six-screen sequence below (approximately 2 minutes 40 seconds).
+
 This isolated submission branch demonstrates the existing LandedOS application with one **explicitly synthetic, read-only campaign**. It reuses the Campaign plans, Creators, campaign workspace and reporting components. It does not insert synthetic data into protected approval or report history.
 
 The preview is a product prototype, not proof of production campaign execution. Authentication and project access use Supabase Auth and RLS. The campaign snapshot is generated from deterministic source data; campaign and creator costs use the existing analytics calculators. Approval, delivery, wallet consent, attribution paths and results in this snapshot are simulated. No placements, payments, live wallet signatures, revenue or externally verified performance are claimed.
@@ -55,3 +61,7 @@ The hosted judge experience uses an existing Supabase Auth project and pre-provi
 For a production build run `LANDED_SUBMISSION_SNAPSHOT=1 pnpm --filter @landed/web build`. To serve it run `pnpm --filter @landed/web exec next start`. Supply the same public Auth variables and snapshot flag at runtime.
 
 The synthetic campaign does not prove live transaction ingestion. Genuine devnet evidence is separate and must not be inferred from these synthetic results.
+
+### Export and hosting verification
+
+The exported source installed independently with the frozen lockfile and passed a production build. The hosted Vercel production build also passed. Submission-only guards prevent account creation and recovery even if their feature flags are enabled; focused authentication tests passed. The app retains existing judge authentication and RLS-protected project reads, with no business database migrations.
