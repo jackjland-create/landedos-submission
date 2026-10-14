@@ -6,7 +6,9 @@ The product will help teams discover and manage creators, build campaign baskets
 
 ## Submission prototype — October 2026
 
-**Hosted app:** https://landedos-submission.vercel.app/projects/demo/overview
+**Hosted app:** https://app.landeddigital.io/projects/demo/overview
+
+**Fallback:** https://landedos-submission.vercel.app/projects/demo/overview
 
 Use the judge account supplied privately with the submission. Credentials are never included in this repository. The app requires sign-in and project access; no Vercel account is needed on the production URL.
 
