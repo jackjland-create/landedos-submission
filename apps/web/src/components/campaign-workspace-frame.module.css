@@ -1,0 +1,619 @@
+/* CMP-03 / BRD-06 / UI-03: campaign workspace frame on the canonical
+   application tokens. Scoped to this frame; legacy interiors keep their own
+   variables and are not restyled from here. */
+.frame {
+  composes: kit from "./application-ui.module.css";
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  min-height: 0;
+  height: 100%;
+  padding: 0;
+  background: var(--app-color-canvas);
+  color: var(--app-color-ink);
+  font: 400 14px/1.5 var(--app-font);
+  font-variant-numeric: tabular-nums;
+  color-scheme: light;
+}
+.frame[data-theme="dark"] {
+  color-scheme: dark;
+}
+.frame.frame :is(h1, h2, h3, p, dl, dd) {
+  margin: 0;
+}
+.frame a:focus-visible,
+.frame summary:focus-visible,
+.frame button:focus-visible {
+  outline: 2px solid var(--app-color-focus);
+  outline-offset: 2px;
+}
+.body:focus-visible {
+  outline: 2px solid var(--app-color-focus);
+  outline-offset: -2px;
+}
+.icon {
+  width: 16px;
+  height: 16px;
+  flex: 0 0 16px;
+}
+
+/* header */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+  flex-shrink: 0;
+}
+.identity {
+  display: grid;
+  gap: 4px;
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+.meta {
+  font-size: 14px;
+  color: var(--app-color-secondary);
+}
+.frame .meta a {
+  color: inherit;
+  text-underline-offset: 3px;
+}
+.titleRow {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 14px;
+}
+.frame.frame h1 {
+  font: 600 24px / 1.2 var(--app-font);
+  letter-spacing: -0.02em;
+  color: var(--app-color-ink);
+  text-transform: none;
+  text-wrap: balance;
+}
+.pills {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.objective {
+  color: var(--app-color-secondary);
+  max-width: 72ch;
+}
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 10px 14px;
+  flex-shrink: 0;
+}
+.actions :global(.application-button) {
+  text-decoration: none;
+}
+.textLink {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  color: var(--app-color-ink);
+  font-weight: 500;
+  text-underline-offset: 3px;
+}
+.viewOnly {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 36px;
+  padding: 6px 14px;
+  border: 1px solid var(--app-color-line);
+  border-radius: var(--app-radius-pill);
+  background: var(--app-color-card);
+  color: var(--app-color-secondary);
+  font-weight: 500;
+}
+.frame .notice {
+  color: var(--app-color-secondary);
+}
+
+/* One shared summary strip; keep every qualification next to its value. */
+.tiles {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0;
+  flex-shrink: 0;
+  background: var(--app-color-card);
+  border: 1px solid var(--app-color-line);
+  border-radius: var(--app-radius-card);
+  box-shadow: var(--app-shadow-card);
+  padding: 8px 0;
+}
+.tile {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0;
+  padding: 0 12px;
+}
+.tile + .tile {
+  border-left: 1px solid var(--app-color-line);
+}
+.tile dt {
+  color: var(--app-color-secondary);
+  font-weight: 500;
+}
+.tileValue {
+  font: 600 20px/1.25 var(--app-font);
+  letter-spacing: -0.02em;
+  overflow-wrap: anywhere;
+}
+.frame .tileValue small {
+  font: 500 14px/1.4 var(--app-font);
+  letter-spacing: 0;
+  color: var(--app-color-secondary);
+}
+.tileDetail {
+  color: var(--app-color-secondary);
+  overflow-wrap: anywhere;
+}
+
+/* deliverable bar: one segment per asset; the text legend carries the meaning */
+.segments {
+  display: flex;
+  gap: 3px;
+  height: 6px;
+}
+.segments span {
+  flex: 1;
+  border-radius: var(--app-radius-pill);
+  background: var(--app-color-sunk);
+  border: 1px dashed var(--app-color-grid);
+}
+.segments span[data-status="published"] {
+  background: var(--app-color-chart-qualified);
+  border: 0;
+}
+.segments span[data-status="approved"] {
+  background: var(--app-color-go-edge);
+  border: 0;
+}
+.segments span[data-status="submitted"],
+.segments span[data-status="revision_requested"] {
+  background: var(--app-color-warn-edge);
+  border: 0;
+}
+.segments span[data-status="draft"] {
+  background: var(--app-color-grid);
+  border: 0;
+}
+
+/* dot + word */
+.dotWord {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+.dot {
+  width: 8px;
+  height: 8px;
+  flex: 0 0 8px;
+  border-radius: var(--app-radius-pill);
+  border: 1.5px solid var(--app-color-secondary);
+}
+.dotWord[data-tone="progress"] .dot {
+  border-color: var(--app-color-hero);
+}
+.dotWord[data-tone="attention"] .dot {
+  border-color: var(--app-color-warn-edge);
+}
+.dotWord[data-tone="blocked"] .dot {
+  border-color: var(--app-color-bad);
+}
+.dotWord[data-state="confirmed"] .dot {
+  background: currentColor;
+  border-color: currentColor;
+}
+.dotWord[data-state="confirmed"][data-tone="progress"] .dot {
+  background: var(--app-color-hero);
+  border-color: var(--app-color-hero);
+}
+.dotWord[data-state="confirmed"][data-tone="attention"] .dot {
+  background: var(--app-color-warn-edge);
+  border-color: var(--app-color-warn-edge);
+}
+.dotWord[data-state="unavailable"] .dot {
+  border-style: dashed;
+}
+
+/* body card + view navigation */
+.card {
+  display: flex;
+  flex-direction: column;
+  /* Retain a usable detail area; unusually tall content may scroll the shell. */
+  flex: 1 0 320px;
+  min-height: 0;
+  background: var(--app-color-card);
+  border: 1px solid var(--app-color-line);
+  border-radius: var(--app-radius-card);
+  box-shadow: var(--app-shadow-card);
+  padding: 12px 16px 0;
+}
+.navigation {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  align-self: flex-start;
+  padding: 4px;
+  border-radius: 12px;
+  background: var(--app-color-sunk);
+  flex-shrink: 0;
+}
+.navigation a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 40px;
+  padding: 8px 16px;
+  border-radius: var(--app-radius-control);
+  color: var(--app-color-secondary);
+  font-weight: 500;
+  text-decoration: none;
+}
+.navigation a:hover {
+  color: var(--app-color-ink);
+}
+.navigation a[aria-current="page"] {
+  background: var(--app-color-card);
+  color: var(--app-color-ink);
+  font-weight: 600;
+  box-shadow:
+    var(--app-shadow-card),
+    0 0 0 1px var(--app-color-line);
+}
+.body {
+  display: grid;
+  align-content: start;
+  gap: 16px;
+  min-height: 0;
+  flex: 1;
+  padding: 12px 4px 16px 0;
+  overflow: auto;
+  scrollbar-gutter: stable;
+}
+.nextAction {
+  flex-shrink: 0;
+}
+
+/* Brief and Delivery are short task views, not nested scrolling workspaces.
+   Let expanded history / longer rosters grow the page without clipping them. */
+.frame[data-detail-scroll="page"] {
+  height: auto;
+}
+.frame[data-detail-scroll="page"] .card {
+  flex: 0 0 auto;
+}
+.frame[data-detail-scroll="page"] .body {
+  flex: none;
+  overflow: visible;
+  scrollbar-gutter: auto;
+  padding-right: 0;
+}
+
+/* next step */
+.next {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 12px;
+  border: 1px solid var(--app-color-line);
+  border-radius: var(--app-radius-card);
+  background: var(--app-color-sunk);
+  color: var(--app-color-on-pastel);
+}
+.next[data-tone="neutral"] {
+  color: var(--app-color-ink);
+}
+.next[data-tone="attention"] {
+  background: var(--app-color-warn);
+  border-color: var(--app-color-warn-edge);
+}
+.next[data-tone="progress"] {
+  background: var(--app-color-go);
+  border-color: var(--app-color-go-edge);
+}
+.next[data-tone="blocked"] {
+  background: var(--app-color-bad-fill);
+  border-color: var(--app-color-bad-edge);
+}
+.nextIcon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: var(--app-color-card);
+  color: var(--app-color-ink);
+}
+.nextIcon[data-tone="neutral"] {
+  background: var(--app-color-info);
+  color: var(--app-color-on-pastel);
+}
+.nextIcon .icon {
+  width: 20px;
+  height: 20px;
+  flex-basis: 20px;
+}
+.nextCopy {
+  display: grid;
+  gap: 2px;
+  min-width: 0;
+}
+.eyebrow {
+  font: 600 12px/1.4 var(--app-font);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+.frame .next h2 {
+  font: 600 17px/1.35 var(--app-font);
+  letter-spacing: -0.01em;
+  color: inherit;
+  text-transform: none;
+}
+.frame .next p {
+  color: inherit;
+}
+.frame .next p:last-child {
+  max-width: 72ch;
+}
+.next :global(.application-button) {
+  text-decoration: none;
+}
+
+/* loading / error / permission */
+.stateCard {
+  padding: 32px;
+  display: grid;
+  justify-items: start;
+  gap: 16px;
+  flex: 0 0 auto;
+}
+.frame.frame .stateCard h1 {
+  font-size: 22px;
+}
+.frame .stateCard p {
+  margin-top: 8px;
+  color: var(--app-color-secondary);
+}
+
+@media (max-width: 1100px) {
+  .header {
+    flex-direction: column;
+    gap: 12px;
+  }
+  .actions {
+    justify-content: flex-start;
+  }
+  .tiles {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    row-gap: 12px;
+  }
+  .tile:nth-child(odd) {
+    border-left: 0;
+  }
+}
+@media (max-width: 1100px), (max-height: 650px) {
+  .frame {
+    height: auto;
+  }
+  .card {
+    flex: 0 0 auto;
+  }
+  .body {
+    overflow: visible;
+    padding-right: 0;
+  }
+}
+@media (max-width: 700px) {
+  .frame {
+    padding: 14px;
+    gap: 12px;
+  }
+  .tiles {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .card {
+    padding: 12px 14px 0;
+  }
+  .navigation {
+    align-self: stretch;
+  }
+  .navigation a {
+    flex: 1 1 auto;
+    justify-content: center;
+    min-height: 44px;
+    padding: 8px 12px;
+  }
+  .next {
+    grid-template-columns: auto minmax(0, 1fr);
+  }
+  .next > a {
+    grid-column: 1 / -1;
+    justify-self: stretch;
+  }
+}
+
+/* The legacy Clarity root paints link hovers; keep each control's own fill. */
+.frame.frame a:hover {
+  background: none;
+}
+.frame.frame a:global(.application-button):hover {
+  background: var(--app-color-card);
+}
+.frame.frame a:global(.application-button--attention):hover {
+  background: var(--app-color-warn);
+}
+.frame.frame a:global(.application-button--progress):hover {
+  background: var(--app-color-go);
+}
+.frame.frame a:global(.application-button--hero):hover {
+  background: var(--app-color-hero);
+  color: var(--app-color-hero-ink);
+}
+.frame.frame .navigation a[aria-current="page"]:hover {
+  background: var(--app-color-card);
+}
+
+/* progress: supplied steps only; done = filled check, not yet = hollow,
+   unavailable = dashed. No "current step" emphasis is derived here. */
+.progress {
+  position: relative;
+  display: grid;
+  flex-shrink: 0;
+  padding: 8px 12px;
+  background: var(--app-color-card);
+  border: 1px solid var(--app-color-line);
+  border-radius: var(--app-radius-card);
+  box-shadow: var(--app-shadow-card);
+}
+.steps {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 0 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.step {
+  min-width: 0;
+  position: relative;
+}
+.step::after {
+  content: "";
+  position: absolute;
+  top: 15px;
+  left: 32px;
+  right: 0;
+  height: 2px;
+  background: var(--app-color-line);
+  pointer-events: none;
+}
+.step[data-state="complete"]::after {
+  background: var(--app-color-go-edge);
+}
+.step:last-child::after {
+  display: none;
+}
+.frame .stepDisclosure summary {
+  display: grid;
+  align-content: start;
+  justify-items: start;
+  gap: 4px;
+  min-height: 44px;
+  padding: 4px 0;
+  cursor: pointer;
+  list-style: none;
+  touch-action: manipulation;
+  border-radius: var(--app-radius-control);
+}
+.stepDisclosure summary:hover {
+  background: var(--app-color-sunk);
+}
+.stepDisclosure summary::-webkit-details-marker {
+  display: none;
+}
+.chevron {
+  display: inline-block;
+  margin-left: 6px;
+  color: var(--app-color-secondary);
+  font-weight: 400;
+}
+.stepDisclosure[open] .chevron {
+  transform: rotate(180deg);
+}
+.frame .stepDetail {
+  padding: 4px 0 8px;
+  color: var(--app-color-secondary);
+  overflow-wrap: anywhere;
+}
+.stepMark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  flex: 0 0 24px;
+  border-radius: var(--app-radius-pill);
+  border: 2px solid var(--app-color-secondary);
+  background: var(--app-color-card);
+  color: var(--app-color-on-pastel);
+}
+.step[data-state="complete"] .stepMark {
+  background: var(--app-color-go);
+  border-color: var(--app-color-go-edge);
+}
+.step[data-state="unavailable"] .stepMark {
+  border-style: dashed;
+}
+.stepMark .icon {
+  width: 13px;
+  height: 13px;
+  flex-basis: 13px;
+}
+.stepText {
+  display: grid;
+  gap: 0;
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+.stepText strong {
+  font-weight: 600;
+  color: var(--app-color-ink);
+}
+.stepState {
+  font-weight: 400;
+  color: var(--app-color-secondary);
+}
+.frame .asOf {
+  justify-self: end;
+  margin-top: 0;
+  font-size: 14px;
+  line-height: 1.3;
+  color: var(--app-color-secondary);
+}
+@media (max-width: 1100px) {
+  .steps {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0 12px;
+  }
+  .step:nth-child(3n)::after {
+    display: none;
+  }
+}
+@media (max-width: 700px) {
+  .steps {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .step:nth-child(3n)::after {
+    display: block;
+  }
+  .step:nth-child(2n)::after,
+  .step:last-child::after {
+    display: none;
+  }
+}
+@media (max-width: 400px) {
+  .tiles,
+  .steps {
+    grid-template-columns: 1fr;
+  }
+  .tile + .tile {
+    border-left: 0;
+  }
+  .step::after,
+  .step:nth-child(3n)::after {
+    display: none;
+  }
+}

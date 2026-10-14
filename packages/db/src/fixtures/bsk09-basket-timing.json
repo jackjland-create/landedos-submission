@@ -1,0 +1,17 @@
+{
+  "timing": {
+    "flight": {
+      "endedAt": "2026-10-12T00:00:00Z",
+      "startedAt": "2026-09-14T00:00:00Z"
+    },
+    "measurement": {
+      "endedAt": "2026-11-12T00:00:00Z",
+      "startedAt": "2026-09-01T00:00:00Z"
+    },
+    "schemaVersion": 1
+  },
+  "revision": 3,
+  "basket_id": "5fea5eaf-0433-4bc0-9273-c1687f16b4d1",
+  "project_id": "20990000-0000-4000-8000-000000000001",
+  "workspace_id": "10990000-0000-4000-8000-000000000001"
+}

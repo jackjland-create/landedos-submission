@@ -1,0 +1,188 @@
+/* CMP-03 / TRK-01 / BRD-06: same application kit as Brief and Delivery. */
+.card.card {
+  display: grid;
+  gap: 12px;
+  padding: 16px;
+  background: var(--app-color-card);
+  border: 1px solid var(--app-color-line);
+  border-radius: var(--app-radius-control);
+}
+.row,
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 16px;
+}
+.identity {
+  flex: 1;
+  min-width: 180px;
+}
+.card.card :is(h3, p, dl, dd) {
+  margin: 0;
+}
+.card.card h3 {
+  font: 600 16px/1.4 var(--app-font);
+  color: var(--app-color-ink);
+  text-transform: none;
+  letter-spacing: normal;
+}
+.card.card :is(p, dd, strong, span, small, time) {
+  overflow-wrap: anywhere;
+}
+.facts {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 12px 24px;
+}
+.facts > div {
+  min-width: 0;
+}
+.facts dt {
+  color: var(--app-color-secondary);
+}
+.card.card .notice {
+  padding: 8px 12px;
+  background: var(--app-color-sunk);
+  border-radius: var(--app-radius-control);
+}
+.card.card .detail :is(form, label) {
+  display: grid;
+  gap: 8px;
+  min-width: 0;
+}
+.card.card .detail form {
+  gap: 16px;
+  padding: 0;
+  border: 0;
+  grid-template-columns: minmax(0, 1fr);
+}
+.card.card .detail summary {
+  min-height: 44px;
+  padding: 10px 0;
+  cursor: pointer;
+  font-weight: 500;
+  touch-action: manipulation;
+}
+.card.card .detail summary:hover {
+  text-decoration: underline;
+}
+.card.card .detail .notice {
+  display: grid;
+  gap: 8px;
+}
+.card.card .detail label {
+  color: var(--app-color-ink);
+  font: 500 14px/1.5 var(--app-font);
+  text-transform: none;
+  letter-spacing: normal;
+}
+.card.card .detail :is(input, select) {
+  width: 100%;
+  min-width: 0;
+  min-height: 44px;
+  padding: 8px 12px;
+  background: var(--app-color-card);
+  color: var(--app-color-ink);
+  border: 1px solid var(--app-color-grid);
+  border-radius: var(--app-radius-control);
+  font: 400 16px/1.5 var(--app-font);
+}
+.card.card .detail :is(input, button):focus-visible {
+  outline: 2px solid var(--app-color-focus);
+  outline-offset: 2px;
+}
+.card.card .detail :global(.action-button) {
+  justify-self: start;
+  min-height: 44px;
+  padding: 10px 18px;
+  border-radius: var(--app-radius-pill);
+  background: var(--app-color-hero);
+  color: var(--app-color-hero-ink);
+  font: 600 14px/1.4 var(--app-font);
+  border: 1px solid var(--app-color-hero);
+}
+.card.card .detail :global(.campaign-tracking-revoke-button) {
+  background: var(--app-color-card);
+  color: var(--app-color-bad);
+  border-color: var(--app-color-bad);
+}
+.card.card .detail :global(.action-button):disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+.card.card .detail :global(.action-button):hover {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.card.card .detail :is(dl, ol, section) {
+  min-width: 0;
+}
+.card.card .detail :is(dl, ol) {
+  display: grid;
+  gap: 12px;
+}
+.card.card .detail dl {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+.card.card .detail dl > div {
+  min-width: 0;
+}
+.card.card .detail :is(dt, dd, small, span, strong, time) {
+  font-family: var(--app-font);
+  font-size: 14px;
+  line-height: 1.5;
+  text-transform: none;
+  letter-spacing: normal;
+  color: var(--app-color-ink);
+}
+.card.card .detail :global(.campaign-tracking-current) {
+  display: grid;
+  gap: 16px;
+}
+.card.card .detail :global(.campaign-tracking-history) {
+  padding-left: 20px;
+}
+.card.card .detail :global(.campaign-tracking-history) li {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 4px;
+  padding: 12px 0;
+}
+.card.card .detail :global(.campaign-click-quality) {
+  background: var(--app-color-sunk);
+  padding: 12px;
+  border: 1px solid var(--app-color-line);
+  border-radius: var(--app-radius-control);
+}
+.card.card .detail :global(.campaign-click-quality__heading) {
+  display: grid;
+  gap: 8px;
+}
+.card.card [data-mode="evidence"] {
+  width: min(640px, 100vw);
+  height: 100dvh;
+  max-height: 100dvh;
+  margin: 0 0 0 auto;
+  border-radius: 0;
+}
+.card.card [data-mode="evidence"] > div {
+  height: 100%;
+  max-height: 100dvh;
+}
+@media (max-width: 700px) {
+  .identity {
+    min-width: 0;
+    flex-basis: 100%;
+  }
+  .facts,
+  .card.card .detail dl {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .actions {
+    width: 100%;
+  }
+  .card.card [data-mode="setup"] {
+    width: 100vw;
+  }
+}

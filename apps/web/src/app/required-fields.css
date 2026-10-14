@@ -1,0 +1,49 @@
+/* UI-03 / BRD-06: required input is visible before submit, never an approval.
+   Native required/validity and existing custom readiness remain authoritative.
+   Reserve the marker's space to avoid label jumps as users type. */
+:root,
+[data-theme="dark"] {
+  /* Canonical application.dark.bad; scoped fallback for legacy surfaces. */
+  --required-field-color: #f08a74;
+}
+[data-theme="light"] {
+  /* Canonical application.light.bad, without restyling legacy controls. */
+  --required-field-color: #c23b22;
+}
+.required-field-marker {
+  visibility: hidden;
+  color: var(--app-color-bad, var(--required-field-color));
+  font-weight: 600;
+  white-space: nowrap;
+}
+.required-field-marker::after {
+  content: " *";
+}
+
+label:has(
+    > :is(
+        :required:invalid,
+        [aria-required="true"][data-required-missing="true"]
+      ):not(:disabled):not([readonly])
+  )
+  .required-field-marker,
+label:has(
+    + :is(
+        :required:invalid,
+        [aria-required="true"][data-required-missing="true"]
+      ):not(:disabled):not([readonly])
+  )
+  .required-field-marker,
+label:has(
+    + div
+      > :is(
+        :required:invalid,
+        [aria-required="true"][data-required-missing="true"]
+      ):not(:disabled):not([readonly])
+  )
+  .required-field-marker,
+fieldset[aria-required="true"][data-required-missing="true"]:not(:disabled)
+  > legend
+  .required-field-marker {
+  visibility: visible;
+}

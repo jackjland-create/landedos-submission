@@ -1,0 +1,371 @@
+/* FND-06 / BRD-04: 6 October shell; legacy interiors are not migrated here. */
+.frame {
+  composes: kit from "./application-ui.module.css";
+  background: var(--app-color-canvas);
+  min-height: 100dvh;
+}
+.chrome {
+  font-family: var(--app-font);
+  color: var(--app-color-ink);
+}
+.frame > .sidebar {
+  width: var(--app-layout-sidebar);
+  padding: 24px 16px;
+  overflow-y: auto;
+  background: var(--app-color-side);
+  border-color: var(--app-color-line);
+  gap: 24px;
+}
+.chrome :global(.wordmark) {
+  font: 700 16px/1.2 var(--app-font);
+  color: var(--app-color-ink);
+}
+.chrome :global(.wordmark__suffix) {
+  font-weight: 500;
+  color: var(--app-color-secondary);
+}
+.chrome :global(.project-switcher) {
+  margin: 0;
+  padding: 12px 0;
+  border-color: var(--app-color-line);
+}
+.chrome :global(.project-switcher) span,
+.chrome :global(.rail__footer) > span {
+  font: 400 14px/1.4 var(--app-font);
+  letter-spacing: 0;
+  text-transform: none;
+  color: var(--app-color-secondary);
+}
+.chrome :global(.rail__nav) {
+  gap: 6px;
+}
+.chrome :global(.rail__link) {
+  display: flex;
+  min-height: 44px;
+  padding: 10px 12px;
+  align-items: center;
+  gap: 10px;
+  border: 1px solid transparent;
+  border-radius: var(--app-radius-control);
+  color: var(--app-color-secondary);
+  text-decoration: none;
+  transition: none;
+}
+.chrome :global(.rail__link) > span {
+  display: none;
+}
+.chrome :global(.rail__link) strong {
+  font: 500 14px/1.5 var(--app-font);
+  letter-spacing: 0;
+  text-transform: none;
+}
+.chrome :global(.rail__link:hover) {
+  background: var(--app-color-sunk);
+}
+.chrome :global(.rail__link--active),
+.chrome :global(.rail__link--active:hover) {
+  background: var(--app-color-card);
+  color: var(--app-color-ink);
+  border-color: var(--app-color-line);
+  box-shadow: var(--app-shadow-card);
+}
+.chrome :global(.rail__footer) {
+  gap: 12px;
+}
+.chrome :global(.rail__footer) span {
+  font-family: var(--app-font);
+  font-size: 14px;
+  letter-spacing: 0;
+  text-transform: none;
+  color: inherit;
+}
+.chrome :global(.rail__footer form) {
+  margin: 0;
+}
+.chrome :global(.application-button[role="switch"]) {
+  justify-content: space-between;
+  border: 0;
+  border-radius: var(--app-radius-control);
+  padding: 8px;
+  background: transparent;
+  color: var(--app-color-secondary);
+  font-weight: 400;
+}
+.chrome :global(.rail__settings-link) {
+  display: flex;
+  align-items: center;
+  min-height: 44px;
+  width: 100%;
+  padding: 8px;
+  font: 400 14px/1.4 var(--app-font);
+  color: var(--app-color-secondary);
+  letter-spacing: 0;
+  text-transform: none;
+  text-decoration: none;
+  overflow-wrap: anywhere;
+  border-radius: var(--app-radius-control);
+}
+.chrome :global(.rail__settings-link:hover) {
+  background: var(--app-color-sunk);
+}
+.chrome :global(.rail__settings-link[aria-current]),
+.chrome :global(.rail__settings-link[aria-current]:hover) {
+  background: var(--app-color-card);
+  color: var(--app-color-ink);
+}
+.chrome :global(.logout-action) {
+  min-height: 44px;
+  width: 100%;
+  font: 500 14px/1.4 var(--app-font);
+  color: var(--app-color-ink);
+  border: 0;
+  padding: 10px 12px;
+  background: transparent;
+  border-radius: var(--app-radius-control);
+  text-align: left;
+  letter-spacing: 0;
+  text-transform: none;
+}
+.chrome :global(.logout-action:hover) {
+  background: var(--app-color-sunk);
+}
+.chrome :global(.shell-icon) {
+  flex-shrink: 0;
+}
+.chrome :global(:is(.shell-project, .shell-account, .shell-settings)) {
+  position: relative;
+  min-width: 0;
+  font: 400 14px/1.4 var(--app-font);
+}
+.chrome
+  :global(:is(.shell-project, .shell-account, .shell-settings) > summary) {
+  list-style: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 44px;
+  padding: 8px;
+  border-radius: var(--app-radius-control);
+  color: var(--app-color-secondary);
+}
+.chrome :global(summary::-webkit-details-marker) {
+  display: none;
+}
+.chrome
+  :global(
+    :is(.shell-project, .shell-account, .shell-settings) > summary:hover
+  ) {
+  background: var(--app-color-sunk);
+}
+.chrome
+  :global(
+    :is(.shell-project, .shell-account, .shell-settings)
+      > summary
+      > svg:last-child
+  ) {
+  margin-left: auto;
+}
+.chrome :global(.shell-project > summary) {
+  background: var(--app-color-card);
+  border: 1px solid var(--app-color-line);
+  color: var(--app-color-ink);
+}
+.chrome :global(.shell-project__identity) {
+  display: grid;
+  min-width: 0;
+  gap: 2px;
+}
+.chrome :global(.shell-project__identity strong) {
+  font-weight: 600;
+  overflow-wrap: anywhere;
+}
+.chrome :global(.shell-project__identity > span) {
+  font-size: 12px;
+  color: var(--app-color-secondary);
+}
+.chrome :global(.shell-project__tile) {
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  width: 32px;
+  height: 32px;
+  border-radius: var(--app-radius-control);
+  background: var(--app-color-info);
+  color: var(--app-color-on-pastel);
+  font-weight: 700;
+}
+.chrome :global(.shell-account) {
+  padding-top: 10px;
+  border-top: 1px solid var(--app-color-line);
+}
+.chrome :global(.shell-account > summary > .shell-account__avatar) {
+  display: grid;
+  place-items: center;
+  width: 30px;
+  height: 30px;
+  border-radius: var(--app-radius-pill);
+  flex-shrink: 0;
+  background: var(--app-color-ink);
+  color: var(--app-color-card);
+  font-weight: 600;
+}
+.chrome :global(.shell-account > summary) {
+  color: var(--app-color-ink);
+  font-weight: 500;
+}
+.chrome :global(.shell-disclosure__panel) {
+  /* Shell-local overlay layer: below the existing modal/evidence layers. */
+  position: absolute;
+  z-index: 2;
+  left: 0;
+  right: 0;
+  top: calc(100% + 4px);
+  border: 1px solid var(--app-color-line);
+  border-radius: var(--app-radius-control);
+  padding: 6px;
+  background: var(--app-color-card);
+  box-shadow: var(--app-shadow-card);
+}
+.chrome :global(.shell-disclosure__panel a) {
+  display: flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 8px;
+  color: var(--app-color-ink);
+  text-decoration: none;
+}
+.chrome :global(.shell-disclosure__panel a:hover) {
+  background: var(--app-color-sunk);
+  border-radius: var(--app-radius-control);
+}
+.chrome :global(:is(a, button, summary)) {
+  touch-action: manipulation;
+}
+.chrome :global(.shell-disclosure__panel p) {
+  margin: 4px 8px;
+  color: var(--app-color-secondary);
+  font: 400 12px/1.5 var(--app-font);
+}
+.chrome :global(.shell-account .shell-disclosure__panel) {
+  top: auto;
+  bottom: calc(100% + 4px);
+}
+.chrome :global(.shell-settings__links) {
+  display: grid;
+  gap: 2px;
+  padding-left: 12px;
+}
+.chrome :global(.shell-settings--active > summary) {
+  color: var(--app-color-ink);
+}
+.chrome :global(:is(a, button, summary):focus-visible),
+.frame > :global(.skip-link:focus-visible) {
+  outline: 2px solid var(--app-color-focus);
+  outline-offset: 2px;
+}
+.frame > :global(.skip-link) {
+  background: var(--app-color-card);
+  color: var(--app-color-ink);
+  transition: none;
+}
+.frame > .content {
+  /* Existing interiors keep their own legacy/Clarity tokens until migrated. */
+  background: var(--canvas);
+  margin-left: var(--app-layout-sidebar);
+  min-width: 0;
+  padding: 24px;
+  overflow: visible;
+  scroll-margin-top: 76px;
+}
+.frame > .content::before {
+  display: none;
+}
+.frame > .content[data-content-appearance="application"] {
+  background: var(--app-color-canvas);
+  color: var(--app-color-ink);
+  font: 400 14px/1.5 var(--app-font);
+  color-scheme: light;
+}
+.frame[data-theme="dark"] > .content[data-content-appearance="application"] {
+  color-scheme: dark;
+}
+.frame > .mobile {
+  min-height: 0;
+}
+@media (max-width: 760px) {
+  .frame > .sidebar {
+    display: none;
+  }
+  .frame > .content {
+    margin-left: 0;
+    padding: 16px;
+  }
+  .frame > .mobile {
+    display: grid;
+    background: var(--app-color-side);
+    border-color: var(--app-color-line);
+    height: auto;
+    min-height: 60px;
+    padding: 8px 16px;
+    grid-template-columns: auto minmax(0, 1fr) auto;
+  }
+  .chrome :global(.wordmark) {
+    font-size: 16px;
+  }
+  .chrome :global(.mobile-bar__context) {
+    color: var(--app-color-secondary);
+    font-size: 14px;
+  }
+  .chrome :global(.mobile-menu) summary {
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+    font: 500 14px/1.4 var(--app-font);
+  }
+  .chrome :global(.mobile-menu__panel) {
+    top: 48px;
+    width: min(280px, calc(100vw - 32px));
+    background: var(--app-color-side);
+    border-color: var(--app-color-line);
+    max-height: calc(100dvh - 100px);
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    border-radius: var(--app-radius-control);
+  }
+  .chrome :global(.mobile-menu) nav a {
+    color: var(--app-color-secondary);
+    font: 400 14px/1.4 var(--app-font);
+    min-height: 44px;
+    border-color: transparent;
+  }
+  .chrome :global(.mobile-menu) nav a[aria-current] {
+    background: var(--app-color-card);
+    color: var(--app-color-ink);
+    border-color: var(--app-color-line);
+  }
+  .chrome :global(.mobile-menu .shell-disclosure__panel) {
+    position: static;
+    margin-top: 4px;
+  }
+  .chrome :global(.mobile-menu form) {
+    border: 0;
+    padding: 0;
+  }
+  .chrome :global(.mobile-menu__panel > .application-status) {
+    margin: 12px 8px;
+  }
+}
+@media (min-width: 761px) {
+  .frame > .mobile {
+    display: none;
+  }
+}
+
+/* Keep long signed-in account labels inside the existing sidebar. */
+.chrome :global(.shell-account > summary > span:not(.shell-account__avatar)) {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}

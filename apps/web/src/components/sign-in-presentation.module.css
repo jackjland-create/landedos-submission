@@ -1,0 +1,230 @@
+.screen {
+  composes: theme from "./application-ui.module.css";
+  display: grid;
+  grid-template-columns: minmax(300px, min(43%, 620px)) minmax(0, 1fr);
+  gap: 16px;
+  min-height: 100dvh;
+  padding: 16px;
+}
+.brand {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 32px;
+  padding: 36px 40px;
+  border-radius: var(--app-radius-card);
+  background: var(--app-color-ink);
+  color: var(--app-color-sunk);
+}
+.wordmark {
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: -0.04em;
+}
+.wordmark span {
+  font-weight: 400;
+}
+.pitch {
+  display: grid;
+  gap: 20px;
+  max-width: 440px;
+}
+.headline {
+  font-size: clamp(32px, 3.1vw, 44px);
+  font-weight: 600;
+  line-height: 1.08;
+  letter-spacing: -0.04em;
+  text-wrap: balance;
+}
+.lede {
+  font-size: 16px;
+  line-height: 1.6;
+  text-wrap: pretty;
+}
+.eyebrow,
+.footnote {
+  font-size: 14px;
+  font-weight: 500;
+}
+.panel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 0;
+  padding: 32px 24px;
+}
+.column {
+  display: grid;
+  gap: 24px;
+  width: min(440px, 100%);
+}
+.heading {
+  display: grid;
+  gap: 12px;
+}
+.heading h1 {
+  font-size: 28px;
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: -0.03em;
+}
+.heading p,
+.hint,
+.returnNote {
+  color: var(--app-color-secondary);
+}
+.form {
+  display: grid;
+  gap: 20px;
+}
+.field {
+  display: grid;
+  gap: 8px;
+  min-width: 0;
+}
+.field label {
+  font-size: 14px;
+  font-weight: 600;
+}
+.input,
+.password {
+  min-width: 0;
+  width: 100%;
+  min-height: 48px;
+  border: 1px solid var(--app-color-secondary);
+  border-radius: var(--app-radius-control);
+  background: var(--app-color-card);
+  color: var(--app-color-ink);
+}
+.input {
+  padding: 10px 14px;
+  font: inherit;
+  font-size: 16px;
+}
+.password {
+  display: flex;
+  align-items: center;
+  padding: 0 4px 0 14px;
+}
+.password input {
+  flex: 1;
+  width: 100%;
+  min-width: 0;
+  min-height: 46px;
+  padding: 10px 4px 10px 0;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  font-size: 16px;
+}
+.password:focus-within {
+  outline: 2px solid var(--app-color-focus);
+  outline-offset: 2px;
+}
+.password input:focus-visible {
+  outline: none;
+}
+.input:focus-visible,
+.reveal:focus-visible,
+.notice:focus-visible {
+  outline: 2px solid var(--app-color-focus);
+  outline-offset: 2px;
+}
+.reveal {
+  flex: 0 0 auto;
+  min-height: 44px;
+  min-width: 52px;
+  padding: 8px;
+  border: 0;
+  border-radius: var(--app-radius-control);
+  background: transparent;
+  color: var(--app-color-ink);
+  font: 500 14px/1.5 var(--app-font);
+  cursor: pointer;
+  touch-action: manipulation;
+}
+.reveal:hover {
+  text-decoration: underline;
+}
+.hint,
+.returnNote {
+  font-size: 14px;
+  line-height: 1.5;
+}
+.actions {
+  display: grid;
+  gap: 12px;
+}
+.status:empty {
+  display: none;
+}
+.status {
+  font-size: 14px;
+  color: var(--app-color-secondary);
+}
+.notice {
+  padding: 14px 16px;
+  border: 1px solid var(--app-color-line);
+  border-radius: var(--app-radius-control);
+  background: var(--app-color-card);
+  overflow-wrap: anywhere;
+}
+.link {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  color: var(--app-color-ink);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  border-radius: var(--app-radius-control);
+  touch-action: manipulation;
+}
+.link:hover {
+  text-decoration-thickness: 2px;
+}
+.link:focus-visible {
+  outline: 2px solid var(--app-color-focus);
+  outline-offset: 2px;
+}
+.error {
+  border-color: var(--app-color-bad-edge);
+  background: var(--app-color-bad-fill);
+  color: var(--app-color-on-pastel);
+}
+@media (max-width: 1000px) {
+  .screen {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .brand {
+    gap: 24px;
+    padding: 24px;
+  }
+  .pitch {
+    max-width: 600px;
+    gap: 12px;
+  }
+  .headline {
+    font-size: 32px;
+  }
+  .panel {
+    padding: 24px 8px 40px;
+  }
+  .footnote {
+    display: none;
+  }
+}
+@media (max-width: 520px) {
+  .screen {
+    padding: 12px;
+  }
+  .brand {
+    padding: 20px;
+  }
+  .headline {
+    font-size: 28px;
+  }
+  .lede {
+    font-size: 14px;
+  }
+}

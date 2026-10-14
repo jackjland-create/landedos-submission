@@ -1,0 +1,55 @@
+{
+  "$schema": "https://design-tokens.github.io/community-group/format/",
+  "color": {
+    "canvas": { "$value": "#000000", "$type": "color" },
+    "surface": { "$value": "#0A0A0A", "$type": "color" },
+    "surfaceRaised": { "$value": "#161616", "$type": "color" },
+    "grid": { "$value": "#292929", "$type": "color" },
+    "muted": { "$value": "#808080", "$type": "color" },
+    "text": { "$value": "#FFFFFF", "$type": "color" },
+    "action": { "$value": "#FF462E", "$type": "color" },
+    "verified": { "$value": "#14C700", "$type": "color" },
+    "intelligence": { "$value": "#009DFF", "$type": "color" },
+    "danger": { "$value": "#FF0000", "$type": "color" }
+  },
+  "font": {
+    "display": { "$value": "Clash Display", "$type": "fontFamily" },
+    "utility": { "$value": "Geist, Inter, sans-serif", "$type": "fontFamily" },
+    "data": { "$value": "Geist Mono, monospace", "$type": "fontFamily" }
+  },
+  "fontWeight": {
+    "regular": { "$value": 400, "$type": "fontWeight" },
+    "medium": { "$value": 500, "$type": "fontWeight" },
+    "semibold": { "$value": 600, "$type": "fontWeight" }
+  },
+  "space": {
+    "1": { "$value": "4px", "$type": "dimension" },
+    "2": { "$value": "8px", "$type": "dimension" },
+    "3": { "$value": "12px", "$type": "dimension" },
+    "4": { "$value": "16px", "$type": "dimension" },
+    "6": { "$value": "24px", "$type": "dimension" },
+    "8": { "$value": "32px", "$type": "dimension" },
+    "12": { "$value": "48px", "$type": "dimension" },
+    "16": { "$value": "64px", "$type": "dimension" }
+  },
+  "radius": {
+    "square": { "$value": "0px", "$type": "dimension" },
+    "soft": { "$value": "12px", "$type": "dimension" },
+    "pill": { "$value": "999px", "$type": "dimension" }
+  },
+  "border": {
+    "default": {
+      "$value": {
+        "color": "#292929",
+        "width": "1px",
+        "style": "solid"
+      },
+      "$type": "border"
+    }
+  },
+  "duration": {
+    "fast": { "$value": "160ms", "$type": "duration" },
+    "normal": { "$value": "240ms", "$type": "duration" },
+    "editorial": { "$value": "400ms", "$type": "duration" }
+  }
+}

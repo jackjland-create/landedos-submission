@@ -1,0 +1,1631 @@
+{
+  "evidence": {
+    "protocol": "landed:timed-report-evidence:1",
+    "sourceScope": "project_retained_evidence",
+    "click_events": [
+      {
+        "id": "90990000-0000-4000-8000-000000000001",
+        "creator_id": "40990000-0000-4000-8000-000000000001",
+        "project_id": "20990000-0000-4000-8000-000000000001",
+        "campaign_id": "74437545-67d3-46c1-8bef-775ddc717ccb",
+        "eligibility": "eligible",
+        "recorded_at": "2026-09-18T12:00:01+00:00",
+        "requested_at": "2026-09-18T12:00:00+00:00",
+        "workspace_id": "10990000-0000-4000-8000-000000000001",
+        "signature_valid": true,
+        "tracked_link_id": "90990000-0000-4000-8000-000000000002",
+        "content_asset_id": "1348403c-225f-4d5d-8b4f-95fb6ef692f6"
+      },
+      {
+        "id": "90990000-0000-4000-8000-000000000051",
+        "creator_id": "40990000-0000-4000-8000-000000000001",
+        "project_id": "20990000-0000-4000-8000-000000000001",
+        "campaign_id": "74437545-67d3-46c1-8bef-775ddc717ccb",
+        "eligibility": "eligible",
+        "recorded_at": "2026-09-18T12:00:01+00:00",
+        "requested_at": "2026-09-18T12:00:00+00:00",
+        "workspace_id": "10990000-0000-4000-8000-000000000001",
+        "signature_valid": true,
+        "tracked_link_id": "90990000-0000-4000-8000-000000000002",
+        "content_asset_id": "1348403c-225f-4d5d-8b4f-95fb6ef692f6"
+      }
+    ],
+    "executionReview": {
+      "kind": "execution_report_review",
+      "execution": {
+        "reason": "Retain this precise human reason",
+        "preview": {
+          "review": {
+            "kind": "exact_campaign_execution",
+            "projectId": "20990000-0000-4000-8000-000000000001",
+            "campaignId": "74437545-67d3-46c1-8bef-775ddc717ccb",
+            "candidates": [
+              {
+                "conversionFactId": "90990000-0000-4000-8000-000000000201",
+                "attributionFactId": "90990000-0000-4000-8000-000000000202",
+                "calculationRequestId": "90990000-0000-4000-8000-000000000200",
+                "canonicalChainEventId": "90990000-0000-4000-8000-000000000030",
+                "protectedWalletMappingId": "90990000-0000-4000-8000-000000000011"
+              },
+              {
+                "conversionFactId": "90990000-0000-4000-8000-000000000211",
+                "attributionFactId": "90990000-0000-4000-8000-000000000212",
+                "calculationRequestId": "90990000-0000-4000-8000-000000000210",
+                "canonicalChainEventId": "90990000-0000-4000-8000-000000000031",
+                "protectedWalletMappingId": "90990000-0000-4000-8000-000000000061"
+              }
+            ],
+            "workspaceId": "10990000-0000-4000-8000-000000000001",
+            "environments": ["demo"],
+            "ruleVersionId": "61990000-0000-4000-8000-000000000001",
+            "schemaVersion": 1,
+            "measurementWindow": {
+              "endedAt": "2026-09-21T00:00:00.000000Z",
+              "startedAt": "2026-09-19T00:00:00.000000Z"
+            },
+            "commercialPlanVersionId": "5d545b06-7c97-444e-8db7-1ba73a9f6bc5",
+            "commercialPlanSnapshotHash": "653f660ffcb676069d9a2243fb34fcb06adbe09dde87af635b2effa34f8747fc"
+          },
+          "reviewHash": "f99004ff6ccdf9058bf307c41a7fdfe2638cfe8f8ab328c7de23bdbdd4f155af"
+        },
+        "receipt": {
+          "batch": {
+            "results": [
+              {
+                "inserted": true,
+                "conversionFactId": "90990000-0000-4000-8000-000000000201",
+                "attributionFactId": "90990000-0000-4000-8000-000000000202",
+                "calculationRequestId": "90990000-0000-4000-8000-000000000200"
+              },
+              {
+                "inserted": true,
+                "conversionFactId": "90990000-0000-4000-8000-000000000211",
+                "attributionFactId": "90990000-0000-4000-8000-000000000212",
+                "calculationRequestId": "90990000-0000-4000-8000-000000000210"
+              }
+            ],
+            "campaignId": "74437545-67d3-46c1-8bef-775ddc717ccb",
+            "insertedCount": 2,
+            "ruleVersionId": "61990000-0000-4000-8000-000000000001",
+            "processedCount": 2
+          },
+          "approvalId": "90990000-0000-4000-8000-000000000300",
+          "reviewHash": "f99004ff6ccdf9058bf307c41a7fdfe2638cfe8f8ab328c7de23bdbdd4f155af",
+          "completeness": "not_established",
+          "reportIssuance": "blocked"
+        },
+        "approvalId": "90990000-0000-4000-8000-000000000300",
+        "approvedAt": "2026-09-21T18:22:45.926446Z"
+      },
+      "reportScope": "campaign_wide",
+      "completeness": "not_established",
+      "reportReview": {
+        "reportSources": {
+          "kind": "retained_report_sources",
+          "results": [
+            {
+              "value": {
+                "kind": "native_lamports",
+                "decimals": 9,
+                "rawAmount": "1000000",
+                "tokenMint": null
+              },
+              "auditId": "0e4721a3-d0a2-480d-b802-d074eb736882",
+              "creatorId": "40990000-0000-4000-8000-000000000001",
+              "touchTime": "2026-09-18T12:00:00+00:00",
+              "confidence": "strong",
+              "revenueKind": "none",
+              "contentAssetId": "1348403c-225f-4d5d-8b4f-95fb6ef692f6",
+              "conversionTime": "2026-09-20T12:00:00+00:00",
+              "conversionFactId": "90990000-0000-4000-8000-000000000201",
+              "attributionFactId": "90990000-0000-4000-8000-000000000202",
+              "primaryRoasEligible": true,
+              "calculationRequestId": "90990000-0000-4000-8000-000000000200",
+              "canonicalChainEventId": "90990000-0000-4000-8000-000000000030"
+            },
+            {
+              "value": {
+                "kind": "native_lamports",
+                "decimals": 9,
+                "rawAmount": "1000000",
+                "tokenMint": null
+              },
+              "auditId": "ea656e9f-7ffe-4e7b-a7ba-989eefa382d0",
+              "creatorId": "40990000-0000-4000-8000-000000000001",
+              "touchTime": "2026-09-18T12:00:00+00:00",
+              "confidence": "strong",
+              "revenueKind": "none",
+              "contentAssetId": "1348403c-225f-4d5d-8b4f-95fb6ef692f6",
+              "conversionTime": "2026-09-20T12:00:00+00:00",
+              "conversionFactId": "90990000-0000-4000-8000-000000000211",
+              "attributionFactId": "90990000-0000-4000-8000-000000000212",
+              "primaryRoasEligible": true,
+              "calculationRequestId": "90990000-0000-4000-8000-000000000210",
+              "canonicalChainEventId": "90990000-0000-4000-8000-000000000031"
+            }
+          ],
+          "projectId": "20990000-0000-4000-8000-000000000001",
+          "campaignId": "74437545-67d3-46c1-8bef-775ddc717ccb",
+          "workspaceId": "10990000-0000-4000-8000-000000000001",
+          "completeness": "not_established",
+          "ruleVersionId": "61990000-0000-4000-8000-000000000001",
+          "measurementWindow": {
+            "endedAt": "2026-09-21T00:00:00+00:00",
+            "startedAt": "2026-09-19T00:00:00+00:00"
+          },
+          "protocolRevenueStatus": "source_not_configured",
+          "commercialPlanSnapshot": {
+            "basket": {
+              "id": "b2b5befd-56fd-415b-9f32-4cbec0be8b5c",
+              "name": "Strategy preview",
+              "objective": "Increase qualified wallets",
+              "outcomeProfile": {
+                "metric": "qualified_wallets",
+                "targetUnits": "100",
+                "baselineUnits": "0"
+              }
+            },
+            "packages": [
+              {
+                "id": "4ac14ac1-4e10-4000-a059-05d94a89f9bb",
+                "creatorId": "40990000-0000-4000-8000-000000000002",
+                "packageLabel": "Creator 2",
+                "compensationLines": [
+                  {
+                    "id": "171fc20a-8df5-4a7e-afa1-4f894d0111ab",
+                    "model": "fixed",
+                    "assetType": "cash",
+                    "amountMinor": "392000",
+                    "currencyCode": "GBP"
+                  }
+                ],
+                "sourceRateQuoteId": null,
+                "deliverableSummary": "One independently negotiated research thread"
+              },
+              {
+                "id": "c72c6e1d-598e-4436-b964-07618bb36396",
+                "creatorId": "40990000-0000-4000-8000-000000000001",
+                "packageLabel": "Creator 1",
+                "compensationLines": [
+                  {
+                    "id": "aeaa9028-4071-4a91-bd56-c929d976e5c9",
+                    "model": "fixed",
+                    "assetType": "cash",
+                    "amountMinor": "127500",
+                    "currencyCode": "GBP"
+                  }
+                ],
+                "sourceRateQuoteId": null,
+                "deliverableSummary": "One independently negotiated research thread"
+              }
+            ],
+            "scenario": {
+              "id": "439a6438-1fd5-4dd8-a95d-5f867efc342e",
+              "code": "A",
+              "name": "Focused authority"
+            },
+            "projectId": "20990000-0000-4000-8000-000000000001",
+            "workspaceId": "10990000-0000-4000-8000-000000000001",
+            "schemaVersion": 2,
+            "strategyBinding": {
+              "origin": {
+                "kind": "custom"
+              },
+              "timing": {
+                "flight": {
+                  "endedAt": "2026-09-20T00:00:00Z",
+                  "startedAt": "2026-09-19T00:00:00Z"
+                },
+                "measurement": {
+                  "endedAt": "2026-09-21T00:00:00Z",
+                  "startedAt": "2026-09-19T00:00:00Z"
+                },
+                "schemaVersion": 1
+              },
+              "revision": 3,
+              "strategy": {
+                "goal": "Generate qualified investor interest in the product and its proposition.",
+                "sector": null,
+                "audience": "Crypto-native investors, research teams and ecosystem operators.",
+                "rationale": "Combine specialist discovery with long-form explanation; test whether attention translates into qualified product use.",
+                "exclusions": [
+                  "Token-price movements are not a success metric.",
+                  "Deck requests are not onchain revenue or qualified-wallet proof."
+                ],
+                "allocations": [
+                  {
+                    "format": "Research thread",
+                    "channel": "x",
+                    "archetype": "analyst",
+                    "rationale": "Test discovery among relevant investor networks.",
+                    "plannedSpendBps": 4500
+                  },
+                  {
+                    "format": "Founder interview",
+                    "channel": "podcast",
+                    "archetype": "long_form_host",
+                    "rationale": "Explain the proposition and product evidence in depth.",
+                    "plannedSpendBps": 3500
+                  },
+                  {
+                    "format": "Research briefing",
+                    "channel": "newsletter_research",
+                    "archetype": "sector_specialist",
+                    "rationale": "Provide a considered follow-up for specialist readers.",
+                    "plannedSpendBps": 2000
+                  }
+                ],
+                "assumptions": [
+                  "Audience descriptions require source-backed creator review.",
+                  "Investor interest and wallet activity are different signals; neither proves investor identity."
+                ],
+                "measurement": {
+                  "primaryOutcome": "qualified_wallets",
+                  "attributionModel": "last_eligible_touch",
+                  "qualifyingAction": "Select the project's instrumented Solana product action.",
+                  "revenueTreatment": "verified_protocol_revenue_only",
+                  "leadingIndicators": [
+                    "Qualified visits",
+                    "Deck requests (separate source required)"
+                  ],
+                  "retentionWindowDays": 7,
+                  "attributionWindowDays": 7,
+                  "conversionRuleVersionId": "61990000-0000-4000-8000-000000000001"
+                },
+                "missingEvidence": [
+                  "Current creator availability, quotes and audience evidence need review.",
+                  "No comparative campaign outcomes validate these starting allocations.",
+                  "Project conversion instrumentation and retention coverage need confirmation."
+                ],
+                "rebalanceQuestions": [
+                  "Which creators generated qualified actions after attention?",
+                  "Does the evidence justify renewing long-form distribution?"
+                ]
+              },
+              "schemaVersion": 2,
+              "conversionRule": {
+                "id": "61990000-0000-4000-8000-000000000001",
+                "name": "Qualified action",
+                "chain": "solana",
+                "ruleId": "60990000-0000-4000-8000-000000000001",
+                "version": 1,
+                "createdAt": "2026-09-21T18:22:45.794000Z",
+                "createdBy": "30990000-0000-4000-8000-000000000001",
+                "programId": null,
+                "projectId": "20990000-0000-4000-8000-000000000001",
+                "description": "First finalized qualifying action with explicit wallet binding.",
+                "workspaceId": "10990000-0000-4000-8000-000000000001",
+                "changeReason": "Synthetic BSK09 measurement fixture",
+                "templateCode": "first_qualifying_transaction",
+                "valueMapping": "transfer_amount",
+                "effectiveFrom": "2026-09-01T00:00:00.000000Z",
+                "effectiveUntil": null,
+                "revenueMapping": "none",
+                "minimumFinality": "finalized",
+                "attributionModel": "last_eligible_creator_touch",
+                "eventDiscriminator": null,
+                "evidenceCapability": "ready",
+                "requiresWalletBinding": true,
+                "attributionWindowSeconds": 604800
+              },
+              "measurementWindow": {
+                "endedAt": "2026-09-21T00:00:00.000000Z",
+                "startedAt": "2026-09-19T00:00:00.000000Z"
+              },
+              "selectedCreatorIds": [
+                "40990000-0000-4000-8000-000000000001",
+                "40990000-0000-4000-8000-000000000002",
+                "40990000-0000-4000-8000-000000000003"
+              ]
+            }
+          },
+          "qualifiedClickEvidence": [],
+          "commercialPlanVersionId": "5d545b06-7c97-444e-8db7-1ba73a9f6bc5",
+          "commercialPlanSnapshotHash": "653f660ffcb676069d9a2243fb34fcb06adbe09dde87af635b2effa34f8747fc",
+          "walletAttributionEvidenceIds": [
+            "90990000-0000-4000-8000-000000000202",
+            "90990000-0000-4000-8000-000000000212"
+          ]
+        },
+        "historyReadiness": {
+          "kind": "campaign_history_readiness",
+          "issuance": "blocked",
+          "mappings": [
+            {
+              "status": "history_recorded",
+              "creatorId": "40990000-0000-4000-8000-000000000001",
+              "latestJob": {
+                "id": "90990000-0000-4000-8000-000000000710",
+                "status": "completed",
+                "endedAt": "2026-09-21T00:00:00+00:00",
+                "startedAt": "2026-09-18T13:00:00+00:00",
+                "completedAt": "2026-09-21T18:22:46.078+00:00",
+                "environment": "demo",
+                "normalizationIssueCount": 0
+              },
+              "mappingId": "90990000-0000-4000-8000-000000000011",
+              "matchingJob": {
+                "id": "90990000-0000-4000-8000-000000000710",
+                "endedAt": "2026-09-21T00:00:00+00:00",
+                "startedAt": "2026-09-18T13:00:00+00:00",
+                "completedAt": "2026-09-21T18:22:46.078+00:00",
+                "environment": "demo"
+              },
+              "contentAssetId": "1348403c-225f-4d5d-8b4f-95fb6ef692f6",
+              "requiredHistory": {
+                "endedAt": "2026-09-21T00:00:00+00:00",
+                "startedAt": "2026-09-18T13:00:00+00:00"
+              }
+            },
+            {
+              "status": "history_recorded",
+              "creatorId": "40990000-0000-4000-8000-000000000001",
+              "latestJob": {
+                "id": "90990000-0000-4000-8000-000000000720",
+                "status": "completed",
+                "endedAt": "2026-09-21T00:00:00+00:00",
+                "startedAt": "2026-09-18T13:00:00+00:00",
+                "completedAt": "2026-09-21T18:22:46.08+00:00",
+                "environment": "demo",
+                "normalizationIssueCount": 0
+              },
+              "mappingId": "90990000-0000-4000-8000-000000000061",
+              "matchingJob": {
+                "id": "90990000-0000-4000-8000-000000000720",
+                "endedAt": "2026-09-21T00:00:00+00:00",
+                "startedAt": "2026-09-18T13:00:00+00:00",
+                "completedAt": "2026-09-21T18:22:46.08+00:00",
+                "environment": "demo"
+              },
+              "contentAssetId": "1348403c-225f-4d5d-8b4f-95fb6ef692f6",
+              "requiredHistory": {
+                "endedAt": "2026-09-21T00:00:00+00:00",
+                "startedAt": "2026-09-18T13:00:00+00:00"
+              }
+            }
+          ],
+          "projectId": "20990000-0000-4000-8000-000000000001",
+          "campaignId": "74437545-67d3-46c1-8bef-775ddc717ccb",
+          "workspaceId": "10990000-0000-4000-8000-000000000001",
+          "completeness": "not_established",
+          "ruleVersionId": "61990000-0000-4000-8000-000000000001",
+          "measurementWindow": {
+            "endedAt": "2026-09-21T00:00:00+00:00",
+            "startedAt": "2026-09-19T00:00:00+00:00"
+          }
+        }
+      },
+      "schemaVersion": 1,
+      "reportIssuance": "blocked"
+    },
+    "conversion_facts": [
+      {
+        "id": "90990000-0000-4000-8000-000000000201",
+        "reason": "matched",
+        "outcome": "match",
+        "rule_id": "60990000-0000-4000-8000-000000000001",
+        "decimals": 9,
+        "created_at": "2026-09-21T18:22:46.005+00:00",
+        "creator_id": "40990000-0000-4000-8000-000000000001",
+        "project_id": "20990000-0000-4000-8000-000000000001",
+        "raw_amount": "1000000",
+        "token_mint": null,
+        "value_kind": "native_lamports",
+        "campaign_id": "74437545-67d3-46c1-8bef-775ddc717ccb",
+        "revenue_kind": "none",
+        "workspace_id": "10990000-0000-4000-8000-000000000001",
+        "conversion_time": "2026-09-20T12:00:00+00:00",
+        "rule_version_id": "61990000-0000-4000-8000-000000000001",
+        "tracked_link_id": "90990000-0000-4000-8000-000000000002",
+        "content_asset_id": "1348403c-225f-4d5d-8b4f-95fb6ef692f6",
+        "evaluator_version": 1,
+        "calculation_request_id": "90990000-0000-4000-8000-000000000200",
+        "canonical_chain_event_id": "90990000-0000-4000-8000-000000000030",
+        "protected_wallet_mapping_id": "90990000-0000-4000-8000-000000000011"
+      },
+      {
+        "id": "90990000-0000-4000-8000-000000000211",
+        "reason": "matched",
+        "outcome": "match",
+        "rule_id": "60990000-0000-4000-8000-000000000001",
+        "decimals": 9,
+        "created_at": "2026-09-21T18:22:46.036+00:00",
+        "creator_id": "40990000-0000-4000-8000-000000000001",
+        "project_id": "20990000-0000-4000-8000-000000000001",
+        "raw_amount": "1000000",
+        "token_mint": null,
+        "value_kind": "native_lamports",
+        "campaign_id": "74437545-67d3-46c1-8bef-775ddc717ccb",
+        "revenue_kind": "none",
+        "workspace_id": "10990000-0000-4000-8000-000000000001",
+        "conversion_time": "2026-09-20T12:00:00+00:00",
+        "rule_version_id": "61990000-0000-4000-8000-000000000001",
+        "tracked_link_id": "90990000-0000-4000-8000-000000000002",
+        "content_asset_id": "1348403c-225f-4d5d-8b4f-95fb6ef692f6",
+        "evaluator_version": 1,
+        "calculation_request_id": "90990000-0000-4000-8000-000000000210",
+        "canonical_chain_event_id": "90990000-0000-4000-8000-000000000031",
+        "protected_wallet_mapping_id": "90990000-0000-4000-8000-000000000061"
+      }
+    ],
+    "raw_chain_events": [
+      {
+        "id": "1ab42406-7ea5-498f-a0b6-f909a99ef810",
+        "slot": "100",
+        "provider": "helius",
+        "project_id": "20990000-0000-4000-8000-000000000001",
+        "delivery_id": "90990000-0000-4000-8000-000000000430",
+        "raw_payload": {
+          "fee": 5000,
+          "slot": 100,
+          "type": "TRANSFER",
+          "events": {},
+          "source": "SYSTEM_PROGRAM",
+          "feePayer": "11111111111111111111111111111111",
+          "signature": "4nNtjezQMYBHvgSQmoRmJPiXGsPAWmJPoGSa64xanqrauogiVzFyGQhKeFataHGXq51jR2hjbzNTkPUpP787HAmL",
+          "timestamp": 1789905600,
+          "accountData": [],
+          "description": "Synthetic connected-report native transfer",
+          "tokenTransfers": [],
+          "nativeTransfers": [
+            {
+              "amount": 1000000,
+              "toUserAccount": "Vote111111111111111111111111111111111111111",
+              "fromUserAccount": "11111111111111111111111111111111"
+            }
+          ],
+          "transactionError": null
+        },
+        "received_at": "2026-09-21T18:22:45.884312+00:00",
+        "workspace_id": "10990000-0000-4000-8000-000000000001",
+        "integration_id": "90990000-0000-4000-8000-000000000020",
+        "acquisition_source": "helius_webhook",
+        "provider_timestamp": "1789905600",
+        "provider_event_index": 0,
+        "transaction_signature": "4nNtjezQMYBHvgSQmoRmJPiXGsPAWmJPoGSa64xanqrauogiVzFyGQhKeFataHGXq51jR2hjbzNTkPUpP787HAmL",
+        "configured_environment": "demo"
+      },
+      {
+        "id": "3016616d-9464-487c-81a2-900766a18555",
+        "slot": "101",
+        "provider": "helius",
+        "project_id": "20990000-0000-4000-8000-000000000001",
+        "delivery_id": "90990000-0000-4000-8000-000000000722",
+        "raw_payload": {
+          "fee": 5000,
+          "slot": 101,
+          "type": "TRANSFER",
+          "events": {},
+          "source": "SYSTEM_PROGRAM",
+          "feePayer": "So11111111111111111111111111111111111111112",
+          "signature": "5nNtjezQMYBHvgSQmoRmJPiXGsPAWmJPoGSa64xanqrauogiVzFyGQhKeFataHGXq51jR2hjbzNTkPUpP787HAmL",
+          "timestamp": 1789905600,
+          "accountData": [],
+          "description": "Synthetic historical acquisition of same transfer",
+          "tokenTransfers": [],
+          "nativeTransfers": [
+            {
+              "amount": 1000000,
+              "toUserAccount": "Vote111111111111111111111111111111111111111",
+              "fromUserAccount": "So11111111111111111111111111111111111111112"
+            }
+          ],
+          "transactionError": null
+        },
+        "received_at": "2026-09-21T18:22:46.079+00:00",
+        "workspace_id": "10990000-0000-4000-8000-000000000001",
+        "integration_id": "90990000-0000-4000-8000-000000000020",
+        "acquisition_source": "helius_backfill",
+        "provider_timestamp": "1789905600",
+        "provider_event_index": 0,
+        "transaction_signature": "5nNtjezQMYBHvgSQmoRmJPiXGsPAWmJPoGSa64xanqrauogiVzFyGQhKeFataHGXq51jR2hjbzNTkPUpP787HAmL",
+        "configured_environment": "demo"
+      },
+      {
+        "id": "e3c978e7-923b-40aa-9809-32137392d7d8",
+        "slot": "101",
+        "provider": "helius",
+        "project_id": "20990000-0000-4000-8000-000000000001",
+        "delivery_id": "90990000-0000-4000-8000-000000000431",
+        "raw_payload": {
+          "fee": 5000,
+          "slot": 101,
+          "type": "TRANSFER",
+          "events": {},
+          "source": "SYSTEM_PROGRAM",
+          "feePayer": "So11111111111111111111111111111111111111112",
+          "signature": "5nNtjezQMYBHvgSQmoRmJPiXGsPAWmJPoGSa64xanqrauogiVzFyGQhKeFataHGXq51jR2hjbzNTkPUpP787HAmL",
+          "timestamp": 1789905600,
+          "accountData": [],
+          "description": "Synthetic connected-report native transfer",
+          "tokenTransfers": [],
+          "nativeTransfers": [
+            {
+              "amount": 1000000,
+              "toUserAccount": "Vote111111111111111111111111111111111111111",
+              "fromUserAccount": "So11111111111111111111111111111111111111112"
+            }
+          ],
+          "transactionError": null
+        },
+        "received_at": "2026-09-21T18:22:45.90273+00:00",
+        "workspace_id": "10990000-0000-4000-8000-000000000001",
+        "integration_id": "90990000-0000-4000-8000-000000000020",
+        "acquisition_source": "helius_webhook",
+        "provider_timestamp": "1789905600",
+        "provider_event_index": 0,
+        "transaction_signature": "5nNtjezQMYBHvgSQmoRmJPiXGsPAWmJPoGSa64xanqrauogiVzFyGQhKeFataHGXq51jR2hjbzNTkPUpP787HAmL",
+        "configured_environment": "demo"
+      },
+      {
+        "id": "f56ff892-4f98-4413-8a78-da533452e5d7",
+        "slot": "100",
+        "provider": "helius",
+        "project_id": "20990000-0000-4000-8000-000000000001",
+        "delivery_id": "90990000-0000-4000-8000-000000000712",
+        "raw_payload": {
+          "fee": 5000,
+          "slot": 100,
+          "type": "TRANSFER",
+          "events": {},
+          "source": "SYSTEM_PROGRAM",
+          "feePayer": "11111111111111111111111111111111",
+          "signature": "4nNtjezQMYBHvgSQmoRmJPiXGsPAWmJPoGSa64xanqrauogiVzFyGQhKeFataHGXq51jR2hjbzNTkPUpP787HAmL",
+          "timestamp": 1789905600,
+          "accountData": [],
+          "description": "Synthetic historical acquisition of same transfer",
+          "tokenTransfers": [],
+          "nativeTransfers": [
+            {
+              "amount": 1000000,
+              "toUserAccount": "Vote111111111111111111111111111111111111111",
+              "fromUserAccount": "11111111111111111111111111111111"
+            }
+          ],
+          "transactionError": null
+        },
+        "received_at": "2026-09-21T18:22:46.076+00:00",
+        "workspace_id": "10990000-0000-4000-8000-000000000001",
+        "integration_id": "90990000-0000-4000-8000-000000000020",
+        "acquisition_source": "helius_backfill",
+        "provider_timestamp": "1789905600",
+        "provider_event_index": 0,
+        "transaction_signature": "4nNtjezQMYBHvgSQmoRmJPiXGsPAWmJPoGSa64xanqrauogiVzFyGQhKeFataHGXq51jR2hjbzNTkPUpP787HAmL",
+        "configured_environment": "demo"
+      }
+    ],
+    "attribution_facts": [
+      {
+        "id": "90990000-0000-4000-8000-000000000202",
+        "reason": "most_recent_eligible_touch",
+        "outcome": "attributed",
+        "confidence": "strong",
+        "created_at": "2026-09-21T18:22:46.005+00:00",
+        "creator_id": "40990000-0000-4000-8000-000000000001",
+        "project_id": "20990000-0000-4000-8000-000000000001",
+        "touch_time": "2026-09-18T12:00:00+00:00",
+        "campaign_id": "74437545-67d3-46c1-8bef-775ddc717ccb",
+        "workspace_id": "10990000-0000-4000-8000-000000000001",
+        "click_event_id": "90990000-0000-4000-8000-000000000001",
+        "conversion_time": "2026-09-20T12:00:00+00:00",
+        "rule_version_id": "61990000-0000-4000-8000-000000000001",
+        "tracked_link_id": "90990000-0000-4000-8000-000000000002",
+        "wallet_proof_id": "90990000-0000-4000-8000-000000000007",
+        "content_asset_id": "1348403c-225f-4d5d-8b4f-95fb6ef692f6",
+        "attribution_model": "last_eligible_creator_touch",
+        "classifier_version": 1,
+        "conversion_fact_id": "90990000-0000-4000-8000-000000000201",
+        "anonymous_session_id": "90990000-0000-4000-8000-000000000005",
+        "primary_roas_eligible": true,
+        "calculation_request_id": "90990000-0000-4000-8000-000000000200",
+        "measurement_consent_id": "90990000-0000-4000-8000-000000000009",
+        "attribution_window_seconds": 604800,
+        "click_quality_assessment_id": "90990000-0000-4000-8000-000000000003",
+        "protected_wallet_mapping_id": "90990000-0000-4000-8000-000000000011",
+        "attribution_evaluator_version": 1
+      },
+      {
+        "id": "90990000-0000-4000-8000-000000000212",
+        "reason": "most_recent_eligible_touch",
+        "outcome": "attributed",
+        "confidence": "strong",
+        "created_at": "2026-09-21T18:22:46.036+00:00",
+        "creator_id": "40990000-0000-4000-8000-000000000001",
+        "project_id": "20990000-0000-4000-8000-000000000001",
+        "touch_time": "2026-09-18T12:00:00+00:00",
+        "campaign_id": "74437545-67d3-46c1-8bef-775ddc717ccb",
+        "workspace_id": "10990000-0000-4000-8000-000000000001",
+        "click_event_id": "90990000-0000-4000-8000-000000000051",
+        "conversion_time": "2026-09-20T12:00:00+00:00",
+        "rule_version_id": "61990000-0000-4000-8000-000000000001",
+        "tracked_link_id": "90990000-0000-4000-8000-000000000002",
+        "wallet_proof_id": "90990000-0000-4000-8000-000000000057",
+        "content_asset_id": "1348403c-225f-4d5d-8b4f-95fb6ef692f6",
+        "attribution_model": "last_eligible_creator_touch",
+        "classifier_version": 1,
+        "conversion_fact_id": "90990000-0000-4000-8000-000000000211",
+        "anonymous_session_id": "90990000-0000-4000-8000-000000000055",
+        "primary_roas_eligible": true,
+        "calculation_request_id": "90990000-0000-4000-8000-000000000210",
+        "measurement_consent_id": "90990000-0000-4000-8000-000000000059",
+        "attribution_window_seconds": 604800,
+        "click_quality_assessment_id": "90990000-0000-4000-8000-000000000053",
+        "protected_wallet_mapping_id": "90990000-0000-4000-8000-000000000061",
+        "attribution_evaluator_version": 1
+      }
+    ],
+    "anonymous_sessions": [
+      {
+        "id": "90990000-0000-4000-8000-000000000005",
+        "created_at": "2026-09-18T12:00:00+00:00",
+        "creator_id": "40990000-0000-4000-8000-000000000001",
+        "expires_at": "2026-09-25T12:00:00+00:00",
+        "project_id": "20990000-0000-4000-8000-000000000001",
+        "campaign_id": "74437545-67d3-46c1-8bef-775ddc717ccb",
+        "workspace_id": "10990000-0000-4000-8000-000000000001",
+        "session_version": 1,
+        "tracked_link_id": "90990000-0000-4000-8000-000000000002",
+        "content_asset_id": "1348403c-225f-4d5d-8b4f-95fb6ef692f6",
+        "qualified_assessment_id": "90990000-0000-4000-8000-000000000003",
+        "qualified_click_event_id": "90990000-0000-4000-8000-000000000001"
+      },
+      {
+        "id": "90990000-0000-4000-8000-000000000055",
+        "created_at": "2026-09-18T12:00:00+00:00",
+        "creator_id": "40990000-0000-4000-8000-000000000001",
+        "expires_at": "2026-09-25T12:00:00+00:00",
+        "project_id": "20990000-0000-4000-8000-000000000001",
+        "campaign_id": "74437545-67d3-46c1-8bef-775ddc717ccb",
+        "workspace_id": "10990000-0000-4000-8000-000000000001",
+        "session_version": 1,
+        "tracked_link_id": "90990000-0000-4000-8000-000000000002",
+        "content_asset_id": "1348403c-225f-4d5d-8b4f-95fb6ef692f6",
+        "qualified_assessment_id": "90990000-0000-4000-8000-000000000053",
+        "qualified_click_event_id": "90990000-0000-4000-8000-000000000051"
+      }
+    ],
+    "wallet_session_proofs": [
+      {
+        "id": "90990000-0000-4000-8000-000000000007",
+        "verifier": "wallet_standard_siws",
+        "creator_id": "40990000-0000-4000-8000-000000000001",
+        "project_id": "20990000-0000-4000-8000-000000000001",
+        "campaign_id": "74437545-67d3-46c1-8bef-775ddc717ccb",
+        "verified_at": "2026-09-18T12:59:00+00:00",
+        "challenge_id": "90990000-0000-4000-8000-000000000008",
+        "workspace_id": "10990000-0000-4000-8000-000000000001",
+        "signature_hash": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+        "wallet_address": "11111111111111111111111111111111",
+        "tracked_link_id": "90990000-0000-4000-8000-000000000002",
+        "content_asset_id": "1348403c-225f-4d5d-8b4f-95fb6ef692f6",
+        "verifier_version": "1.1.3",
+        "signed_message_hash": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+        "anonymous_session_id": "90990000-0000-4000-8000-000000000005"
+      },
+      {
+        "id": "90990000-0000-4000-8000-000000000057",
+        "verifier": "wallet_standard_siws",
+        "creator_id": "40990000-0000-4000-8000-000000000001",
+        "project_id": "20990000-0000-4000-8000-000000000001",
+        "campaign_id": "74437545-67d3-46c1-8bef-775ddc717ccb",
+        "verified_at": "2026-09-18T12:59:00+00:00",
+        "challenge_id": "90990000-0000-4000-8000-000000000058",
+        "workspace_id": "10990000-0000-4000-8000-000000000001",
+        "signature_hash": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+        "wallet_address": "So11111111111111111111111111111111111111112",
+        "tracked_link_id": "90990000-0000-4000-8000-000000000002",
+        "content_asset_id": "1348403c-225f-4d5d-8b4f-95fb6ef692f6",
+        "verifier_version": "1.1.3",
+        "signed_message_hash": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+        "anonymous_session_id": "90990000-0000-4000-8000-000000000055"
+      }
+    ],
+    "canonical_chain_events": [
+      {
+        "id": "90990000-0000-4000-8000-000000000030",
+        "chain": "solana",
+        "payload": {
+          "id": "1ab42406-7ea5-498f-a0b6-f909a99ef810:native_transfer:0",
+          "slot": "100",
+          "chain": "solana",
+          "source": "helius_webhook",
+          "eventName": "solana.native_transfer",
+          "eventTime": "2026-09-20T12:00:00+00:00",
+          "projectId": "20990000-0000-4000-8000-000000000001",
+          "toAddress": "Vote111111111111111111111111111111111111111",
+          "ingestedAt": "2026-09-21T18:22:45.884+00:00",
+          "fromAddress": "11111111111111111111111111111111",
+          "workspaceId": "10990000-0000-4000-8000-000000000001",
+          "rawEvidenceId": "1ab42406-7ea5-498f-a0b6-f909a99ef810",
+          "schemaVersion": 1,
+          "sourceEventId": "1ab42406-7ea5-498f-a0b6-f909a99ef810",
+          "sourceTransferKind": "native_transfer",
+          "sourceTransferIndex": 0,
+          "nativeAmountLamports": "1000000",
+          "transactionSignature": "4nNtjezQMYBHvgSQmoRmJPiXGsPAWmJPoGSa64xanqrauogiVzFyGQhKeFataHGXq51jR2hjbzNTkPUpP787HAmL"
+        },
+        "finality": "finalized",
+        "created_at": "2026-09-21T18:22:45.889977+00:00",
+        "event_name": "solana.native_transfer",
+        "event_time": "2026-09-20T12:00:00+00:00",
+        "project_id": "20990000-0000-4000-8000-000000000001",
+        "to_address": "Vote111111111111111111111111111111111111111",
+        "token_mint": null,
+        "ingested_at": "2026-09-21T18:22:45.884+00:00",
+        "from_address": "11111111111111111111111111111111",
+        "workspace_id": "10990000-0000-4000-8000-000000000001",
+        "integration_id": "90990000-0000-4000-8000-000000000020",
+        "schema_version": 1,
+        "token_decimals": null,
+        "to_token_account": null,
+        "token_amount_raw": null,
+        "transaction_slot": "100",
+        "instruction_index": null,
+        "from_token_account": null,
+        "raw_chain_event_id": "1ab42406-7ea5-498f-a0b6-f909a99ef810",
+        "source_transfer_kind": "native_transfer",
+        "source_transfer_index": 0,
+        "transaction_signature": "4nNtjezQMYBHvgSQmoRmJPiXGsPAWmJPoGSa64xanqrauogiVzFyGQhKeFataHGXq51jR2hjbzNTkPUpP787HAmL",
+        "configured_environment": "demo",
+        "native_amount_lamports": "1000000",
+        "finality_observation_id": "90990000-0000-4000-8000-000000000230"
+      },
+      {
+        "id": "90990000-0000-4000-8000-000000000031",
+        "chain": "solana",
+        "payload": {
+          "id": "e3c978e7-923b-40aa-9809-32137392d7d8:native_transfer:0",
+          "slot": "101",
+          "chain": "solana",
+          "source": "helius_webhook",
+          "eventName": "solana.native_transfer",
+          "eventTime": "2026-09-20T12:00:00+00:00",
+          "projectId": "20990000-0000-4000-8000-000000000001",
+          "toAddress": "Vote111111111111111111111111111111111111111",
+          "ingestedAt": "2026-09-21T18:22:45.902+00:00",
+          "fromAddress": "So11111111111111111111111111111111111111112",
+          "workspaceId": "10990000-0000-4000-8000-000000000001",
+          "rawEvidenceId": "e3c978e7-923b-40aa-9809-32137392d7d8",
+          "schemaVersion": 1,
+          "sourceEventId": "e3c978e7-923b-40aa-9809-32137392d7d8",
+          "sourceTransferKind": "native_transfer",
+          "sourceTransferIndex": 0,
+          "nativeAmountLamports": "1000000",
+          "transactionSignature": "5nNtjezQMYBHvgSQmoRmJPiXGsPAWmJPoGSa64xanqrauogiVzFyGQhKeFataHGXq51jR2hjbzNTkPUpP787HAmL"
+        },
+        "finality": "finalized",
+        "created_at": "2026-09-21T18:22:45.90477+00:00",
+        "event_name": "solana.native_transfer",
+        "event_time": "2026-09-20T12:00:00+00:00",
+        "project_id": "20990000-0000-4000-8000-000000000001",
+        "to_address": "Vote111111111111111111111111111111111111111",
+        "token_mint": null,
+        "ingested_at": "2026-09-21T18:22:45.902+00:00",
+        "from_address": "So11111111111111111111111111111111111111112",
+        "workspace_id": "10990000-0000-4000-8000-000000000001",
+        "integration_id": "90990000-0000-4000-8000-000000000020",
+        "schema_version": 1,
+        "token_decimals": null,
+        "to_token_account": null,
+        "token_amount_raw": null,
+        "transaction_slot": "101",
+        "instruction_index": null,
+        "from_token_account": null,
+        "raw_chain_event_id": "e3c978e7-923b-40aa-9809-32137392d7d8",
+        "source_transfer_kind": "native_transfer",
+        "source_transfer_index": 0,
+        "transaction_signature": "5nNtjezQMYBHvgSQmoRmJPiXGsPAWmJPoGSa64xanqrauogiVzFyGQhKeFataHGXq51jR2hjbzNTkPUpP787HAmL",
+        "configured_environment": "demo",
+        "native_amount_lamports": "1000000",
+        "finality_observation_id": "90990000-0000-4000-8000-000000000231"
+      }
+    ],
+    "anonymous_session_clicks": [
+      {
+        "id": "90990000-0000-4000-8000-000000000006",
+        "kind": "originating",
+        "bound_at": "2026-09-18T12:00:03+00:00",
+        "creator_id": "40990000-0000-4000-8000-000000000001",
+        "project_id": "20990000-0000-4000-8000-000000000001",
+        "session_id": "90990000-0000-4000-8000-000000000005",
+        "campaign_id": "74437545-67d3-46c1-8bef-775ddc717ccb",
+        "workspace_id": "10990000-0000-4000-8000-000000000001",
+        "assessment_id": "90990000-0000-4000-8000-000000000003",
+        "click_event_id": "90990000-0000-4000-8000-000000000001",
+        "tracked_link_id": "90990000-0000-4000-8000-000000000002",
+        "content_asset_id": "1348403c-225f-4d5d-8b4f-95fb6ef692f6"
+      },
+      {
+        "id": "90990000-0000-4000-8000-000000000056",
+        "kind": "originating",
+        "bound_at": "2026-09-18T12:00:03+00:00",
+        "creator_id": "40990000-0000-4000-8000-000000000001",
+        "project_id": "20990000-0000-4000-8000-000000000001",
+        "session_id": "90990000-0000-4000-8000-000000000055",
+        "campaign_id": "74437545-67d3-46c1-8bef-775ddc717ccb",
+        "workspace_id": "10990000-0000-4000-8000-000000000001",
+        "assessment_id": "90990000-0000-4000-8000-000000000053",
+        "click_event_id": "90990000-0000-4000-8000-000000000051",
+        "tracked_link_id": "90990000-0000-4000-8000-000000000002",
+        "content_asset_id": "1348403c-225f-4d5d-8b4f-95fb6ef692f6"
+      }
+    ],
+    "conversion_rule_versions": [
+      {
+        "id": "61990000-0000-4000-8000-000000000001",
+        "name": "Qualified action",
+        "chain": "solana",
+        "rule_id": "60990000-0000-4000-8000-000000000001",
+        "version": 1,
+        "created_at": "2026-09-21T18:22:45.794+00:00",
+        "created_by": "30990000-0000-4000-8000-000000000001",
+        "program_id": null,
+        "project_id": "20990000-0000-4000-8000-000000000001",
+        "description": "First finalized qualifying action with explicit wallet binding.",
+        "workspace_id": "10990000-0000-4000-8000-000000000001",
+        "change_reason": "Synthetic BSK09 measurement fixture",
+        "template_code": "first_qualifying_transaction",
+        "value_mapping": "transfer_amount",
+        "effective_from": "2026-09-01T00:00:00+00:00",
+        "effective_until": null,
+        "revenue_mapping": "none",
+        "match_conditions": {
+          "chain": "solana",
+          "eventNames": ["solana.native_transfer", "solana.token_transfer"],
+          "minimumFinality": "finalized",
+          "requiresWalletBinding": true
+        },
+        "minimum_finality": "finalized",
+        "attribution_model": "last_eligible_creator_touch",
+        "change_request_id": "62990000-0000-4000-8000-000000000001",
+        "event_discriminator": null,
+        "evidence_capability": "ready",
+        "requires_wallet_binding": true,
+        "attribution_window_seconds": 604800
+      }
+    ],
+    "click_quality_assessments": [
+      {
+        "id": "90990000-0000-4000-8000-000000000003",
+        "reason": "passed_declared_checks",
+        "outcome": "qualified",
+        "creator_id": "40990000-0000-4000-8000-000000000001",
+        "project_id": "20990000-0000-4000-8000-000000000001",
+        "assessed_at": "2026-09-18T12:00:02+00:00",
+        "campaign_id": "74437545-67d3-46c1-8bef-775ddc717ccb",
+        "workspace_id": "10990000-0000-4000-8000-000000000001",
+        "click_event_id": "90990000-0000-4000-8000-000000000001",
+        "dedupe_key_hash": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "rule_version_id": "90990000-0000-4000-8000-000000000004",
+        "tracked_link_id": "90990000-0000-4000-8000-000000000002",
+        "content_asset_id": "1348403c-225f-4d5d-8b4f-95fb6ef692f6",
+        "automated_agent_detected": false,
+        "canonical_click_event_id": "90990000-0000-4000-8000-000000000001"
+      },
+      {
+        "id": "90990000-0000-4000-8000-000000000053",
+        "reason": "passed_declared_checks",
+        "outcome": "qualified",
+        "creator_id": "40990000-0000-4000-8000-000000000001",
+        "project_id": "20990000-0000-4000-8000-000000000001",
+        "assessed_at": "2026-09-18T12:00:02+00:00",
+        "campaign_id": "74437545-67d3-46c1-8bef-775ddc717ccb",
+        "workspace_id": "10990000-0000-4000-8000-000000000001",
+        "click_event_id": "90990000-0000-4000-8000-000000000051",
+        "dedupe_key_hash": "dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd",
+        "rule_version_id": "90990000-0000-4000-8000-000000000004",
+        "tracked_link_id": "90990000-0000-4000-8000-000000000002",
+        "content_asset_id": "1348403c-225f-4d5d-8b4f-95fb6ef692f6",
+        "automated_agent_detected": false,
+        "canonical_click_event_id": "90990000-0000-4000-8000-000000000051"
+      }
+    ],
+    "protected_wallet_mappings": [
+      {
+        "id": "90990000-0000-4000-8000-000000000011",
+        "proof_id": "90990000-0000-4000-8000-000000000007",
+        "consent_id": "90990000-0000-4000-8000-000000000009",
+        "creator_id": "40990000-0000-4000-8000-000000000001",
+        "project_id": "20990000-0000-4000-8000-000000000001",
+        "active_from": "2026-09-18T13:00:00+00:00",
+        "campaign_id": "74437545-67d3-46c1-8bef-775ddc717ccb",
+        "unlinked_at": null,
+        "workspace_id": "10990000-0000-4000-8000-000000000001",
+        "wallet_address": "11111111111111111111111111111111",
+        "historical_from": "2026-06-20T13:00:00+00:00",
+        "tracked_link_id": "90990000-0000-4000-8000-000000000002",
+        "content_asset_id": "1348403c-225f-4d5d-8b4f-95fb6ef692f6",
+        "unlink_request_id": null,
+        "monitoring_ends_at": "2026-09-25T12:00:00+00:00",
+        "anonymous_session_id": "90990000-0000-4000-8000-000000000005"
+      },
+      {
+        "id": "90990000-0000-4000-8000-000000000061",
+        "proof_id": "90990000-0000-4000-8000-000000000057",
+        "consent_id": "90990000-0000-4000-8000-000000000059",
+        "creator_id": "40990000-0000-4000-8000-000000000001",
+        "project_id": "20990000-0000-4000-8000-000000000001",
+        "active_from": "2026-09-18T13:00:00+00:00",
+        "campaign_id": "74437545-67d3-46c1-8bef-775ddc717ccb",
+        "unlinked_at": null,
+        "workspace_id": "10990000-0000-4000-8000-000000000001",
+        "wallet_address": "So11111111111111111111111111111111111111112",
+        "historical_from": "2026-06-20T13:00:00+00:00",
+        "tracked_link_id": "90990000-0000-4000-8000-000000000002",
+        "content_asset_id": "1348403c-225f-4d5d-8b4f-95fb6ef692f6",
+        "unlink_request_id": null,
+        "monitoring_ends_at": "2026-09-25T12:00:00+00:00",
+        "anonymous_session_id": "90990000-0000-4000-8000-000000000055"
+      }
+    ],
+    "raw_chain_event_deliveries": [
+      {
+        "id": "90990000-0000-4000-8000-000000000430",
+        "provider": "helius",
+        "raw_body": "[{\"fee\": 5000, \"slot\": 100, \"type\": \"TRANSFER\", \"events\": {}, \"source\": \"SYSTEM_PROGRAM\", \"feePayer\": \"11111111111111111111111111111111\", \"signature\": \"4nNtjezQMYBHvgSQmoRmJPiXGsPAWmJPoGSa64xanqrauogiVzFyGQhKeFataHGXq51jR2hjbzNTkPUpP787HAmL\", \"timestamp\": 1789905600, \"accountData\": [], \"description\": \"Synthetic connected-report native transfer\", \"tokenTransfers\": [], \"nativeTransfers\": [{\"amount\": 1000000, \"toUserAccount\": \"Vote111111111111111111111111111111111111111\", \"fromUserAccount\": \"11111111111111111111111111111111\"}], \"transactionError\": null}]",
+        "project_id": "20990000-0000-4000-8000-000000000001",
+        "event_count": 1,
+        "raw_payload": [
+          {
+            "fee": 5000,
+            "slot": 100,
+            "type": "TRANSFER",
+            "events": {},
+            "source": "SYSTEM_PROGRAM",
+            "feePayer": "11111111111111111111111111111111",
+            "signature": "4nNtjezQMYBHvgSQmoRmJPiXGsPAWmJPoGSa64xanqrauogiVzFyGQhKeFataHGXq51jR2hjbzNTkPUpP787HAmL",
+            "timestamp": 1789905600,
+            "accountData": [],
+            "description": "Synthetic connected-report native transfer",
+            "tokenTransfers": [],
+            "nativeTransfers": [
+              {
+                "amount": 1000000,
+                "toUserAccount": "Vote111111111111111111111111111111111111111",
+                "fromUserAccount": "11111111111111111111111111111111"
+              }
+            ],
+            "transactionError": null
+          }
+        ],
+        "received_at": "2026-09-21T18:22:45.884312+00:00",
+        "workspace_id": "10990000-0000-4000-8000-000000000001",
+        "integration_id": "90990000-0000-4000-8000-000000000020",
+        "payload_sha256": "d133979f4ce8e6e98685230d634d6fd9e64cc02c97cf1db9636ad046d5173e44",
+        "acquisition_source": "helius_webhook",
+        "configured_environment": "demo"
+      },
+      {
+        "id": "90990000-0000-4000-8000-000000000431",
+        "provider": "helius",
+        "raw_body": "[{\"fee\": 5000, \"slot\": 101, \"type\": \"TRANSFER\", \"events\": {}, \"source\": \"SYSTEM_PROGRAM\", \"feePayer\": \"So11111111111111111111111111111111111111112\", \"signature\": \"5nNtjezQMYBHvgSQmoRmJPiXGsPAWmJPoGSa64xanqrauogiVzFyGQhKeFataHGXq51jR2hjbzNTkPUpP787HAmL\", \"timestamp\": 1789905600, \"accountData\": [], \"description\": \"Synthetic connected-report native transfer\", \"tokenTransfers\": [], \"nativeTransfers\": [{\"amount\": 1000000, \"toUserAccount\": \"Vote111111111111111111111111111111111111111\", \"fromUserAccount\": \"So11111111111111111111111111111111111111112\"}], \"transactionError\": null}]",
+        "project_id": "20990000-0000-4000-8000-000000000001",
+        "event_count": 1,
+        "raw_payload": [
+          {
+            "fee": 5000,
+            "slot": 101,
+            "type": "TRANSFER",
+            "events": {},
+            "source": "SYSTEM_PROGRAM",
+            "feePayer": "So11111111111111111111111111111111111111112",
+            "signature": "5nNtjezQMYBHvgSQmoRmJPiXGsPAWmJPoGSa64xanqrauogiVzFyGQhKeFataHGXq51jR2hjbzNTkPUpP787HAmL",
+            "timestamp": 1789905600,
+            "accountData": [],
+            "description": "Synthetic connected-report native transfer",
+            "tokenTransfers": [],
+            "nativeTransfers": [
+              {
+                "amount": 1000000,
+                "toUserAccount": "Vote111111111111111111111111111111111111111",
+                "fromUserAccount": "So11111111111111111111111111111111111111112"
+              }
+            ],
+            "transactionError": null
+          }
+        ],
+        "received_at": "2026-09-21T18:22:45.90273+00:00",
+        "workspace_id": "10990000-0000-4000-8000-000000000001",
+        "integration_id": "90990000-0000-4000-8000-000000000020",
+        "payload_sha256": "630733923b3ea929eb47c492d57505fd4a5c2116f430071027b88f140d00b298",
+        "acquisition_source": "helius_webhook",
+        "configured_environment": "demo"
+      },
+      {
+        "id": "90990000-0000-4000-8000-000000000712",
+        "provider": "helius",
+        "raw_body": "[{\"fee\": 5000, \"slot\": 100, \"type\": \"TRANSFER\", \"events\": {}, \"source\": \"SYSTEM_PROGRAM\", \"feePayer\": \"11111111111111111111111111111111\", \"signature\": \"4nNtjezQMYBHvgSQmoRmJPiXGsPAWmJPoGSa64xanqrauogiVzFyGQhKeFataHGXq51jR2hjbzNTkPUpP787HAmL\", \"timestamp\": 1789905600, \"accountData\": [], \"description\": \"Synthetic historical acquisition of same transfer\", \"tokenTransfers\": [], \"nativeTransfers\": [{\"amount\": 1000000, \"toUserAccount\": \"Vote111111111111111111111111111111111111111\", \"fromUserAccount\": \"11111111111111111111111111111111\"}], \"transactionError\": null}]",
+        "project_id": "20990000-0000-4000-8000-000000000001",
+        "event_count": 1,
+        "raw_payload": [
+          {
+            "fee": 5000,
+            "slot": 100,
+            "type": "TRANSFER",
+            "events": {},
+            "source": "SYSTEM_PROGRAM",
+            "feePayer": "11111111111111111111111111111111",
+            "signature": "4nNtjezQMYBHvgSQmoRmJPiXGsPAWmJPoGSa64xanqrauogiVzFyGQhKeFataHGXq51jR2hjbzNTkPUpP787HAmL",
+            "timestamp": 1789905600,
+            "accountData": [],
+            "description": "Synthetic historical acquisition of same transfer",
+            "tokenTransfers": [],
+            "nativeTransfers": [
+              {
+                "amount": 1000000,
+                "toUserAccount": "Vote111111111111111111111111111111111111111",
+                "fromUserAccount": "11111111111111111111111111111111"
+              }
+            ],
+            "transactionError": null
+          }
+        ],
+        "received_at": "2026-09-21T18:22:46.076+00:00",
+        "workspace_id": "10990000-0000-4000-8000-000000000001",
+        "integration_id": "90990000-0000-4000-8000-000000000020",
+        "payload_sha256": "7bbc74a8b35670a7d3b8ab5beb186d4bf10cdaa4f8c4af6fdb9fdf5045b93d6b",
+        "acquisition_source": "helius_backfill",
+        "configured_environment": "demo"
+      },
+      {
+        "id": "90990000-0000-4000-8000-000000000722",
+        "provider": "helius",
+        "raw_body": "[{\"fee\": 5000, \"slot\": 101, \"type\": \"TRANSFER\", \"events\": {}, \"source\": \"SYSTEM_PROGRAM\", \"feePayer\": \"So11111111111111111111111111111111111111112\", \"signature\": \"5nNtjezQMYBHvgSQmoRmJPiXGsPAWmJPoGSa64xanqrauogiVzFyGQhKeFataHGXq51jR2hjbzNTkPUpP787HAmL\", \"timestamp\": 1789905600, \"accountData\": [], \"description\": \"Synthetic historical acquisition of same transfer\", \"tokenTransfers\": [], \"nativeTransfers\": [{\"amount\": 1000000, \"toUserAccount\": \"Vote111111111111111111111111111111111111111\", \"fromUserAccount\": \"So11111111111111111111111111111111111111112\"}], \"transactionError\": null}]",
+        "project_id": "20990000-0000-4000-8000-000000000001",
+        "event_count": 1,
+        "raw_payload": [
+          {
+            "fee": 5000,
+            "slot": 101,
+            "type": "TRANSFER",
+            "events": {},
+            "source": "SYSTEM_PROGRAM",
+            "feePayer": "So11111111111111111111111111111111111111112",
+            "signature": "5nNtjezQMYBHvgSQmoRmJPiXGsPAWmJPoGSa64xanqrauogiVzFyGQhKeFataHGXq51jR2hjbzNTkPUpP787HAmL",
+            "timestamp": 1789905600,
+            "accountData": [],
+            "description": "Synthetic historical acquisition of same transfer",
+            "tokenTransfers": [],
+            "nativeTransfers": [
+              {
+                "amount": 1000000,
+                "toUserAccount": "Vote111111111111111111111111111111111111111",
+                "fromUserAccount": "So11111111111111111111111111111111111111112"
+              }
+            ],
+            "transactionError": null
+          }
+        ],
+        "received_at": "2026-09-21T18:22:46.079+00:00",
+        "workspace_id": "10990000-0000-4000-8000-000000000001",
+        "integration_id": "90990000-0000-4000-8000-000000000020",
+        "payload_sha256": "253cc28225691bd5c4b81cd1e94f394d5401182514d845ea92d28a2d8a81c1da",
+        "acquisition_source": "helius_backfill",
+        "configured_environment": "demo"
+      }
+    ],
+    "solana_reconciliation_jobs": [
+      {
+        "id": "90990000-0000-4000-8000-000000000700",
+        "status": "completed",
+        "failed_at": null,
+        "consent_id": "90990000-0000-4000-8000-000000000009",
+        "created_at": "2026-09-21T18:22:46.059+00:00",
+        "creator_id": "40990000-0000-4000-8000-000000000001",
+        "mapping_id": "90990000-0000-4000-8000-000000000011",
+        "page_count": 1,
+        "project_id": "20990000-0000-4000-8000-000000000001",
+        "request_id": "90990000-0000-4000-8000-000000000701",
+        "started_at": "2026-09-21T18:22:46.061+00:00",
+        "updated_at": "2026-09-21T18:22:46.061+00:00",
+        "campaign_id": "74437545-67d3-46c1-8bef-775ddc717ccb",
+        "completed_at": "2026-09-21T18:22:46.061+00:00",
+        "failure_code": null,
+        "workspace_id": "10990000-0000-4000-8000-000000000001",
+        "integration_id": "90990000-0000-4000-8000-000000000020",
+        "range_ended_at": "2026-09-18T13:00:00+00:00",
+        "wallet_address": "11111111111111111111111111111111",
+        "raw_event_count": 0,
+        "tracked_link_id": "90990000-0000-4000-8000-000000000002",
+        "content_asset_id": "1348403c-225f-4d5d-8b4f-95fb6ef692f6",
+        "range_started_at": "2026-06-20T13:00:00+00:00",
+        "canonical_event_count": 0,
+        "duplicate_event_count": 0,
+        "next_before_signature": null,
+        "configured_environment": "demo",
+        "normalization_issue_count": 0
+      },
+      {
+        "id": "90990000-0000-4000-8000-000000000710",
+        "status": "completed",
+        "failed_at": null,
+        "consent_id": "90990000-0000-4000-8000-000000000009",
+        "created_at": "2026-09-21T18:22:46.064+00:00",
+        "creator_id": "40990000-0000-4000-8000-000000000001",
+        "mapping_id": "90990000-0000-4000-8000-000000000011",
+        "page_count": 1,
+        "project_id": "20990000-0000-4000-8000-000000000001",
+        "request_id": "90990000-0000-4000-8000-000000000711",
+        "started_at": "2026-09-21T18:22:46.078+00:00",
+        "updated_at": "2026-09-21T18:22:46.078+00:00",
+        "campaign_id": "74437545-67d3-46c1-8bef-775ddc717ccb",
+        "completed_at": "2026-09-21T18:22:46.078+00:00",
+        "failure_code": null,
+        "workspace_id": "10990000-0000-4000-8000-000000000001",
+        "integration_id": "90990000-0000-4000-8000-000000000020",
+        "range_ended_at": "2026-09-21T00:00:00+00:00",
+        "wallet_address": "11111111111111111111111111111111",
+        "raw_event_count": 1,
+        "tracked_link_id": "90990000-0000-4000-8000-000000000002",
+        "content_asset_id": "1348403c-225f-4d5d-8b4f-95fb6ef692f6",
+        "range_started_at": "2026-09-18T13:00:00+00:00",
+        "canonical_event_count": 0,
+        "duplicate_event_count": 1,
+        "next_before_signature": null,
+        "configured_environment": "demo",
+        "normalization_issue_count": 0
+      },
+      {
+        "id": "90990000-0000-4000-8000-000000000720",
+        "status": "completed",
+        "failed_at": null,
+        "consent_id": "90990000-0000-4000-8000-000000000059",
+        "created_at": "2026-09-21T18:22:46.075+00:00",
+        "creator_id": "40990000-0000-4000-8000-000000000001",
+        "mapping_id": "90990000-0000-4000-8000-000000000061",
+        "page_count": 1,
+        "project_id": "20990000-0000-4000-8000-000000000001",
+        "request_id": "90990000-0000-4000-8000-000000000721",
+        "started_at": "2026-09-21T18:22:46.08+00:00",
+        "updated_at": "2026-09-21T18:22:46.08+00:00",
+        "campaign_id": "74437545-67d3-46c1-8bef-775ddc717ccb",
+        "completed_at": "2026-09-21T18:22:46.08+00:00",
+        "failure_code": null,
+        "workspace_id": "10990000-0000-4000-8000-000000000001",
+        "integration_id": "90990000-0000-4000-8000-000000000020",
+        "range_ended_at": "2026-09-21T00:00:00+00:00",
+        "wallet_address": "So11111111111111111111111111111111111111112",
+        "raw_event_count": 1,
+        "tracked_link_id": "90990000-0000-4000-8000-000000000002",
+        "content_asset_id": "1348403c-225f-4d5d-8b4f-95fb6ef692f6",
+        "range_started_at": "2026-09-18T13:00:00+00:00",
+        "canonical_event_count": 0,
+        "duplicate_event_count": 1,
+        "next_before_signature": null,
+        "configured_environment": "demo",
+        "normalization_issue_count": 0
+      }
+    ],
+    "wallet_measurement_consents": [
+      {
+        "id": "90990000-0000-4000-8000-000000000009",
+        "proof_id": "90990000-0000-4000-8000-000000000007",
+        "creator_id": "40990000-0000-4000-8000-000000000001",
+        "project_id": "20990000-0000-4000-8000-000000000001",
+        "accepted_at": "2026-09-18T13:00:00+00:00",
+        "campaign_id": "74437545-67d3-46c1-8bef-775ddc717ccb",
+        "workspace_id": "10990000-0000-4000-8000-000000000001",
+        "wallet_address": "11111111111111111111111111111111",
+        "consent_version": 1,
+        "tracked_link_id": "90990000-0000-4000-8000-000000000002",
+        "content_asset_id": "1348403c-225f-4d5d-8b4f-95fb6ef692f6",
+        "consent_statement": "I consent to Landed linking this wallet to this campaign session to measure configured campaign outcomes. Analysis may include up to 90 days of relevant pre-touch activity and relevant activity until this qualified campaign session expires. I can unlink at any time to stop future association.",
+        "measurement_scope": "configured_campaign_outcomes",
+        "consent_request_id": "90990000-0000-4000-8000-000000000010",
+        "monitoring_ends_at": "2026-09-25T12:00:00+00:00",
+        "anonymous_session_id": "90990000-0000-4000-8000-000000000005",
+        "forward_window_basis": "qualified_session_expiry",
+        "historical_lookback_days": 90
+      },
+      {
+        "id": "90990000-0000-4000-8000-000000000059",
+        "proof_id": "90990000-0000-4000-8000-000000000057",
+        "creator_id": "40990000-0000-4000-8000-000000000001",
+        "project_id": "20990000-0000-4000-8000-000000000001",
+        "accepted_at": "2026-09-18T13:00:00+00:00",
+        "campaign_id": "74437545-67d3-46c1-8bef-775ddc717ccb",
+        "workspace_id": "10990000-0000-4000-8000-000000000001",
+        "wallet_address": "So11111111111111111111111111111111111111112",
+        "consent_version": 1,
+        "tracked_link_id": "90990000-0000-4000-8000-000000000002",
+        "content_asset_id": "1348403c-225f-4d5d-8b4f-95fb6ef692f6",
+        "consent_statement": "I consent to Landed linking this wallet to this campaign session to measure configured campaign outcomes. Analysis may include up to 90 days of relevant pre-touch activity and relevant activity until this qualified campaign session expires. I can unlink at any time to stop future association.",
+        "measurement_scope": "configured_campaign_outcomes",
+        "consent_request_id": "90990000-0000-4000-8000-000000000060",
+        "monitoring_ends_at": "2026-09-25T12:00:00+00:00",
+        "anonymous_session_id": "90990000-0000-4000-8000-000000000055",
+        "forward_window_basis": "qualified_session_expiry",
+        "historical_lookback_days": 90
+      }
+    ],
+    "solana_finality_observations": [
+      {
+        "id": "90990000-0000-4000-8000-000000000230",
+        "method": "getSignatureStatuses",
+        "project_id": "20990000-0000-4000-8000-000000000001",
+        "observed_at": "2026-09-21T18:22:45.889977+00:00",
+        "rpc_response": {
+          "id": "synthetic-finality",
+          "result": {
+            "value": [
+              {
+                "err": null,
+                "slot": 100,
+                "confirmations": null,
+                "confirmationStatus": "finalized"
+              }
+            ],
+            "context": {
+              "slot": 110
+            }
+          },
+          "jsonrpc": "2.0"
+        },
+        "workspace_id": "10990000-0000-4000-8000-000000000001",
+        "confirmations": null,
+        "integration_id": "90990000-0000-4000-8000-000000000020",
+        "transaction_slot": "100",
+        "transaction_error": null,
+        "raw_chain_event_id": "1ab42406-7ea5-498f-a0b6-f909a99ef810",
+        "confirmation_status": "finalized",
+        "observed_context_slot": "110",
+        "transaction_signature": "4nNtjezQMYBHvgSQmoRmJPiXGsPAWmJPoGSa64xanqrauogiVzFyGQhKeFataHGXq51jR2hjbzNTkPUpP787HAmL",
+        "configured_environment": "demo"
+      },
+      {
+        "id": "90990000-0000-4000-8000-000000000231",
+        "method": "getSignatureStatuses",
+        "project_id": "20990000-0000-4000-8000-000000000001",
+        "observed_at": "2026-09-21T18:22:45.90477+00:00",
+        "rpc_response": {
+          "id": "synthetic-finality",
+          "result": {
+            "value": [
+              {
+                "err": null,
+                "slot": 101,
+                "confirmations": null,
+                "confirmationStatus": "finalized"
+              }
+            ],
+            "context": {
+              "slot": 111
+            }
+          },
+          "jsonrpc": "2.0"
+        },
+        "workspace_id": "10990000-0000-4000-8000-000000000001",
+        "confirmations": null,
+        "integration_id": "90990000-0000-4000-8000-000000000020",
+        "transaction_slot": "101",
+        "transaction_error": null,
+        "raw_chain_event_id": "e3c978e7-923b-40aa-9809-32137392d7d8",
+        "confirmation_status": "finalized",
+        "observed_context_slot": "111",
+        "transaction_signature": "5nNtjezQMYBHvgSQmoRmJPiXGsPAWmJPoGSa64xanqrauogiVzFyGQhKeFataHGXq51jR2hjbzNTkPUpP787HAmL",
+        "configured_environment": "demo"
+      },
+      {
+        "id": "90990000-0000-4000-8000-000000000714",
+        "method": "getSignatureStatuses",
+        "project_id": "20990000-0000-4000-8000-000000000001",
+        "observed_at": "2026-09-21T18:22:46.0783+00:00",
+        "rpc_response": {
+          "id": "synthetic-finality",
+          "result": {
+            "value": [
+              {
+                "err": null,
+                "slot": 100,
+                "confirmations": null,
+                "confirmationStatus": "finalized"
+              }
+            ],
+            "context": {
+              "slot": 110
+            }
+          },
+          "jsonrpc": "2.0"
+        },
+        "workspace_id": "10990000-0000-4000-8000-000000000001",
+        "confirmations": null,
+        "integration_id": "90990000-0000-4000-8000-000000000020",
+        "transaction_slot": "100",
+        "transaction_error": null,
+        "raw_chain_event_id": "f56ff892-4f98-4413-8a78-da533452e5d7",
+        "confirmation_status": "finalized",
+        "observed_context_slot": "110",
+        "transaction_signature": "4nNtjezQMYBHvgSQmoRmJPiXGsPAWmJPoGSa64xanqrauogiVzFyGQhKeFataHGXq51jR2hjbzNTkPUpP787HAmL",
+        "configured_environment": "demo"
+      },
+      {
+        "id": "90990000-0000-4000-8000-000000000724",
+        "method": "getSignatureStatuses",
+        "project_id": "20990000-0000-4000-8000-000000000001",
+        "observed_at": "2026-09-21T18:22:46.080283+00:00",
+        "rpc_response": {
+          "id": "synthetic-finality",
+          "result": {
+            "value": [
+              {
+                "err": null,
+                "slot": 101,
+                "confirmations": null,
+                "confirmationStatus": "finalized"
+              }
+            ],
+            "context": {
+              "slot": 111
+            }
+          },
+          "jsonrpc": "2.0"
+        },
+        "workspace_id": "10990000-0000-4000-8000-000000000001",
+        "confirmations": null,
+        "integration_id": "90990000-0000-4000-8000-000000000020",
+        "transaction_slot": "101",
+        "transaction_error": null,
+        "raw_chain_event_id": "3016616d-9464-487c-81a2-900766a18555",
+        "confirmation_status": "finalized",
+        "observed_context_slot": "111",
+        "transaction_signature": "5nNtjezQMYBHvgSQmoRmJPiXGsPAWmJPoGSa64xanqrauogiVzFyGQhKeFataHGXq51jR2hjbzNTkPUpP787HAmL",
+        "configured_environment": "demo"
+      }
+    ],
+    "canonical_chain_event_sources": [
+      {
+        "id": "4cf85279-c137-4806-930b-427d27cc6427",
+        "linked_at": "2026-09-21T18:22:45.90477+00:00",
+        "project_id": "20990000-0000-4000-8000-000000000001",
+        "workspace_id": "10990000-0000-4000-8000-000000000001",
+        "integration_id": "90990000-0000-4000-8000-000000000020",
+        "transaction_slot": "101",
+        "raw_chain_event_id": "e3c978e7-923b-40aa-9809-32137392d7d8",
+        "transaction_signature": "5nNtjezQMYBHvgSQmoRmJPiXGsPAWmJPoGSa64xanqrauogiVzFyGQhKeFataHGXq51jR2hjbzNTkPUpP787HAmL",
+        "configured_environment": "demo",
+        "finality_observation_id": "90990000-0000-4000-8000-000000000231",
+        "canonical_chain_event_id": "90990000-0000-4000-8000-000000000031"
+      },
+      {
+        "id": "51bf9053-ad93-4df5-aeb5-7e373debf26f",
+        "linked_at": "2026-09-21T18:22:46.080283+00:00",
+        "project_id": "20990000-0000-4000-8000-000000000001",
+        "workspace_id": "10990000-0000-4000-8000-000000000001",
+        "integration_id": "90990000-0000-4000-8000-000000000020",
+        "transaction_slot": "101",
+        "raw_chain_event_id": "3016616d-9464-487c-81a2-900766a18555",
+        "transaction_signature": "5nNtjezQMYBHvgSQmoRmJPiXGsPAWmJPoGSa64xanqrauogiVzFyGQhKeFataHGXq51jR2hjbzNTkPUpP787HAmL",
+        "configured_environment": "demo",
+        "finality_observation_id": "90990000-0000-4000-8000-000000000724",
+        "canonical_chain_event_id": "90990000-0000-4000-8000-000000000031"
+      },
+      {
+        "id": "6bbd8fd0-f27c-48f1-bd56-a36a6ed61be0",
+        "linked_at": "2026-09-21T18:22:46.0783+00:00",
+        "project_id": "20990000-0000-4000-8000-000000000001",
+        "workspace_id": "10990000-0000-4000-8000-000000000001",
+        "integration_id": "90990000-0000-4000-8000-000000000020",
+        "transaction_slot": "100",
+        "raw_chain_event_id": "f56ff892-4f98-4413-8a78-da533452e5d7",
+        "transaction_signature": "4nNtjezQMYBHvgSQmoRmJPiXGsPAWmJPoGSa64xanqrauogiVzFyGQhKeFataHGXq51jR2hjbzNTkPUpP787HAmL",
+        "configured_environment": "demo",
+        "finality_observation_id": "90990000-0000-4000-8000-000000000714",
+        "canonical_chain_event_id": "90990000-0000-4000-8000-000000000030"
+      },
+      {
+        "id": "978c1eb9-ff3a-4b04-8141-d69cf7b3cd1f",
+        "linked_at": "2026-09-21T18:22:45.889977+00:00",
+        "project_id": "20990000-0000-4000-8000-000000000001",
+        "workspace_id": "10990000-0000-4000-8000-000000000001",
+        "integration_id": "90990000-0000-4000-8000-000000000020",
+        "transaction_slot": "100",
+        "raw_chain_event_id": "1ab42406-7ea5-498f-a0b6-f909a99ef810",
+        "transaction_signature": "4nNtjezQMYBHvgSQmoRmJPiXGsPAWmJPoGSa64xanqrauogiVzFyGQhKeFataHGXq51jR2hjbzNTkPUpP787HAmL",
+        "configured_environment": "demo",
+        "finality_observation_id": "90990000-0000-4000-8000-000000000230",
+        "canonical_chain_event_id": "90990000-0000-4000-8000-000000000030"
+      }
+    ],
+    "solana_reconciliation_job_events": [
+      {
+        "id": "1f8d05e3-b40c-447d-8f8b-527854e0b794",
+        "kind": "completed",
+        "job_id": "90990000-0000-4000-8000-000000000710",
+        "mapping_id": "90990000-0000-4000-8000-000000000011",
+        "project_id": "20990000-0000-4000-8000-000000000001",
+        "occurred_at": "2026-09-21T18:22:46.078+00:00",
+        "page_number": null,
+        "cursor_after": null,
+        "failure_code": null,
+        "workspace_id": "10990000-0000-4000-8000-000000000001",
+        "cursor_before": null,
+        "integration_id": "90990000-0000-4000-8000-000000000020",
+        "raw_event_count": 0,
+        "canonical_event_count": 0,
+        "duplicate_event_count": 0,
+        "configured_environment": "demo",
+        "normalization_issue_count": 0
+      },
+      {
+        "id": "3bbc7abe-f00c-4837-b3ed-1f3f9882b1e5",
+        "kind": "queued",
+        "job_id": "90990000-0000-4000-8000-000000000720",
+        "mapping_id": "90990000-0000-4000-8000-000000000061",
+        "project_id": "20990000-0000-4000-8000-000000000001",
+        "occurred_at": "2026-09-21T18:22:46.075+00:00",
+        "page_number": null,
+        "cursor_after": null,
+        "failure_code": null,
+        "workspace_id": "10990000-0000-4000-8000-000000000001",
+        "cursor_before": null,
+        "integration_id": "90990000-0000-4000-8000-000000000020",
+        "raw_event_count": 0,
+        "canonical_event_count": 0,
+        "duplicate_event_count": 0,
+        "configured_environment": "demo",
+        "normalization_issue_count": 0
+      },
+      {
+        "id": "3bd64723-ac45-478f-b1de-fdcfd2674a22",
+        "kind": "page_completed",
+        "job_id": "90990000-0000-4000-8000-000000000700",
+        "mapping_id": "90990000-0000-4000-8000-000000000011",
+        "project_id": "20990000-0000-4000-8000-000000000001",
+        "occurred_at": "2026-09-21T18:22:46.061+00:00",
+        "page_number": 1,
+        "cursor_after": null,
+        "failure_code": null,
+        "workspace_id": "10990000-0000-4000-8000-000000000001",
+        "cursor_before": null,
+        "integration_id": "90990000-0000-4000-8000-000000000020",
+        "raw_event_count": 0,
+        "canonical_event_count": 0,
+        "duplicate_event_count": 0,
+        "configured_environment": "demo",
+        "normalization_issue_count": 0
+      },
+      {
+        "id": "51747186-df49-4598-9377-a2d5c396786e",
+        "kind": "page_completed",
+        "job_id": "90990000-0000-4000-8000-000000000720",
+        "mapping_id": "90990000-0000-4000-8000-000000000061",
+        "project_id": "20990000-0000-4000-8000-000000000001",
+        "occurred_at": "2026-09-21T18:22:46.08+00:00",
+        "page_number": 1,
+        "cursor_after": null,
+        "failure_code": null,
+        "workspace_id": "10990000-0000-4000-8000-000000000001",
+        "cursor_before": null,
+        "integration_id": "90990000-0000-4000-8000-000000000020",
+        "raw_event_count": 1,
+        "canonical_event_count": 0,
+        "duplicate_event_count": 1,
+        "configured_environment": "demo",
+        "normalization_issue_count": 0
+      },
+      {
+        "id": "6148ab74-f2d4-4bec-8749-4d5eee449d21",
+        "kind": "completed",
+        "job_id": "90990000-0000-4000-8000-000000000700",
+        "mapping_id": "90990000-0000-4000-8000-000000000011",
+        "project_id": "20990000-0000-4000-8000-000000000001",
+        "occurred_at": "2026-09-21T18:22:46.061+00:00",
+        "page_number": null,
+        "cursor_after": null,
+        "failure_code": null,
+        "workspace_id": "10990000-0000-4000-8000-000000000001",
+        "cursor_before": null,
+        "integration_id": "90990000-0000-4000-8000-000000000020",
+        "raw_event_count": 0,
+        "canonical_event_count": 0,
+        "duplicate_event_count": 0,
+        "configured_environment": "demo",
+        "normalization_issue_count": 0
+      },
+      {
+        "id": "7c514990-619e-463c-bde8-df2f44a1aa82",
+        "kind": "queued",
+        "job_id": "90990000-0000-4000-8000-000000000710",
+        "mapping_id": "90990000-0000-4000-8000-000000000011",
+        "project_id": "20990000-0000-4000-8000-000000000001",
+        "occurred_at": "2026-09-21T18:22:46.064+00:00",
+        "page_number": null,
+        "cursor_after": null,
+        "failure_code": null,
+        "workspace_id": "10990000-0000-4000-8000-000000000001",
+        "cursor_before": null,
+        "integration_id": "90990000-0000-4000-8000-000000000020",
+        "raw_event_count": 0,
+        "canonical_event_count": 0,
+        "duplicate_event_count": 0,
+        "configured_environment": "demo",
+        "normalization_issue_count": 0
+      },
+      {
+        "id": "8055270a-0df4-4440-8243-414a67d8e712",
+        "kind": "completed",
+        "job_id": "90990000-0000-4000-8000-000000000720",
+        "mapping_id": "90990000-0000-4000-8000-000000000061",
+        "project_id": "20990000-0000-4000-8000-000000000001",
+        "occurred_at": "2026-09-21T18:22:46.08+00:00",
+        "page_number": null,
+        "cursor_after": null,
+        "failure_code": null,
+        "workspace_id": "10990000-0000-4000-8000-000000000001",
+        "cursor_before": null,
+        "integration_id": "90990000-0000-4000-8000-000000000020",
+        "raw_event_count": 0,
+        "canonical_event_count": 0,
+        "duplicate_event_count": 0,
+        "configured_environment": "demo",
+        "normalization_issue_count": 0
+      },
+      {
+        "id": "a0d40f9d-0b18-4929-87db-9d2998b3fdd5",
+        "kind": "queued",
+        "job_id": "90990000-0000-4000-8000-000000000700",
+        "mapping_id": "90990000-0000-4000-8000-000000000011",
+        "project_id": "20990000-0000-4000-8000-000000000001",
+        "occurred_at": "2026-09-21T18:22:46.059+00:00",
+        "page_number": null,
+        "cursor_after": null,
+        "failure_code": null,
+        "workspace_id": "10990000-0000-4000-8000-000000000001",
+        "cursor_before": null,
+        "integration_id": "90990000-0000-4000-8000-000000000020",
+        "raw_event_count": 0,
+        "canonical_event_count": 0,
+        "duplicate_event_count": 0,
+        "configured_environment": "demo",
+        "normalization_issue_count": 0
+      },
+      {
+        "id": "cf1f923d-fed8-451b-a5e8-22e6d238e751",
+        "kind": "page_completed",
+        "job_id": "90990000-0000-4000-8000-000000000710",
+        "mapping_id": "90990000-0000-4000-8000-000000000011",
+        "project_id": "20990000-0000-4000-8000-000000000001",
+        "occurred_at": "2026-09-21T18:22:46.078+00:00",
+        "page_number": 1,
+        "cursor_after": null,
+        "failure_code": null,
+        "workspace_id": "10990000-0000-4000-8000-000000000001",
+        "cursor_before": null,
+        "integration_id": "90990000-0000-4000-8000-000000000020",
+        "raw_event_count": 1,
+        "canonical_event_count": 0,
+        "duplicate_event_count": 1,
+        "configured_environment": "demo",
+        "normalization_issue_count": 0
+      }
+    ],
+    "solana_reconciliation_job_deliveries": [
+      {
+        "job_id": "90990000-0000-4000-8000-000000000710",
+        "linked_at": "2026-09-21T18:22:46.076+00:00",
+        "mapping_id": "90990000-0000-4000-8000-000000000011",
+        "project_id": "20990000-0000-4000-8000-000000000001",
+        "delivery_id": "90990000-0000-4000-8000-000000000712",
+        "workspace_id": "10990000-0000-4000-8000-000000000001",
+        "integration_id": "90990000-0000-4000-8000-000000000020",
+        "configured_environment": "demo"
+      },
+      {
+        "job_id": "90990000-0000-4000-8000-000000000720",
+        "linked_at": "2026-09-21T18:22:46.079+00:00",
+        "mapping_id": "90990000-0000-4000-8000-000000000061",
+        "project_id": "20990000-0000-4000-8000-000000000001",
+        "delivery_id": "90990000-0000-4000-8000-000000000722",
+        "workspace_id": "10990000-0000-4000-8000-000000000001",
+        "integration_id": "90990000-0000-4000-8000-000000000020",
+        "configured_environment": "demo"
+      }
+    ]
+  },
+  "issuance": "blocked",
+  "protocol": "landed:timed-report-evidence:1",
+  "checkedAt": "2026-09-21T18:22:46.113756+00:00",
+  "sourceHash": "d494fc4c1a53d3fbddf60c89833df99d4f2bbc652eddeda743d9f6f03c2a0aa6",
+  "completeness": "not_established",
+  "hashEncoding": "postgres-jsonb-text-utf8-sha256"
+}

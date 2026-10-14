@@ -1,0 +1,159 @@
+[
+  {
+    "review_snapshot": {
+      "basket": {
+        "id": "c8beb51a-2c8f-47cc-a5bc-7fa7186d39a2",
+        "name": "Strategy preview",
+        "objective": "Increase qualified wallets",
+        "outcomeProfile": {
+          "metric": "qualified_wallets",
+          "targetUnits": "100",
+          "baselineUnits": "0"
+        }
+      },
+      "packages": [
+        {
+          "id": "2f9859f3-8d4c-410e-b552-e9ed6bea3989",
+          "creatorId": "40990000-0000-4000-8000-000000000001",
+          "packageLabel": "Creator 1",
+          "compensationLines": [
+            {
+              "id": "b858deca-4140-4d96-936c-7838a49daa35",
+              "model": "fixed",
+              "assetType": "cash",
+              "amountMinor": "127500",
+              "currencyCode": "GBP"
+            }
+          ],
+          "sourceRateQuoteId": null,
+          "deliverableSummary": "One independently negotiated research thread"
+        },
+        {
+          "id": "979257f1-63b2-47fb-a27f-336f9a5698a0",
+          "creatorId": "40990000-0000-4000-8000-000000000002",
+          "packageLabel": "Creator 2",
+          "compensationLines": [
+            {
+              "id": "8c247424-7951-4a3f-aaa4-a58e44e9349e",
+              "model": "fixed",
+              "assetType": "cash",
+              "amountMinor": "392000",
+              "currencyCode": "GBP"
+            }
+          ],
+          "sourceRateQuoteId": null,
+          "deliverableSummary": "One independently negotiated research thread"
+        }
+      ],
+      "scenario": {
+        "id": "384b42c0-e490-496e-81cb-99138553d0ae",
+        "code": "A",
+        "name": "Focused authority"
+      },
+      "projectId": "20990000-0000-4000-8000-000000000001",
+      "workspaceId": "10990000-0000-4000-8000-000000000001",
+      "schemaVersion": 2,
+      "strategyBinding": {
+        "origin": {
+          "kind": "custom"
+        },
+        "revision": 2,
+        "strategy": {
+          "goal": "Generate qualified investor interest in the product and its proposition.",
+          "sector": null,
+          "audience": "Crypto-native investors, research teams and ecosystem operators.",
+          "rationale": "Combine specialist discovery with long-form explanation; test whether attention translates into qualified product use.",
+          "exclusions": [
+            "Token-price movements are not a success metric.",
+            "Deck requests are not onchain revenue or qualified-wallet proof."
+          ],
+          "allocations": [
+            {
+              "format": "Research thread",
+              "channel": "x",
+              "archetype": "analyst",
+              "rationale": "Test discovery among relevant investor networks.",
+              "plannedSpendBps": 4500
+            },
+            {
+              "format": "Founder interview",
+              "channel": "podcast",
+              "archetype": "long_form_host",
+              "rationale": "Explain the proposition and product evidence in depth.",
+              "plannedSpendBps": 3500
+            },
+            {
+              "format": "Research briefing",
+              "channel": "newsletter_research",
+              "archetype": "sector_specialist",
+              "rationale": "Provide a considered follow-up for specialist readers.",
+              "plannedSpendBps": 2000
+            }
+          ],
+          "assumptions": [
+            "Audience descriptions require source-backed creator review.",
+            "Investor interest and wallet activity are different signals; neither proves investor identity."
+          ],
+          "measurement": {
+            "primaryOutcome": "qualified_wallets",
+            "attributionModel": "last_eligible_touch",
+            "qualifyingAction": "Select the project's instrumented Solana product action.",
+            "revenueTreatment": "verified_protocol_revenue_only",
+            "leadingIndicators": [
+              "Qualified visits",
+              "Deck requests (separate source required)"
+            ],
+            "retentionWindowDays": 7,
+            "attributionWindowDays": 7,
+            "conversionRuleVersionId": "61990000-0000-4000-8000-000000000001"
+          },
+          "missingEvidence": [
+            "Current creator availability, quotes and audience evidence need review.",
+            "No comparative campaign outcomes validate these starting allocations.",
+            "Project conversion instrumentation and retention coverage need confirmation."
+          ],
+          "rebalanceQuestions": [
+            "Which creators generated qualified actions after attention?",
+            "Does the evidence justify renewing long-form distribution?"
+          ]
+        },
+        "schemaVersion": 1,
+        "conversionRule": {
+          "id": "61990000-0000-4000-8000-000000000001",
+          "name": "Qualified action",
+          "chain": "solana",
+          "ruleId": "60990000-0000-4000-8000-000000000001",
+          "version": 1,
+          "createdAt": "2026-09-08T19:37:03.996000Z",
+          "createdBy": "30990000-0000-4000-8000-000000000001",
+          "programId": null,
+          "projectId": "20990000-0000-4000-8000-000000000001",
+          "description": "First finalized qualifying action with explicit wallet binding.",
+          "workspaceId": "10990000-0000-4000-8000-000000000001",
+          "changeReason": "Synthetic BSK09 measurement fixture",
+          "templateCode": "first_qualifying_transaction",
+          "valueMapping": "transfer_amount",
+          "effectiveFrom": "2026-09-01T00:00:00.000000Z",
+          "effectiveUntil": null,
+          "revenueMapping": "none",
+          "minimumFinality": "finalized",
+          "attributionModel": "last_eligible_creator_touch",
+          "eventDiscriminator": null,
+          "evidenceCapability": "ready",
+          "requiresWalletBinding": true,
+          "attributionWindowSeconds": 604800
+        },
+        "measurementWindow": {
+          "endedAt": "2026-10-12T00:00:00.000000Z",
+          "startedAt": "2026-09-14T00:00:00.000000Z"
+        },
+        "selectedCreatorIds": [
+          "40990000-0000-4000-8000-000000000001",
+          "40990000-0000-4000-8000-000000000002",
+          "40990000-0000-4000-8000-000000000003"
+        ]
+      }
+    },
+    "review_snapshot_hash": "32f8f9685b25b706599c16e037432402e7fc7f4dcbc5bb3c9750c82da97cb5f5"
+  }
+]

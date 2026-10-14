@@ -1,0 +1,62 @@
+{
+  "preview": {
+    "review": {
+      "kind": "exact_campaign_execution",
+      "projectId": "20990000-0000-4000-8000-000000000001",
+      "campaignId": "7882f9bd-88d1-431f-ab95-8644fd8e8a06",
+      "candidates": [
+        {
+          "conversionFactId": "90990000-0000-4000-8000-000000000201",
+          "attributionFactId": "90990000-0000-4000-8000-000000000202",
+          "calculationRequestId": "90990000-0000-4000-8000-000000000200",
+          "canonicalChainEventId": "90990000-0000-4000-8000-000000000030",
+          "protectedWalletMappingId": "90990000-0000-4000-8000-000000000011"
+        },
+        {
+          "conversionFactId": "90990000-0000-4000-8000-000000000221",
+          "attributionFactId": "90990000-0000-4000-8000-000000000222",
+          "calculationRequestId": "90990000-0000-4000-8000-000000000220",
+          "canonicalChainEventId": "90990000-0000-4000-8000-000000000031",
+          "protectedWalletMappingId": "90990000-0000-4000-8000-000000000061"
+        }
+      ],
+      "workspaceId": "10990000-0000-4000-8000-000000000001",
+      "environments": ["demo"],
+      "ruleVersionId": "61990000-0000-4000-8000-000000000001",
+      "schemaVersion": 1,
+      "measurementWindow": {
+        "endedAt": "2026-10-05T00:00:00.000000Z",
+        "startedAt": "2026-09-07T00:00:00.000000Z"
+      },
+      "commercialPlanVersionId": "ee7feddd-db08-4a4d-930a-7e3c73e3abb6",
+      "commercialPlanSnapshotHash": "35412f4d209ad2999308158f3341a85a7d45d701ffd5f0fedd15e6ebd4b0dc74"
+    },
+    "reviewHash": "05b0bd7daac9b844e1fe4cd9b9a9782f68111f495a44d60aad5a9fa8df36eb1a"
+  },
+  "receipt": {
+    "batch": {
+      "results": [
+        {
+          "inserted": true,
+          "conversionFactId": "90990000-0000-4000-8000-000000000201",
+          "attributionFactId": "90990000-0000-4000-8000-000000000202",
+          "calculationRequestId": "90990000-0000-4000-8000-000000000200"
+        },
+        {
+          "inserted": true,
+          "conversionFactId": "90990000-0000-4000-8000-000000000221",
+          "attributionFactId": "90990000-0000-4000-8000-000000000222",
+          "calculationRequestId": "90990000-0000-4000-8000-000000000220"
+        }
+      ],
+      "campaignId": "7882f9bd-88d1-431f-ab95-8644fd8e8a06",
+      "insertedCount": 2,
+      "ruleVersionId": "61990000-0000-4000-8000-000000000001",
+      "processedCount": 2
+    },
+    "approvalId": "90990000-0000-4000-8000-000000000300",
+    "reviewHash": "05b0bd7daac9b844e1fe4cd9b9a9782f68111f495a44d60aad5a9fa8df36eb1a",
+    "completeness": "not_established",
+    "reportIssuance": "blocked"
+  }
+}

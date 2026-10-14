@@ -1,0 +1,536 @@
+/* RUL-01 / UI-03 · Settings › Success rules (journey board 02c). Shared,
+   versioned rules on the canonical application tokens. */
+.root {
+  composes: kit from "./application-ui.module.css";
+  display: grid;
+  gap: 16px;
+  min-width: 0;
+  color: var(--app-color-ink);
+  font: 400 14px/1.5 var(--app-font);
+}
+.root :where(h1, h2, h3, p, dl, dd, ul, ol) {
+  margin: 0;
+}
+.root
+  :is(a, button, summary, input, textarea, [tabindex]):focus-visible {
+  outline: 2px solid var(--app-color-focus);
+  outline-offset: 2px;
+}
+.contextBar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 16px;
+  padding: 10px 16px;
+  border-radius: var(--app-radius-card);
+  background: var(--app-color-info);
+  color: var(--app-color-on-pastel);
+}
+.contextBar p {
+  flex: 1 1 320px;
+  min-width: 0;
+}
+.layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 24px;
+  align-items: start;
+}
+.main {
+  display: grid;
+  gap: 16px;
+  min-width: 0;
+}
+.top {
+  display: grid;
+  gap: 6px;
+  padding-top: 8px;
+}
+.top > .button {
+  justify-self: start;
+}
+.kind {
+  color: color-mix(in srgb, var(--app-color-hero) 82%, var(--app-color-ink));
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.title {
+  font: 600 30px/1.15 var(--app-font);
+  letter-spacing: -0.01em;
+  text-wrap: balance;
+}
+.purpose {
+  max-width: 72ch;
+  font-size: 15px;
+}
+.card {
+  display: grid;
+  gap: 10px;
+  min-width: 0;
+  padding: 18px 22px;
+  border: 1px solid var(--app-color-line);
+  border-radius: var(--app-radius-card);
+  background: var(--app-color-card);
+  box-shadow: var(--app-shadow-card);
+}
+.cardHead {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+}
+.cardTitle {
+  font: 600 18px/1.3 var(--app-font);
+  text-wrap: balance;
+  overflow-wrap: anywhere;
+}
+.card > .button {
+  justify-self: start;
+}
+details.card > summary {
+  cursor: pointer;
+  min-height: 44px;
+  align-content: center;
+}
+details.card[open] > summary {
+  margin-bottom: 12px;
+}
+details.card {
+  display: block;
+}
+.card p {
+  overflow-wrap: anywhere;
+}
+.subTitle {
+  font: 600 15px/1.3 var(--app-font);
+}
+.small {
+  color: var(--app-color-secondary);
+  font-size: 14px;
+}
+.mono {
+  font-size: 14px;
+  font-variant-numeric: tabular-nums;
+  overflow-wrap: anywhere;
+}
+.facts {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px 24px;
+}
+section.facts {
+  grid-template-columns: minmax(0, 1fr);
+  background: var(--app-color-sunk);
+  box-shadow: none;
+}
+.facts dt {
+  color: var(--app-color-secondary);
+  font-size: 14px;
+}
+.facts dd {
+  font-weight: 600;
+  overflow-wrap: anywhere;
+}
+.details summary {
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  font-weight: 600;
+}
+.details[open] summary {
+  margin-bottom: 8px;
+}
+.versions {
+  display: grid;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border-top: 1px solid var(--app-color-line);
+}
+.versions li {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  gap: 14px;
+  align-items: center;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--app-color-line);
+}
+.versionPill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 48px;
+  padding: 2px 10px;
+  border: 1px solid var(--app-color-line);
+  border-radius: var(--app-radius-pill);
+  background: var(--app-color-sunk);
+  font-size: 13px;
+  font-weight: 600;
+}
+.versionText {
+  display: grid;
+  gap: 2px;
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+.versionStatus {
+  color: var(--app-color-secondary);
+  font-size: 14px;
+  text-align: right;
+}
+.pillGo,
+.pillWarn,
+.pillBad,
+.pillInfo,
+.pillMuted {
+  display: inline-flex;
+  align-items: center;
+  padding: 2px 10px;
+  border-radius: var(--app-radius-pill);
+  font-size: 12px;
+  font-weight: 600;
+  white-space: nowrap;
+  color: var(--app-color-on-pastel);
+}
+.pillGo {
+  background: var(--app-color-go);
+}
+.pillWarn {
+  background: var(--app-color-warn);
+}
+.pillBad {
+  background: var(--app-color-bad-fill);
+}
+.pillInfo {
+  background: var(--app-color-info);
+}
+.pillMuted {
+  background: var(--app-color-sunk);
+  color: var(--app-color-secondary);
+}
+.create {
+  width: min(800px, calc(100vw - 48px));
+  max-width: none;
+  max-height: calc(100dvh - 48px);
+  margin: auto;
+  padding: 0;
+  overflow: hidden;
+  border: 1px solid var(--app-color-line);
+  border-radius: var(--app-radius-card);
+  background: var(--app-color-card);
+  color: var(--app-color-ink);
+  font: inherit;
+}
+.create[open] {
+  display: flex;
+  flex-direction: column;
+}
+.create::backdrop {
+  background: rgb(0 0 0 / 55%);
+}
+.create > header,
+.editorFooter {
+  flex: none;
+  padding: 16px 24px;
+}
+.create > header {
+  border-bottom: 1px solid var(--app-color-line);
+}
+.editorBody {
+  display: grid;
+  gap: 16px;
+  min-height: 0;
+  padding: 16px 24px;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+}
+.editorFooter {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  border-top: 1px solid var(--app-color-line);
+}
+.editorFooter p {
+  flex: 1 1 240px;
+}
+.root[data-theme="dark"] .create {
+  color-scheme: dark;
+}
+.root[data-theme="light"] .create {
+  color-scheme: light;
+}
+.create > header h2:focus-visible {
+  outline: 2px solid var(--app-color-focus);
+  outline-offset: 2px;
+}
+.templates {
+  display: grid;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  min-width: 0;
+}
+.templates legend {
+  margin-bottom: 6px;
+  font-weight: 600;
+}
+.template {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 12px;
+  align-items: start;
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid var(--app-color-line);
+  border-radius: 12px;
+  background: var(--app-color-card);
+  color: var(--app-color-ink);
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+.templateOn {
+  border: 2px solid var(--app-color-hero);
+  padding: 11px 13px;
+}
+.radio {
+  width: 18px;
+  height: 18px;
+  margin-top: 2px;
+  border: 2px solid var(--app-color-secondary);
+  border-radius: 50%;
+}
+.templateOn .radio {
+  border-color: var(--app-color-hero);
+  box-shadow: inset 0 0 0 3px var(--app-color-card);
+  background: var(--app-color-hero);
+}
+.templateText {
+  display: grid;
+  gap: 2px;
+  min-width: 0;
+}
+.form {
+  display: grid;
+  gap: 12px;
+}
+.editFields {
+  display: grid;
+  gap: 12px;
+  min-width: 0;
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+.create > header {
+  flex-wrap: nowrap;
+}
+.create > header h2 {
+  min-width: 0;
+}
+.row {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+.form label {
+  display: grid;
+  gap: 6px;
+  min-width: 0;
+}
+.form label > span {
+  font-weight: 600;
+}
+.form :is(input, textarea) {
+  width: 100%;
+  min-width: 0;
+  min-height: 44px;
+  padding: 10px 12px;
+  border: 1px solid var(--app-color-line);
+  border-radius: var(--app-radius-control);
+  background: var(--app-color-card);
+  color: var(--app-color-ink);
+  font: 400 15px/1.4 var(--app-font);
+}
+.form textarea {
+  min-height: 72px;
+  resize: vertical;
+}
+.advanced {
+  display: grid;
+  gap: 8px;
+  padding: 12px;
+  border-radius: 12px;
+  background: var(--app-color-sunk);
+}
+.impact {
+  display: grid;
+  gap: 4px;
+  padding: 14px 16px;
+  border-radius: 12px;
+  background: var(--app-color-warn);
+  color: var(--app-color-on-pastel);
+}
+.impact ul {
+  display: grid;
+  gap: 4px;
+  padding-left: 18px;
+  font-size: 14px;
+}
+.notice,
+.noticeBad,
+.noticeGo {
+  padding: 10px 12px;
+  border-radius: 10px;
+  font-size: 14px;
+  color: var(--app-color-on-pastel);
+}
+.notice {
+  background: var(--app-color-sunk);
+  color: var(--app-color-ink);
+}
+.noticeBad {
+  background: var(--app-color-bad-fill);
+}
+.noticeGo {
+  background: var(--app-color-go);
+}
+.messageRow {
+  display: grid;
+  gap: 8px;
+  justify-items: start;
+}
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 12px;
+}
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 44px;
+  padding: 10px 18px;
+  border: 1px solid var(--app-color-secondary);
+  border-radius: var(--app-radius-pill);
+  background: var(--app-color-card);
+  color: var(--app-color-ink);
+  font: 600 14px/1.4 var(--app-font);
+  text-decoration: none;
+  white-space: normal;
+  text-align: center;
+  cursor: pointer;
+}
+.hero {
+  border-color: var(--app-color-hero);
+  background: var(--app-color-hero);
+  color: var(--app-color-hero-ink);
+}
+.button:not(:disabled):hover {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.button:disabled {
+  border-color: var(--app-color-sunk);
+  background: var(--app-color-sunk);
+  color: var(--app-color-secondary);
+  cursor: not-allowed;
+}
+.replay {
+  display: grid;
+  gap: 8px;
+}
+.replayList {
+  display: grid;
+  gap: 12px;
+  margin: 8px 0 0;
+  padding: 0;
+  list-style: none;
+}
+.replayList > li {
+  display: grid;
+  gap: 10px;
+  padding: 12px 14px;
+  border: 1px solid var(--app-color-line);
+  border-radius: 12px;
+}
+.replayHead {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  gap: 12px;
+  align-items: center;
+}
+.replayBody {
+  display: grid;
+  gap: 10px;
+}
+.links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.links .button {
+  white-space: normal;
+  text-align: left;
+}
+.replayEmpty {
+  display: grid;
+  justify-items: start;
+  gap: 6px;
+}
+@media (max-width: 1100px) {
+  .layout {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+@media (max-width: 640px) {
+  .create {
+    width: 100%;
+    height: 100dvh;
+    max-height: 100dvh;
+    border-radius: 0;
+  }
+  .editorBody {
+    flex: 1;
+  }
+  .facts,
+  .row {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .versions li,
+  .replayHead {
+    grid-template-columns: auto minmax(0, 1fr);
+  }
+  .versionStatus {
+    grid-column: 2;
+    text-align: left;
+  }
+  .actions .button {
+    flex: 1 1 100%;
+  }
+  .form :is(input, textarea) {
+    font-size: 16px;
+  }
+}
+.details summary {
+  list-style: none;
+}
+.details summary::-webkit-details-marker {
+  display: none;
+}
+.details summary::before {
+  content: "▸";
+  color: var(--app-color-secondary);
+}
+.details[open] > summary::before {
+  content: "▾";
+}

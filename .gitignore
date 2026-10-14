@@ -1,0 +1,36 @@
+# Environment variables and credentials
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+
+# Solana wallet and local validator material
+*-keypair.json
+test-ledger/
+
+# Dependencies and generated output
+node_modules/
+.pnpm-store/
+.next/
+.turbo/
+dist/
+build/
+coverage/
+outputs/
+*.tsbuildinfo
+
+# Hosting and local tooling
+# Separate private agency operating records and local agent configuration
+/agency-os/
+/.agents/
+.vercel/
+.supabase/
+.DS_Store
+*.log
+
+# Editor settings
+.idea/
+.vscode/

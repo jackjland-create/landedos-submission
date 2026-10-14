@@ -1,0 +1,572 @@
+{
+  "afterReceipt": {
+    "kind": "execution_report_review",
+    "execution": {
+      "readAt": "2026-09-21T12:10:05.914988Z",
+      "reason": "Retain this precise human reason",
+      "preview": {
+        "review": {
+          "kind": "exact_campaign_execution",
+          "projectId": "20990000-0000-4000-8000-000000000001",
+          "campaignId": "bf20ff1d-740f-4515-8789-9fc97f83fd97",
+          "candidates": [
+            {
+              "conversionFactId": "90990000-0000-4000-8000-000000000201",
+              "attributionFactId": "90990000-0000-4000-8000-000000000202",
+              "calculationRequestId": "90990000-0000-4000-8000-000000000200",
+              "canonicalChainEventId": "90990000-0000-4000-8000-000000000030",
+              "protectedWalletMappingId": "90990000-0000-4000-8000-000000000011"
+            }
+          ],
+          "workspaceId": "10990000-0000-4000-8000-000000000001",
+          "environments": ["demo"],
+          "ruleVersionId": "61990000-0000-4000-8000-000000000001",
+          "schemaVersion": 1,
+          "measurementWindow": {
+            "endedAt": "2026-10-05T00:00:00.000000Z",
+            "startedAt": "2026-09-07T00:00:00.000000Z"
+          },
+          "commercialPlanVersionId": "be7b627c-81b0-42d9-a233-76b6744c748f",
+          "commercialPlanSnapshotHash": "e599e5a278b769215314240eafd7db1f30c6508a1c5b1d2cf205934981893343"
+        },
+        "reviewHash": "fb5e4dc13b9bca7f36c7f3d48bef351a44613a9589ca1cfa0419c4f79717184a"
+      },
+      "receipt": {
+        "batch": {
+          "results": [
+            {
+              "inserted": true,
+              "conversionFactId": "90990000-0000-4000-8000-000000000201",
+              "attributionFactId": "90990000-0000-4000-8000-000000000202",
+              "calculationRequestId": "90990000-0000-4000-8000-000000000200"
+            }
+          ],
+          "campaignId": "bf20ff1d-740f-4515-8789-9fc97f83fd97",
+          "insertedCount": 1,
+          "ruleVersionId": "61990000-0000-4000-8000-000000000001",
+          "processedCount": 1
+        },
+        "approvalId": "90990000-0000-4000-8000-000000000300",
+        "reviewHash": "fb5e4dc13b9bca7f36c7f3d48bef351a44613a9589ca1cfa0419c4f79717184a",
+        "completeness": "not_established",
+        "reportIssuance": "blocked"
+      },
+      "approvalId": "90990000-0000-4000-8000-000000000300",
+      "approvedAt": "2026-09-21T12:10:05.786412Z"
+    },
+    "reportScope": "campaign_wide",
+    "completeness": "not_established",
+    "reportReview": {
+      "reportSources": {
+        "kind": "retained_report_sources",
+        "results": [
+          {
+            "value": {
+              "kind": "native_lamports",
+              "decimals": 9,
+              "rawAmount": "9007199254740993123",
+              "tokenMint": null
+            },
+            "auditId": "19e3f147-16d7-4be7-82f9-108b8c876a2e",
+            "creatorId": "40990000-0000-4000-8000-000000000001",
+            "touchTime": "2026-09-06T12:00:00+00:00",
+            "confidence": "strong",
+            "revenueKind": "none",
+            "contentAssetId": "b728da2e-e15b-4b42-9fee-f4bc5f052603",
+            "conversionTime": "2026-09-08T12:00:00+00:00",
+            "conversionFactId": "90990000-0000-4000-8000-000000000201",
+            "attributionFactId": "90990000-0000-4000-8000-000000000202",
+            "primaryRoasEligible": true,
+            "calculationRequestId": "90990000-0000-4000-8000-000000000200",
+            "canonicalChainEventId": "90990000-0000-4000-8000-000000000030"
+          }
+        ],
+        "projectId": "20990000-0000-4000-8000-000000000001",
+        "campaignId": "bf20ff1d-740f-4515-8789-9fc97f83fd97",
+        "workspaceId": "10990000-0000-4000-8000-000000000001",
+        "completeness": "not_established",
+        "ruleVersionId": "61990000-0000-4000-8000-000000000001",
+        "measurementWindow": {
+          "endedAt": "2026-10-05T00:00:00+00:00",
+          "startedAt": "2026-09-07T00:00:00+00:00"
+        },
+        "protocolRevenueStatus": "source_not_configured",
+        "commercialPlanSnapshot": {
+          "basket": {
+            "id": "e1b859c8-1224-4785-b690-c8190e6c11ea",
+            "name": "Strategy preview",
+            "objective": "Increase qualified wallets",
+            "outcomeProfile": {
+              "metric": "qualified_wallets",
+              "targetUnits": "100",
+              "baselineUnits": "0"
+            }
+          },
+          "packages": [
+            {
+              "id": "586a360e-fb66-4445-ba86-9980fbc1189a",
+              "creatorId": "40990000-0000-4000-8000-000000000001",
+              "packageLabel": "Creator 1",
+              "compensationLines": [
+                {
+                  "id": "f5ba7ebe-f389-414f-b7e4-e19460335474",
+                  "model": "fixed",
+                  "assetType": "cash",
+                  "amountMinor": "127500",
+                  "currencyCode": "GBP"
+                }
+              ],
+              "sourceRateQuoteId": null,
+              "deliverableSummary": "One independently negotiated research thread"
+            },
+            {
+              "id": "9d6a717f-283f-4a5b-a62a-6521f815dedb",
+              "creatorId": "40990000-0000-4000-8000-000000000002",
+              "packageLabel": "Creator 2",
+              "compensationLines": [
+                {
+                  "id": "74461b25-8c97-40a6-81dc-957e1d9773b2",
+                  "model": "fixed",
+                  "assetType": "cash",
+                  "amountMinor": "392000",
+                  "currencyCode": "GBP"
+                }
+              ],
+              "sourceRateQuoteId": null,
+              "deliverableSummary": "One independently negotiated research thread"
+            }
+          ],
+          "scenario": {
+            "id": "9935247a-ca78-4519-8d10-3705d6967632",
+            "code": "A",
+            "name": "Focused authority"
+          },
+          "projectId": "20990000-0000-4000-8000-000000000001",
+          "workspaceId": "10990000-0000-4000-8000-000000000001",
+          "schemaVersion": 2,
+          "strategyBinding": {
+            "origin": {
+              "kind": "custom"
+            },
+            "timing": {
+              "flight": {
+                "endedAt": "2026-09-08T00:00:00Z",
+                "startedAt": "2026-09-07T00:00:00Z"
+              },
+              "measurement": {
+                "endedAt": "2026-10-05T00:00:00Z",
+                "startedAt": "2026-09-07T00:00:00Z"
+              },
+              "schemaVersion": 1
+            },
+            "revision": 3,
+            "strategy": {
+              "goal": "Generate qualified investor interest in the product and its proposition.",
+              "sector": null,
+              "audience": "Crypto-native investors, research teams and ecosystem operators.",
+              "rationale": "Combine specialist discovery with long-form explanation; test whether attention translates into qualified product use.",
+              "exclusions": [
+                "Token-price movements are not a success metric.",
+                "Deck requests are not onchain revenue or qualified-wallet proof."
+              ],
+              "allocations": [
+                {
+                  "format": "Research thread",
+                  "channel": "x",
+                  "archetype": "analyst",
+                  "rationale": "Test discovery among relevant investor networks.",
+                  "plannedSpendBps": 4500
+                },
+                {
+                  "format": "Founder interview",
+                  "channel": "podcast",
+                  "archetype": "long_form_host",
+                  "rationale": "Explain the proposition and product evidence in depth.",
+                  "plannedSpendBps": 3500
+                },
+                {
+                  "format": "Research briefing",
+                  "channel": "newsletter_research",
+                  "archetype": "sector_specialist",
+                  "rationale": "Provide a considered follow-up for specialist readers.",
+                  "plannedSpendBps": 2000
+                }
+              ],
+              "assumptions": [
+                "Audience descriptions require source-backed creator review.",
+                "Investor interest and wallet activity are different signals; neither proves investor identity."
+              ],
+              "measurement": {
+                "primaryOutcome": "qualified_wallets",
+                "attributionModel": "last_eligible_touch",
+                "qualifyingAction": "Select the project's instrumented Solana product action.",
+                "revenueTreatment": "verified_protocol_revenue_only",
+                "leadingIndicators": [
+                  "Qualified visits",
+                  "Deck requests (separate source required)"
+                ],
+                "retentionWindowDays": 7,
+                "attributionWindowDays": 7,
+                "conversionRuleVersionId": "61990000-0000-4000-8000-000000000001"
+              },
+              "missingEvidence": [
+                "Current creator availability, quotes and audience evidence need review.",
+                "No comparative campaign outcomes validate these starting allocations.",
+                "Project conversion instrumentation and retention coverage need confirmation."
+              ],
+              "rebalanceQuestions": [
+                "Which creators generated qualified actions after attention?",
+                "Does the evidence justify renewing long-form distribution?"
+              ]
+            },
+            "schemaVersion": 2,
+            "conversionRule": {
+              "id": "61990000-0000-4000-8000-000000000001",
+              "name": "Qualified action",
+              "chain": "solana",
+              "ruleId": "60990000-0000-4000-8000-000000000001",
+              "version": 1,
+              "createdAt": "2026-09-21T12:10:05.644000Z",
+              "createdBy": "30990000-0000-4000-8000-000000000001",
+              "programId": null,
+              "projectId": "20990000-0000-4000-8000-000000000001",
+              "description": "First finalized qualifying action with explicit wallet binding.",
+              "workspaceId": "10990000-0000-4000-8000-000000000001",
+              "changeReason": "Synthetic BSK09 measurement fixture",
+              "templateCode": "first_qualifying_transaction",
+              "valueMapping": "transfer_amount",
+              "effectiveFrom": "2026-09-01T00:00:00.000000Z",
+              "effectiveUntil": null,
+              "revenueMapping": "none",
+              "minimumFinality": "finalized",
+              "attributionModel": "last_eligible_creator_touch",
+              "eventDiscriminator": null,
+              "evidenceCapability": "ready",
+              "requiresWalletBinding": true,
+              "attributionWindowSeconds": 604800
+            },
+            "measurementWindow": {
+              "endedAt": "2026-10-05T00:00:00.000000Z",
+              "startedAt": "2026-09-07T00:00:00.000000Z"
+            },
+            "selectedCreatorIds": [
+              "40990000-0000-4000-8000-000000000001",
+              "40990000-0000-4000-8000-000000000002",
+              "40990000-0000-4000-8000-000000000003"
+            ]
+          }
+        },
+        "qualifiedClickEvidence": [],
+        "commercialPlanVersionId": "be7b627c-81b0-42d9-a233-76b6744c748f",
+        "commercialPlanSnapshotHash": "e599e5a278b769215314240eafd7db1f30c6508a1c5b1d2cf205934981893343",
+        "walletAttributionEvidenceIds": ["90990000-0000-4000-8000-000000000202"]
+      },
+      "historyReadiness": {
+        "kind": "campaign_history_readiness",
+        "issuance": "blocked",
+        "mappings": [
+          {
+            "status": "history_not_established",
+            "creatorId": "40990000-0000-4000-8000-000000000001",
+            "latestJob": null,
+            "mappingId": "90990000-0000-4000-8000-000000000011",
+            "matchingJob": null,
+            "contentAssetId": "b728da2e-e15b-4b42-9fee-f4bc5f052603",
+            "requiredHistory": {
+              "endedAt": "2026-09-13T12:00:00+00:00",
+              "startedAt": "2026-09-06T13:00:00+00:00"
+            }
+          },
+          {
+            "status": "history_not_established",
+            "creatorId": "40990000-0000-4000-8000-000000000001",
+            "latestJob": null,
+            "mappingId": "90990000-0000-4000-8000-000000000061",
+            "matchingJob": null,
+            "contentAssetId": "b728da2e-e15b-4b42-9fee-f4bc5f052603",
+            "requiredHistory": {
+              "endedAt": "2026-09-13T12:00:00+00:00",
+              "startedAt": "2026-09-06T13:00:00+00:00"
+            }
+          }
+        ],
+        "projectId": "20990000-0000-4000-8000-000000000001",
+        "campaignId": "bf20ff1d-740f-4515-8789-9fc97f83fd97",
+        "workspaceId": "10990000-0000-4000-8000-000000000001",
+        "completeness": "not_established",
+        "ruleVersionId": "61990000-0000-4000-8000-000000000001",
+        "measurementWindow": {
+          "endedAt": "2026-10-05T00:00:00+00:00",
+          "startedAt": "2026-09-07T00:00:00+00:00"
+        }
+      }
+    },
+    "schemaVersion": 1,
+    "reportIssuance": "blocked"
+  },
+  "beforeReceipt": {
+    "kind": "execution_report_review",
+    "execution": {
+      "readAt": "2026-09-21T12:10:05.793194Z",
+      "reason": "Retain this precise human reason",
+      "preview": {
+        "review": {
+          "kind": "exact_campaign_execution",
+          "projectId": "20990000-0000-4000-8000-000000000001",
+          "campaignId": "bf20ff1d-740f-4515-8789-9fc97f83fd97",
+          "candidates": [
+            {
+              "conversionFactId": "90990000-0000-4000-8000-000000000201",
+              "attributionFactId": "90990000-0000-4000-8000-000000000202",
+              "calculationRequestId": "90990000-0000-4000-8000-000000000200",
+              "canonicalChainEventId": "90990000-0000-4000-8000-000000000030",
+              "protectedWalletMappingId": "90990000-0000-4000-8000-000000000011"
+            }
+          ],
+          "workspaceId": "10990000-0000-4000-8000-000000000001",
+          "environments": ["demo"],
+          "ruleVersionId": "61990000-0000-4000-8000-000000000001",
+          "schemaVersion": 1,
+          "measurementWindow": {
+            "endedAt": "2026-10-05T00:00:00.000000Z",
+            "startedAt": "2026-09-07T00:00:00.000000Z"
+          },
+          "commercialPlanVersionId": "be7b627c-81b0-42d9-a233-76b6744c748f",
+          "commercialPlanSnapshotHash": "e599e5a278b769215314240eafd7db1f30c6508a1c5b1d2cf205934981893343"
+        },
+        "reviewHash": "fb5e4dc13b9bca7f36c7f3d48bef351a44613a9589ca1cfa0419c4f79717184a"
+      },
+      "receipt": null,
+      "approvalId": "90990000-0000-4000-8000-000000000300",
+      "approvedAt": "2026-09-21T12:10:05.786412Z"
+    },
+    "reportScope": "campaign_wide",
+    "completeness": "not_established",
+    "reportReview": {
+      "reportSources": {
+        "kind": "retained_report_sources",
+        "results": [],
+        "projectId": "20990000-0000-4000-8000-000000000001",
+        "campaignId": "bf20ff1d-740f-4515-8789-9fc97f83fd97",
+        "workspaceId": "10990000-0000-4000-8000-000000000001",
+        "completeness": "not_established",
+        "ruleVersionId": "61990000-0000-4000-8000-000000000001",
+        "measurementWindow": {
+          "endedAt": "2026-10-05T00:00:00+00:00",
+          "startedAt": "2026-09-07T00:00:00+00:00"
+        },
+        "protocolRevenueStatus": "source_not_configured",
+        "commercialPlanSnapshot": {
+          "basket": {
+            "id": "e1b859c8-1224-4785-b690-c8190e6c11ea",
+            "name": "Strategy preview",
+            "objective": "Increase qualified wallets",
+            "outcomeProfile": {
+              "metric": "qualified_wallets",
+              "targetUnits": "100",
+              "baselineUnits": "0"
+            }
+          },
+          "packages": [
+            {
+              "id": "586a360e-fb66-4445-ba86-9980fbc1189a",
+              "creatorId": "40990000-0000-4000-8000-000000000001",
+              "packageLabel": "Creator 1",
+              "compensationLines": [
+                {
+                  "id": "f5ba7ebe-f389-414f-b7e4-e19460335474",
+                  "model": "fixed",
+                  "assetType": "cash",
+                  "amountMinor": "127500",
+                  "currencyCode": "GBP"
+                }
+              ],
+              "sourceRateQuoteId": null,
+              "deliverableSummary": "One independently negotiated research thread"
+            },
+            {
+              "id": "9d6a717f-283f-4a5b-a62a-6521f815dedb",
+              "creatorId": "40990000-0000-4000-8000-000000000002",
+              "packageLabel": "Creator 2",
+              "compensationLines": [
+                {
+                  "id": "74461b25-8c97-40a6-81dc-957e1d9773b2",
+                  "model": "fixed",
+                  "assetType": "cash",
+                  "amountMinor": "392000",
+                  "currencyCode": "GBP"
+                }
+              ],
+              "sourceRateQuoteId": null,
+              "deliverableSummary": "One independently negotiated research thread"
+            }
+          ],
+          "scenario": {
+            "id": "9935247a-ca78-4519-8d10-3705d6967632",
+            "code": "A",
+            "name": "Focused authority"
+          },
+          "projectId": "20990000-0000-4000-8000-000000000001",
+          "workspaceId": "10990000-0000-4000-8000-000000000001",
+          "schemaVersion": 2,
+          "strategyBinding": {
+            "origin": {
+              "kind": "custom"
+            },
+            "timing": {
+              "flight": {
+                "endedAt": "2026-09-08T00:00:00Z",
+                "startedAt": "2026-09-07T00:00:00Z"
+              },
+              "measurement": {
+                "endedAt": "2026-10-05T00:00:00Z",
+                "startedAt": "2026-09-07T00:00:00Z"
+              },
+              "schemaVersion": 1
+            },
+            "revision": 3,
+            "strategy": {
+              "goal": "Generate qualified investor interest in the product and its proposition.",
+              "sector": null,
+              "audience": "Crypto-native investors, research teams and ecosystem operators.",
+              "rationale": "Combine specialist discovery with long-form explanation; test whether attention translates into qualified product use.",
+              "exclusions": [
+                "Token-price movements are not a success metric.",
+                "Deck requests are not onchain revenue or qualified-wallet proof."
+              ],
+              "allocations": [
+                {
+                  "format": "Research thread",
+                  "channel": "x",
+                  "archetype": "analyst",
+                  "rationale": "Test discovery among relevant investor networks.",
+                  "plannedSpendBps": 4500
+                },
+                {
+                  "format": "Founder interview",
+                  "channel": "podcast",
+                  "archetype": "long_form_host",
+                  "rationale": "Explain the proposition and product evidence in depth.",
+                  "plannedSpendBps": 3500
+                },
+                {
+                  "format": "Research briefing",
+                  "channel": "newsletter_research",
+                  "archetype": "sector_specialist",
+                  "rationale": "Provide a considered follow-up for specialist readers.",
+                  "plannedSpendBps": 2000
+                }
+              ],
+              "assumptions": [
+                "Audience descriptions require source-backed creator review.",
+                "Investor interest and wallet activity are different signals; neither proves investor identity."
+              ],
+              "measurement": {
+                "primaryOutcome": "qualified_wallets",
+                "attributionModel": "last_eligible_touch",
+                "qualifyingAction": "Select the project's instrumented Solana product action.",
+                "revenueTreatment": "verified_protocol_revenue_only",
+                "leadingIndicators": [
+                  "Qualified visits",
+                  "Deck requests (separate source required)"
+                ],
+                "retentionWindowDays": 7,
+                "attributionWindowDays": 7,
+                "conversionRuleVersionId": "61990000-0000-4000-8000-000000000001"
+              },
+              "missingEvidence": [
+                "Current creator availability, quotes and audience evidence need review.",
+                "No comparative campaign outcomes validate these starting allocations.",
+                "Project conversion instrumentation and retention coverage need confirmation."
+              ],
+              "rebalanceQuestions": [
+                "Which creators generated qualified actions after attention?",
+                "Does the evidence justify renewing long-form distribution?"
+              ]
+            },
+            "schemaVersion": 2,
+            "conversionRule": {
+              "id": "61990000-0000-4000-8000-000000000001",
+              "name": "Qualified action",
+              "chain": "solana",
+              "ruleId": "60990000-0000-4000-8000-000000000001",
+              "version": 1,
+              "createdAt": "2026-09-21T12:10:05.644000Z",
+              "createdBy": "30990000-0000-4000-8000-000000000001",
+              "programId": null,
+              "projectId": "20990000-0000-4000-8000-000000000001",
+              "description": "First finalized qualifying action with explicit wallet binding.",
+              "workspaceId": "10990000-0000-4000-8000-000000000001",
+              "changeReason": "Synthetic BSK09 measurement fixture",
+              "templateCode": "first_qualifying_transaction",
+              "valueMapping": "transfer_amount",
+              "effectiveFrom": "2026-09-01T00:00:00.000000Z",
+              "effectiveUntil": null,
+              "revenueMapping": "none",
+              "minimumFinality": "finalized",
+              "attributionModel": "last_eligible_creator_touch",
+              "eventDiscriminator": null,
+              "evidenceCapability": "ready",
+              "requiresWalletBinding": true,
+              "attributionWindowSeconds": 604800
+            },
+            "measurementWindow": {
+              "endedAt": "2026-10-05T00:00:00.000000Z",
+              "startedAt": "2026-09-07T00:00:00.000000Z"
+            },
+            "selectedCreatorIds": [
+              "40990000-0000-4000-8000-000000000001",
+              "40990000-0000-4000-8000-000000000002",
+              "40990000-0000-4000-8000-000000000003"
+            ]
+          }
+        },
+        "qualifiedClickEvidence": [],
+        "commercialPlanVersionId": "be7b627c-81b0-42d9-a233-76b6744c748f",
+        "commercialPlanSnapshotHash": "e599e5a278b769215314240eafd7db1f30c6508a1c5b1d2cf205934981893343",
+        "walletAttributionEvidenceIds": []
+      },
+      "historyReadiness": {
+        "kind": "campaign_history_readiness",
+        "issuance": "blocked",
+        "mappings": [
+          {
+            "status": "history_not_established",
+            "creatorId": "40990000-0000-4000-8000-000000000001",
+            "latestJob": null,
+            "mappingId": "90990000-0000-4000-8000-000000000011",
+            "matchingJob": null,
+            "contentAssetId": "b728da2e-e15b-4b42-9fee-f4bc5f052603",
+            "requiredHistory": {
+              "endedAt": "2026-09-13T12:00:00+00:00",
+              "startedAt": "2026-09-06T13:00:00+00:00"
+            }
+          },
+          {
+            "status": "history_not_established",
+            "creatorId": "40990000-0000-4000-8000-000000000001",
+            "latestJob": null,
+            "mappingId": "90990000-0000-4000-8000-000000000061",
+            "matchingJob": null,
+            "contentAssetId": "b728da2e-e15b-4b42-9fee-f4bc5f052603",
+            "requiredHistory": {
+              "endedAt": "2026-09-13T12:00:00+00:00",
+              "startedAt": "2026-09-06T13:00:00+00:00"
+            }
+          }
+        ],
+        "projectId": "20990000-0000-4000-8000-000000000001",
+        "campaignId": "bf20ff1d-740f-4515-8789-9fc97f83fd97",
+        "workspaceId": "10990000-0000-4000-8000-000000000001",
+        "completeness": "not_established",
+        "ruleVersionId": "61990000-0000-4000-8000-000000000001",
+        "measurementWindow": {
+          "endedAt": "2026-10-05T00:00:00+00:00",
+          "startedAt": "2026-09-07T00:00:00+00:00"
+        }
+      }
+    },
+    "schemaVersion": 1,
+    "reportIssuance": "blocked"
+  }
+}

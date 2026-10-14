@@ -1,0 +1,165 @@
+/* FND-05 / UI-03: opt-in primitives, not broad legacy control overrides. */
+@import "./application-fonts.css";
+.kit {
+  composes: theme from "./application-tokens.module.css";
+}
+.theme {
+  composes: kit;
+  background: var(--app-color-canvas);
+  color: var(--app-color-ink);
+  font-family: var(--app-font);
+  font-size: 14px;
+  line-height: 1.5;
+  color-scheme: light;
+  font-variant-numeric: tabular-nums;
+}
+.theme[data-theme="dark"] {
+  color-scheme: dark;
+}
+.panel {
+  background: var(--app-color-card);
+  border: 1px solid var(--app-color-line);
+  border-radius: var(--app-radius-card);
+  min-width: 0;
+  padding: 24px;
+  box-shadow: var(--app-shadow-card);
+}
+.panel:focus-visible {
+  outline: 2px solid var(--app-color-focus);
+  outline-offset: 2px;
+}
+.state {
+  display: grid;
+  justify-items: start;
+  gap: 16px;
+  padding: 24px 0;
+  overflow-wrap: anywhere;
+}
+.state h2 {
+  font: 600 20px/1.3 var(--app-font);
+}
+.state p {
+  margin-top: 8px;
+  color: var(--app-color-secondary);
+}
+.kit :global(.application-button) {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 44px;
+  max-width: 100%;
+  padding: 10px 18px;
+  border: 1px solid var(--app-color-secondary);
+  border-radius: var(--app-radius-pill);
+  background: var(--app-color-card);
+  color: var(--app-color-ink);
+  font: 600 14px/1.4 var(--app-font);
+  text-align: center;
+  overflow-wrap: anywhere;
+  cursor: pointer;
+  touch-action: manipulation;
+}
+.kit :global(.application-button--hero) {
+  background: var(--app-color-hero);
+  border-color: var(--app-color-hero);
+  color: var(--app-color-hero-ink);
+}
+.kit :global(.application-button--progress) {
+  background: var(--app-color-go);
+  border-color: var(--app-color-go-edge);
+  color: var(--app-color-on-pastel);
+}
+.kit :global(.application-button--attention) {
+  background: var(--app-color-warn);
+  border-color: var(--app-color-warn-edge);
+  color: var(--app-color-on-pastel);
+}
+.kit :global(.application-button--destructive) {
+  border-color: var(--app-color-bad);
+  color: var(--app-color-bad);
+}
+.kit :global(.application-button:not(:disabled):hover) {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.kit :global(.application-button:disabled) {
+  background: var(--app-color-sunk);
+  color: var(--app-color-secondary);
+  border-color: var(--app-color-line);
+  cursor: not-allowed;
+}
+.kit :global(.application-button:focus-visible) {
+  outline: 2px solid var(--app-color-focus);
+  outline-offset: 2px;
+}
+.kit :global(.application-status) {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  max-width: 100%;
+  padding: 4px 10px;
+  border-radius: var(--app-radius-pill);
+  background: var(--app-color-sunk);
+  color: var(--app-color-ink);
+  font: 500 14px/1.4 var(--app-font);
+  overflow-wrap: anywhere;
+}
+.kit :global(.application-status--progress) {
+  background: var(--app-color-go);
+  color: var(--app-color-on-pastel);
+}
+.kit :global(.application-status--attention) {
+  background: var(--app-color-warn);
+  color: var(--app-color-on-pastel);
+}
+.kit :global(.application-status--blocked) {
+  background: var(--app-color-bad-fill);
+  color: var(--app-color-on-pastel);
+}
+.kit :global(.application-status--info) {
+  background: var(--app-color-info);
+  color: var(--app-color-on-pastel);
+}
+.kit :global(.application-status__dot) {
+  width: 8px;
+  height: 8px;
+  flex: 0 0 8px;
+  border: 1.5px solid currentColor;
+  border-radius: var(--app-radius-pill);
+}
+.kit :global([data-status-state="confirmed"] .application-status__dot) {
+  background: currentColor;
+}
+.kit :global([data-status-state="unavailable"] .application-status__dot) {
+  border-style: dashed;
+}
+.kit :global(.application-process) {
+  display: inline-flex;
+  gap: 12px;
+  align-items: center;
+  font: 500 14px/1.5 var(--app-font);
+}
+.kit :global(.application-process__orb) {
+  width: 24px;
+  height: 24px;
+  flex: 0 0 24px;
+  border: 3px dotted var(--app-color-hero);
+  border-radius: var(--app-radius-pill);
+  animation: processing 2s linear infinite;
+}
+@keyframes processing {
+  to {
+    transform: rotate(360deg);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .kit :global(.application-process__orb) {
+    animation: none;
+  }
+}
+@media (max-width: 760px) {
+  .panel {
+    padding: 16px;
+  }
+}

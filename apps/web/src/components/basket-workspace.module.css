@@ -1,0 +1,195 @@
+.root {
+  max-width: 100%;
+  min-width: 0;
+}
+.context {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: var(--canvas);
+  border-bottom: 1px solid var(--grid);
+  padding: 16px 0;
+  margin-bottom: 24px;
+  max-width: 100%;
+  min-width: 0;
+}
+.guidance {
+  color: var(--muted);
+}
+.context h1 {
+  scroll-margin-top: 80px;
+  font-family: var(--font-utility, sans-serif);
+  font-size: 24px;
+  line-height: 1.3;
+  overflow-wrap: anywhere;
+  margin: 4px 0 12px;
+}
+.context h1:focus {
+  outline: none;
+}
+.context p {
+  font-size: 14px;
+  line-height: 1.5;
+}
+.context dl {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  margin: 12px 0;
+}
+.context dl > div,
+.context dt,
+.context dd,
+.nextAction > div,
+.nextAction h2,
+.nextAction p {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+.context dt {
+  font-size: 14px;
+}
+.context dd {
+  font-size: 16px;
+  margin: 4px 0 0;
+  font-variant-numeric: tabular-nums;
+}
+.context nav {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 8px;
+  margin-top: 12px;
+}
+.context a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 8px;
+  border-bottom: 2px solid var(--grid);
+  font-size: 16px;
+}
+.context a[aria-current] {
+  border-color: var(--action);
+  font-weight: 600;
+}
+.context a:hover {
+  background: var(--surface-raised, #161616);
+}
+.context a:focus-visible {
+  outline: 2px solid var(--action);
+  outline-offset: 2px;
+}
+.root :global(.basket-builder__header) {
+  display: none;
+}
+.root:not([data-basket-view="plan"]) :global(#basket-plan-navigation) {
+  display: none;
+}
+.nextAction {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 24px;
+  margin: 16px 0;
+  padding: 16px;
+  border: 1px solid var(--grid);
+  border-left: 3px solid var(--action);
+  background: var(--surface);
+}
+.nextAction span {
+  display: block;
+  color: var(--action);
+  font-family: var(--font-data, monospace);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.nextAction h2 {
+  margin: 4px 0;
+  font-family: var(--font-utility, sans-serif);
+  font-size: 18px;
+  line-height: 1.25;
+}
+.nextAction p {
+  margin: 0;
+  color: var(--muted);
+}
+.nextAction > a {
+  min-width: 168px;
+  min-height: 44px;
+  border: 0;
+  border-radius: 999px;
+  background: var(--action);
+  color: var(--canvas);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+.nextAction > a:hover {
+  background: var(--action);
+  filter: brightness(1.06);
+}
+.root:not([data-basket-view="plan"]) :global(#basket-strategy),
+.root:not([data-basket-view="plan"]) :global(#basket-outcome),
+.root:not([data-basket-view="plan"]) :global(.basket-context),
+.root:not([data-basket-view="scenarios"]) :global(.scenario-grid),
+.root:not([data-basket-view="scenarios"]) :global(.basket-totals),
+.root:not([data-basket-view="scenarios"]) :global(.scenario-forecast),
+.root:not([data-basket-view="creators"]) :global(.basket-roster),
+.root:not([data-basket-view="approval"]) :global(#basket-plan-review),
+.root:not([data-basket-view="plan"])
+  :global(#basket-timing > :not(#basket-plan-review)) {
+  display: none;
+}
+.root[data-basket-view="creators"] :global(#basket-timing),
+.root[data-basket-view="scenarios"] :global(#basket-timing),
+.root[data-basket-view="creators"] :global(.basket-builder__deck),
+.root[data-basket-view="approval"] :global(.basket-builder__deck) {
+  display: none;
+}
+.root :global(#basket-timing),
+.root :global(#basket-strategy),
+.root :global(#basket-outcome),
+.root :global(#basket-roster),
+.root :global(#basket-plan-review),
+.root :global(.basket-package-module) {
+  scroll-margin-top: 280px !important;
+}
+.root[data-basket-view="scenarios"] :global(.basket-builder__deck) {
+  display: block;
+}
+@media (max-width: 700px) {
+  .context {
+    position: static;
+    padding: 12px 0;
+  }
+  .context nav {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .context dl {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px 16px;
+  }
+  .guidance {
+    overflow-wrap: anywhere;
+  }
+  .nextAction {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 12px;
+  }
+  .nextAction > a {
+    width: 100%;
+  }
+  .root :global(#basket-timing),
+  .root :global(#basket-strategy),
+  .root :global(#basket-outcome),
+  .root :global(#basket-roster),
+  .root :global(#basket-plan-review),
+  .root :global(.basket-package-module) {
+    scroll-margin-top: 80px !important;
+  }
+}

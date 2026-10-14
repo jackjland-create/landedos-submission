@@ -1,0 +1,890 @@
+.main {
+  height: 100dvh;
+  min-height: 0;
+}
+.cockpit {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  height: 100%;
+  min-height: 0;
+  --report-chart-qualified: var(--app-color-chart-qualified);
+  --report-chart-activated: var(--app-color-chart-activated);
+  --report-chart-grid: var(--app-color-grid);
+  --report-chart-surface: var(--app-color-card);
+  --report-funnel-observed: var(--app-color-chart-qualified);
+  --action: var(--app-color-secondary);
+  --intelligence: var(--app-color-info-accent);
+}
+.cockpit :is(h1, h2, h3),
+.drawer :is(h2, h3) {
+  font-family: var(--app-font);
+  text-transform: none;
+  letter-spacing: -0.02em;
+  line-height: 1.3;
+}
+.header,
+.header > div,
+.performanceLine,
+.performanceLine > div,
+.dataCard > header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+.header h1 {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 28px;
+  font-weight: 600;
+}
+.header h1 svg {
+  width: 24px;
+  height: 24px;
+}
+.range {
+  padding: 8px 16px;
+  background: var(--app-color-card);
+  border: 1px solid var(--app-color-line);
+  border-radius: var(--app-radius-pill);
+  color: var(--app-color-ink);
+  font-weight: 500;
+}
+.needs,
+.kpi,
+.dataCard {
+  border: 1px solid var(--app-color-line);
+  border-radius: var(--app-radius-card);
+  background: var(--app-color-card);
+  box-shadow: var(--app-shadow-card);
+}
+.needs {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  padding: 16px 8px;
+}
+.needs > div {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 0 12px;
+  min-width: 0;
+}
+.needs > div + div {
+  border-left: 1px solid var(--app-color-line);
+}
+.needs p {
+  display: grid;
+  min-width: 0;
+  gap: 2px;
+  flex: 1;
+}
+.needs p span {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: var(--app-color-secondary);
+}
+.needs p strong {
+  font-weight: 600;
+}
+.needs :global(.application-button) {
+  padding: 8px 12px;
+  flex-shrink: 0;
+}
+.infoTile {
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  flex-shrink: 0;
+  border-radius: var(--app-radius-control);
+  background: var(--app-color-info);
+  color: var(--app-color-on-pastel);
+}
+.performanceLine h2 {
+  font-size: 18px;
+  font-weight: 600;
+}
+.freshness,
+.muted {
+  color: var(--app-color-secondary);
+}
+.freshness {
+  font-size: 14px;
+}
+.kpis {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+}
+.kpi {
+  min-width: 0;
+  padding: 16px;
+  text-align: left;
+  color: var(--app-color-ink);
+  font: 400 14px/1.5 var(--app-font);
+  cursor: pointer;
+  min-height: 116px;
+}
+.kpi > span {
+  color: var(--app-color-secondary);
+}
+.kpi > div {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 4px;
+}
+.kpi strong {
+  font-size: clamp(24px, 2.4vw, 36px);
+  font-weight: 600;
+  letter-spacing: -0.04em;
+  line-height: 1.4;
+}
+.kpi > div > span {
+  color: var(--app-color-secondary);
+}
+.kpi small {
+  font: 400 14px/1.4 var(--app-font);
+  color: var(--app-color-secondary);
+  display: block;
+  margin-top: 4px;
+}
+.kpi .positive {
+  color: var(--app-color-hero);
+}
+.kpi .negative {
+  color: var(--app-color-bad);
+}
+.selected {
+  outline: 2px solid var(--app-color-ink);
+  outline-offset: 0;
+}
+.dataCard {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-height: 0;
+  padding: 16px;
+  gap: 16px;
+}
+.dataCard > header {
+  align-items: start;
+}
+.tabs {
+  display: flex;
+  flex-shrink: 0;
+  background: var(--app-color-sunk);
+  padding: 4px;
+  border-radius: var(--app-radius-control);
+  gap: 4px;
+}
+.tabs button {
+  border: 0;
+  background: transparent;
+  color: var(--app-color-secondary);
+  padding: 8px 12px;
+  min-height: 44px;
+  font: 500 14px/1.4 var(--app-font);
+  border-radius: var(--app-radius-control);
+  cursor: pointer;
+}
+.tabs button[aria-selected="true"] {
+  background: var(--app-color-card);
+  color: var(--app-color-ink);
+  box-shadow: var(--app-shadow-card);
+}
+.versions {
+  position: relative;
+  flex-shrink: 0;
+}
+.versions > summary {
+  list-style: none;
+  cursor: pointer;
+  padding: 10px 16px;
+  border: 1px solid var(--app-color-line);
+  border-radius: var(--app-radius-pill);
+  font-weight: 500;
+}
+.versions summary::-webkit-details-marker {
+  display: none;
+}
+.versions nav {
+  position: absolute;
+  right: 0;
+  top: calc(100% + 8px);
+  width: 240px;
+  padding: 8px;
+  z-index: 2;
+  border: 1px solid var(--app-color-line);
+  background: var(--app-color-card);
+  border-radius: var(--app-radius-control);
+  box-shadow: var(--app-shadow-card);
+}
+.versions a {
+  display: block;
+  padding: 12px 8px;
+  color: var(--app-color-ink);
+  border-radius: var(--app-radius-control);
+}
+.versions a:hover {
+  background: var(--app-color-sunk);
+}
+.dataBody {
+  flex: 1;
+  min-height: 0;
+  overflow: auto;
+  overscroll-behavior: contain;
+}
+.chartGrid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 280px;
+  min-height: 100%;
+  gap: 20px;
+}
+.chart {
+  min-width: 0;
+}
+.textButton {
+  border: 0;
+  background: none;
+  min-height: 44px;
+  color: var(--app-color-secondary);
+  font: 500 14px/1.4 var(--app-font);
+  cursor: pointer;
+}
+.ranking {
+  display: flex;
+  flex-direction: column;
+  border-left: 1px solid var(--app-color-line);
+  padding-left: 20px;
+  gap: 20px;
+}
+.ranking h3 {
+  font-size: 16px;
+  font-weight: 600;
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+}
+.ranking h3 > span {
+  font: 400 14px/1.4 var(--app-font);
+  color: var(--app-color-secondary);
+}
+.ranking > button {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: transparent;
+  border: 0;
+  color: var(--app-color-ink);
+  text-align: left;
+  font: 400 14px/1.4 var(--app-font);
+  padding: 4px;
+  cursor: pointer;
+}
+.ranking > button > div {
+  display: grid;
+  gap: 4px;
+  flex: 1;
+  min-width: 0;
+}
+.ranking > button > div > strong {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.ranking > button > div > strong.missingName {
+  white-space: normal;
+  overflow-wrap: anywhere;
+}
+.ranking > button > div:last-child {
+  flex: 0 0 auto;
+  text-align: right;
+}
+.ranking > button span {
+  color: var(--app-color-secondary);
+}
+.avatar {
+  display: grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  flex: 0 0 32px;
+  border-radius: var(--app-radius-pill);
+  background: var(--app-color-sunk);
+  font-size: 14px;
+  font-weight: 600;
+}
+.ranking meter {
+  width: 100%;
+  height: 12px;
+}
+.ranking meter::-webkit-meter-bar {
+  background: var(--app-color-sunk);
+  border: 0;
+}
+.ranking meter::-webkit-meter-optimum-value {
+  background: var(--app-color-ink);
+}
+.confidence {
+  margin-top: auto;
+  border-top: 1px solid var(--app-color-line);
+  padding-top: 16px;
+}
+.confidence p {
+  color: var(--app-color-secondary);
+  margin-top: 8px;
+}
+.confidenceBar {
+  flex-shrink: 0;
+  height: 8px;
+  border-radius: var(--app-radius-pill);
+  background: var(--app-color-sunk);
+  overflow: hidden;
+  margin: 12px 0;
+}
+.confidenceBar > span {
+  display: block;
+  height: 100%;
+  background: var(--app-color-ink);
+  border-radius: inherit;
+}
+.dataBody table {
+  color: var(--app-color-ink);
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: 14px;
+}
+.dataBody :is(th, td) {
+  color: var(--app-color-ink);
+  border-bottom: 1px solid var(--app-color-line);
+  padding: 12px;
+}
+.dataBody caption {
+  text-align: left;
+  padding: 8px 0;
+  color: var(--app-color-secondary);
+}
+.dataBody p {
+  color: var(--app-color-secondary);
+  margin-top: 16px;
+}
+.creatorCards {
+  display: none;
+}
+.dataBody .coverage {
+  margin: 0 0 8px;
+  color: var(--app-color-ink);
+}
+.economicTiles {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+  margin-bottom: 24px;
+}
+.economicTiles > div {
+  display: grid;
+  padding: 16px;
+  gap: 8px;
+  background: var(--app-color-sunk);
+  border-radius: var(--app-radius-control);
+}
+.economicTiles strong {
+  font-size: 24px;
+  font-weight: 600;
+}
+.economicTiles span {
+  color: var(--app-color-secondary);
+}
+.cockpit :global(.report-snapshot-chart__empty) {
+  border: 1px solid var(--app-color-line);
+  border-radius: var(--app-radius-control);
+  background: var(--app-color-sunk);
+}
+.cockpit :global(.report-snapshot-chart__empty strong) {
+  font-family: var(--app-font);
+}
+.cockpit :global(.report-snapshot-chart) {
+  color: var(--app-color-ink);
+  --report-chart-crosshair: var(--app-color-secondary);
+  --chart-tooltip-background: var(--app-color-card);
+  --chart-tooltip-foreground: var(--app-color-ink);
+  --chart-tooltip-muted: var(--app-color-secondary);
+  --report-chart-qualified: var(--app-color-chart-qualified);
+  --report-chart-activated: var(--app-color-chart-activated);
+  --report-chart-grid: var(--app-color-grid);
+  --report-chart-surface: var(--app-color-card);
+  --text: var(--app-color-ink);
+  --muted: var(--app-color-secondary);
+  background: transparent;
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+.cockpit :global(.report-snapshot-chart__caption) {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: space-between;
+  font-size: 14px;
+}
+.cockpit :global(.report-snapshot-chart__caption > div:first-child) {
+  display: none;
+}
+.cockpit :global(.report-snapshot-chart__legend) {
+  display: flex;
+  gap: 16px;
+  color: var(--app-color-secondary);
+}
+.cockpit :global(.report-snapshot-chart__legend span::before) {
+  content: "";
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  margin-right: 8px;
+  border-radius: 4px;
+  background: var(--app-color-chart-qualified);
+}
+.cockpit :global(.report-snapshot-chart__legend .is-activated::before) {
+  height: 3px;
+  background: var(--app-color-chart-activated);
+}
+.cockpit :global(.report-snapshot-chart__summary) {
+  font: 400 14px/1.5 var(--app-font);
+  letter-spacing: 0;
+  text-transform: none;
+  margin: 8px 0;
+  font-size: 14px;
+  color: var(--app-color-secondary);
+}
+.cockpit :global(.report-snapshot-chart__references) {
+  display: none;
+}
+.cockpit :global(.report-snapshot-chart__details) {
+  color: var(--app-color-secondary);
+}
+.cockpit :global(.report-snapshot-chart__legend) {
+  font: 400 14px/1.5 var(--app-font);
+  letter-spacing: 0;
+  text-transform: none;
+}
+.cockpit :global(.report-snapshot-chart__visual) {
+  height: auto;
+  min-height: 0;
+}
+.cockpit :global(.report-snapshot-chart__visual > div) {
+  height: 250px !important;
+  aspect-ratio: auto !important;
+}
+.cockpit :global(.report-snapshot-chart__legend),
+.cockpit :global(.report-snapshot-chart__summary) {
+  font-size: 14px;
+}
+@media (min-width: 1280px) and (min-height: 700px) {
+  .cockpit :global(.report-snapshot-chart__summary) {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+  }
+  .chartGrid {
+    min-height: 0;
+    height: 100%;
+    grid-template-rows: minmax(0, 1fr);
+  }
+  .chart {
+    overflow: auto;
+  }
+  .ranking {
+    gap: 16px;
+  }
+  .confidence p {
+    font-size: 14px;
+  }
+  .confidence p:last-child {
+    margin-top: 4px;
+  }
+  .needs > div {
+    flex-wrap: nowrap;
+  }
+  .needs p {
+    flex: 1;
+  }
+}
+.cockpit :global(.report-funnel-chart) {
+  --report-funnel-observed: var(--app-color-chart-qualified);
+  --text: var(--app-color-ink);
+  --muted: var(--app-color-secondary);
+  --grid: var(--app-color-line);
+}
+.cockpit :global(.report-snapshot-chart__points),
+.cockpit :global(.report-snapshot-chart__references) {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  list-style: none;
+  padding: 8px 0;
+  font-size: 14px;
+}
+.cockpit :global(.report-snapshot-chart__references) {
+  display: none;
+}
+.cockpit :global(.report-snapshot-chart__points li span),
+.cockpit :global(.report-snapshot-chart__references li span) {
+  display: grid;
+  color: var(--app-color-secondary);
+}
+.cockpit :global(.report-snapshot-chart__details summary) {
+  min-height: 44px;
+  cursor: pointer;
+}
+.cockpit :global(.report-funnel-chart__visual) {
+  height: 180px;
+}
+.cockpit :global(.report-funnel-chart__mobile-visual) {
+  display: none;
+}
+.cockpit :global(.report-funnel-chart__retention) {
+  display: flex;
+  gap: 16px;
+  padding: 16px;
+  background: var(--app-color-sunk);
+  margin-top: 16px;
+}
+.drawer {
+  composes: theme from "./application-ui.module.css";
+  position: fixed;
+  inset: 16px 16px 16px auto;
+  margin: 0;
+  width: var(--app-layout-drawer);
+  max-width: calc(100vw - 32px);
+  height: calc(100dvh - 32px);
+  max-height: none;
+  border: 1px solid var(--app-color-line);
+  border-radius: var(--app-radius-drawer);
+  background: var(--app-color-card);
+  color: var(--app-color-ink);
+  padding: 0;
+  box-shadow: var(--app-shadow-card);
+}
+.drawer[open] {
+  display: flex;
+  flex-direction: column;
+}
+.drawer::backdrop {
+  background: transparent;
+}
+.drawer header {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  padding: 24px 24px 0;
+  gap: 16px;
+}
+.drawer h2 {
+  font-size: 20px;
+  font-weight: 600;
+}
+.drawer header button {
+  width: 44px;
+  height: 44px;
+  flex-shrink: 0;
+  border: 0;
+  border-radius: var(--app-radius-pill);
+  background: var(--app-color-sunk);
+  color: var(--app-color-ink);
+  font-size: 24px;
+  cursor: pointer;
+}
+.drawerBody {
+  flex: 1;
+  overflow: auto;
+  overscroll-behavior: contain;
+  padding: 0 24px 24px;
+  display: block;
+}
+.drawerBody > * {
+  margin-bottom: 16px;
+}
+.drawer footer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding: 16px 24px;
+  border-top: 1px solid var(--app-color-line);
+}
+.exact {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.exact strong {
+  font-size: 40px;
+  font-weight: 600;
+  letter-spacing: -0.04em;
+}
+.exact span {
+  color: var(--app-color-secondary);
+}
+.rule {
+  padding: 8px 12px;
+  border-radius: var(--app-radius-control);
+  background: var(--app-color-sunk);
+}
+.pathGroup {
+  display: grid;
+  gap: 12px;
+}
+.pathGroup h3,
+.trust h3 {
+  font-size: 16px;
+  font-weight: 600;
+}
+.pathGroup > div > p {
+  color: var(--app-color-secondary);
+  margin-bottom: 4px;
+}
+.pathGroup .path + .path {
+  margin-top: 8px;
+}
+.path {
+  padding: 8px 12px;
+  border-radius: var(--app-radius-control);
+  background: var(--app-color-sunk);
+}
+.path summary {
+  cursor: pointer;
+  min-height: 44px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+.path p {
+  margin: 8px 0;
+}
+.path :global(.application-status) {
+  padding: 0;
+  background: transparent;
+  text-transform: capitalize;
+}
+.path a {
+  color: var(--app-color-ink);
+  text-decoration: underline;
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+}
+.path dl {
+  display: grid;
+  gap: 8px;
+}
+.identity {
+  overflow-wrap: anywhere;
+}
+.trust {
+  border-top: 1px solid var(--app-color-line);
+  padding-top: 16px;
+  color: var(--app-color-secondary);
+  display: grid;
+  gap: 12px;
+}
+.cockpit :is(button, a, summary):focus-visible,
+.drawer :is(button, a, summary):focus-visible {
+  outline: 2px solid var(--app-color-focus);
+  outline-offset: 2px;
+}
+@media (max-width: 1399px) {
+  .ranking > button > div:last-child > span {
+    display: none;
+  }
+  .ranking {
+    gap: 8px;
+  }
+  .ranking > button {
+    gap: 8px;
+    min-height: 44px;
+    padding: 0;
+  }
+  .confidence {
+    padding-top: 8px;
+    margin-top: 0;
+  }
+  .confidence p {
+    margin-top: 4px;
+  }
+  .confidenceBar {
+    margin: 8px 0 0;
+    display: none;
+  }
+  .ranking h3 > span {
+    display: none;
+  }
+  .cockpit :global(.report-snapshot-chart__visual > div) {
+    height: 170px !important;
+  }
+  .needs > div {
+    flex-wrap: nowrap;
+    gap: 8px;
+  }
+  .needs .infoTile {
+    display: none;
+  }
+  .needs p {
+    flex: 1;
+  }
+  .chartGrid {
+    grid-template-columns: minmax(0, 1fr) 240px;
+  }
+  .performanceLine > div {
+    gap: 8px;
+  }
+  .freshness {
+    max-width: 220px;
+  }
+}
+@media (max-width: 1279px), (max-height: 699px) {
+  .main {
+    height: auto;
+    min-height: 100dvh;
+  }
+  .cockpit {
+    height: auto;
+  }
+  .chartGrid {
+    grid-template-columns: 1fr;
+  }
+  .ranking {
+    border: 0;
+    padding: 0;
+  }
+  .dataCard > header,
+  .performanceLine {
+    flex-wrap: wrap;
+  }
+  .needs {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  .needs > div {
+    flex-wrap: nowrap;
+  }
+  .needs > div + div {
+    border: 0;
+  }
+  .needs p {
+    flex: 1;
+  }
+}
+@media (max-width: 760px) {
+  .main {
+    padding-top: 76px !important;
+  }
+  .header {
+    align-items: start;
+    flex-wrap: wrap;
+  }
+  .header h1 {
+    font-size: 24px;
+  }
+  .header > div {
+    flex-wrap: wrap;
+  }
+  .header .range {
+    display: none;
+  }
+  .kpis,
+  .economicTiles {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+  }
+  .kpi {
+    padding: 12px;
+  }
+  .performanceLine > div {
+    flex-wrap: wrap;
+  }
+  .performanceLine .range {
+    border: 0;
+    padding: 0;
+    background: none;
+  }
+  .freshness {
+    max-width: none;
+  }
+  .tabs {
+    overflow-x: auto;
+    max-width: 100%;
+    flex-shrink: 1;
+  }
+  .tabs button {
+    white-space: nowrap;
+  }
+  .dataCard {
+    padding: 12px;
+  }
+  .dataBody table {
+    min-width: 480px;
+  }
+  .dataBody .creatorTable {
+    display: none;
+  }
+  .creatorCards {
+    display: grid;
+    gap: 16px;
+  }
+  .creatorCards > section {
+    display: grid;
+    gap: 12px;
+    padding: 16px;
+    background: var(--app-color-sunk);
+    border-radius: var(--app-radius-control);
+  }
+  .creatorCards dl,
+  .creatorCards dl > div {
+    display: grid;
+    gap: 8px;
+  }
+  .creatorCards dl > div {
+    grid-template-columns: 1fr auto;
+  }
+  .creatorCards dt {
+    color: var(--app-color-secondary);
+  }
+  .needs > div {
+    flex-wrap: wrap;
+  }
+  .needs p {
+    flex: 1 1 100%;
+  }
+  .drawer {
+    inset: 0;
+    width: 100%;
+    max-width: 100%;
+    height: 100dvh;
+    border-radius: 0;
+  }
+  .drawer header,
+  .drawerBody,
+  .drawer footer {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}
+
+/* FND-06: map the existing funnel to the approved light/dark application tokens. */
+.cockpit :global(.report-funnel-chart) { --canvas: var(--app-color-card); margin-top: 0; }
+.cockpit :global(.report-funnel-chart__visual > .bklit-funnel-chart) { height: 100%; min-height: 0; aspect-ratio: auto; }
+.cockpit :global(.report-funnel-chart .chart-legend) { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+@media (max-width: 640px) { .cockpit :global(.report-funnel-chart .chart-legend) { grid-template-columns: 1fr; } }

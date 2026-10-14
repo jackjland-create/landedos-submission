@@ -1,0 +1,89 @@
+{
+  "afterReceipt": {
+    "readAt": "2026-09-13T17:42:45.927198Z",
+    "reason": "Retain this precise human reason",
+    "preview": {
+      "review": {
+        "kind": "exact_campaign_execution",
+        "projectId": "20990000-0000-4000-8000-000000000001",
+        "campaignId": "1068a985-4f04-47de-b500-49a12509a9dd",
+        "candidates": [
+          {
+            "conversionFactId": "90990000-0000-4000-8000-000000000201",
+            "attributionFactId": "90990000-0000-4000-8000-000000000202",
+            "calculationRequestId": "90990000-0000-4000-8000-000000000200",
+            "canonicalChainEventId": "90990000-0000-4000-8000-000000000030",
+            "protectedWalletMappingId": "90990000-0000-4000-8000-000000000011"
+          }
+        ],
+        "workspaceId": "10990000-0000-4000-8000-000000000001",
+        "environments": ["demo"],
+        "ruleVersionId": "61990000-0000-4000-8000-000000000001",
+        "schemaVersion": 1,
+        "measurementWindow": {
+          "endedAt": "2026-10-05T00:00:00.000000Z",
+          "startedAt": "2026-09-07T00:00:00.000000Z"
+        },
+        "commercialPlanVersionId": "46a2b360-66e2-4715-b585-f3b22e9c55f0",
+        "commercialPlanSnapshotHash": "9f221cb3ddfecd3e4328eaa69b6506ae02e2150979a687d6bb5feeb47eef00e4"
+      },
+      "reviewHash": "56564b83fafff459fe185faf495223609f4d80a58d30feebecc23f4e28b7aac5"
+    },
+    "receipt": {
+      "batch": {
+        "results": [
+          {
+            "inserted": true,
+            "conversionFactId": "90990000-0000-4000-8000-000000000201",
+            "attributionFactId": "90990000-0000-4000-8000-000000000202",
+            "calculationRequestId": "90990000-0000-4000-8000-000000000200"
+          }
+        ],
+        "campaignId": "1068a985-4f04-47de-b500-49a12509a9dd",
+        "insertedCount": 1,
+        "ruleVersionId": "61990000-0000-4000-8000-000000000001",
+        "processedCount": 1
+      },
+      "approvalId": "90990000-0000-4000-8000-000000000300",
+      "reviewHash": "56564b83fafff459fe185faf495223609f4d80a58d30feebecc23f4e28b7aac5",
+      "completeness": "not_established",
+      "reportIssuance": "blocked"
+    },
+    "approvalId": "90990000-0000-4000-8000-000000000300",
+    "approvedAt": "2026-09-13T17:42:45.869892Z"
+  },
+  "beforeReceipt": {
+    "readAt": "2026-09-13T17:42:45.872336Z",
+    "reason": "Retain this precise human reason",
+    "preview": {
+      "review": {
+        "kind": "exact_campaign_execution",
+        "projectId": "20990000-0000-4000-8000-000000000001",
+        "campaignId": "1068a985-4f04-47de-b500-49a12509a9dd",
+        "candidates": [
+          {
+            "conversionFactId": "90990000-0000-4000-8000-000000000201",
+            "attributionFactId": "90990000-0000-4000-8000-000000000202",
+            "calculationRequestId": "90990000-0000-4000-8000-000000000200",
+            "canonicalChainEventId": "90990000-0000-4000-8000-000000000030",
+            "protectedWalletMappingId": "90990000-0000-4000-8000-000000000011"
+          }
+        ],
+        "workspaceId": "10990000-0000-4000-8000-000000000001",
+        "environments": ["demo"],
+        "ruleVersionId": "61990000-0000-4000-8000-000000000001",
+        "schemaVersion": 1,
+        "measurementWindow": {
+          "endedAt": "2026-10-05T00:00:00.000000Z",
+          "startedAt": "2026-09-07T00:00:00.000000Z"
+        },
+        "commercialPlanVersionId": "46a2b360-66e2-4715-b585-f3b22e9c55f0",
+        "commercialPlanSnapshotHash": "9f221cb3ddfecd3e4328eaa69b6506ae02e2150979a687d6bb5feeb47eef00e4"
+      },
+      "reviewHash": "56564b83fafff459fe185faf495223609f4d80a58d30feebecc23f4e28b7aac5"
+    },
+    "receipt": null,
+    "approvalId": "90990000-0000-4000-8000-000000000300",
+    "approvedAt": "2026-09-13T17:42:45.869892Z"
+  }
+}

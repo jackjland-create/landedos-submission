@@ -1,0 +1,227 @@
+.root {
+  display: grid;
+  gap: 16px;
+  padding: 16px;
+  background: var(--surface);
+  color: var(--text);
+  border: 1px solid var(--grid);
+  border-radius: 12px;
+}
+.header,
+.asset,
+.actions {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+}
+.header p,
+.asset p,
+.evidence p {
+  margin-top: 4px;
+  color: var(--muted);
+}
+.header h2,
+.root h3 {
+  text-wrap: balance;
+}
+.status {
+  flex: none;
+  padding: 5px 9px;
+  border: 1px solid var(--grid);
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 650;
+  text-transform: uppercase;
+}
+.ready {
+  color: var(--verified);
+}
+.steps {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin: 0;
+  border-block: 1px solid var(--grid);
+}
+.steps > div {
+  padding: 12px;
+}
+.steps dt {
+  color: var(--muted);
+  font-size: 12px;
+}
+.steps dd {
+  margin: 4px 0 0;
+  font-weight: 650;
+  overflow-wrap: anywhere;
+  font-variant-numeric: tabular-nums;
+}
+.blockers {
+  margin: 0;
+  padding: 12px 12px 12px 32px;
+  color: var(--text);
+  background: color-mix(in srgb, var(--action) 14%, var(--surface-raised));
+  border-left: 3px solid var(--action);
+}
+.assets {
+  display: grid;
+  gap: 0;
+}
+.asset {
+  padding: 12px 0;
+  border-top: 1px solid var(--grid);
+  flex-wrap: wrap;
+}
+.assetActions {
+  display: flex;
+  flex: none;
+  gap: 8px;
+}
+.manualLink {
+  display: grid;
+  gap: 4px;
+  flex-basis: 100%;
+  min-width: 0;
+  font-size: 14px;
+}
+.manualLink p {
+  margin: 4px 0 0;
+  color: var(--text);
+}
+.manualLink input {
+  width: 100%;
+  min-height: 44px;
+  padding: 10px 12px;
+  border: 1px solid var(--grid);
+  border-radius: 8px;
+  background: var(--surface-raised);
+  color: var(--text);
+  font: inherit;
+}
+@media (max-width: 700px) {
+  .manualLink input {
+    font-size: 16px;
+  }
+}
+.asset button,
+.actions button,
+.retry {
+  min-height: 44px;
+  padding: 10px 14px;
+  border: 1px solid var(--action);
+  border-radius: 8px;
+  background: var(--action);
+  color: var(--canvas);
+  font: inherit;
+  font-weight: 650;
+  cursor: pointer;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
+.root .assetActions button {
+  border-color: var(--action);
+  background: var(--action);
+  color: var(--canvas);
+}
+.asset button:not(:disabled):hover,
+.actions button:not(:disabled):hover,
+.retry:not(:disabled):hover {
+  border-color: var(--text);
+  filter: brightness(1.12);
+}
+.root .assetActions button:not(:disabled):hover {
+  border-color: var(--text);
+  background: var(--action);
+  color: var(--canvas);
+}
+.asset button:not(:disabled):active,
+.actions button:not(:disabled):active,
+.retry:not(:disabled):active {
+  transform: translateY(1px);
+}
+.asset button:disabled,
+.actions button:disabled,
+.retry:disabled {
+  cursor: not-allowed;
+  opacity: 0.56;
+}
+.retry {
+  border-color: var(--grid);
+  background: var(--surface-raised);
+  color: var(--text);
+}
+.activation {
+  display: grid;
+  gap: 10px;
+  padding-top: 4px;
+}
+.activation textarea {
+  width: 100%;
+  min-height: 80px;
+  resize: vertical;
+  padding: 10px 12px;
+  border: 1px solid var(--grid);
+  border-radius: 8px;
+  background: var(--surface-raised);
+  color: var(--text);
+  font: inherit;
+}
+.acknowledgement {
+  display: grid;
+  grid-template-columns: 20px 1fr;
+  gap: 10px;
+  align-items: start;
+}
+.acknowledgement input {
+  width: 18px;
+  height: 18px;
+  accent-color: var(--action);
+}
+.message {
+  min-height: 24px;
+}
+.evidence {
+  border-top: 1px solid var(--grid);
+}
+.evidence summary {
+  cursor: pointer;
+  min-height: 44px;
+  padding-block: 10px;
+}
+.evidence code {
+  overflow-wrap: anywhere;
+}
+.root :is(button, textarea, input):focus-visible,
+.evidence summary:focus-visible {
+  outline: 2px solid var(--intelligence);
+  outline-offset: 3px;
+}
+@media (max-width: 700px) {
+  .header,
+  .asset,
+  .actions {
+    align-items: stretch;
+    flex-direction: column;
+  }
+  .steps {
+    grid-template-columns: 1fr;
+  }
+  .steps > div + div {
+    border-top: 1px solid var(--grid);
+  }
+  .asset button,
+  .actions button,
+  .retry {
+    width: 100%;
+  }
+  .assetActions {
+    width: 100%;
+  }
+  .asset {
+    flex-wrap: nowrap;
+  }
+  .manualLink {
+    flex-basis: auto;
+    width: 100%;
+  }
+}

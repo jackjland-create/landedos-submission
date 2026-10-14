@@ -1,0 +1,1669 @@
+/* BSK-08 / BSK-09 / UI-03: campaign plan page and step drawers on the
+   canonical application tokens (journey boards 02a–04e). Scoped to the plan;
+   the legacy editors it hosts are mapped onto the same tokens here. */
+
+.root {
+  composes: kit from "./application-ui.module.css";
+  /* Legacy interiors hosted in drawers read these variables. */
+  --canvas: var(--app-color-canvas);
+  --surface: var(--app-color-card);
+  --surface-raised: var(--app-color-sunk);
+  --grid: var(--app-color-line);
+  --muted: var(--app-color-secondary);
+  --text: var(--app-color-ink);
+  --action: var(--app-color-hero);
+  --verified: var(--app-color-hero);
+  --intelligence: var(--app-color-info-accent);
+  --danger: var(--app-color-bad);
+  --font-display: var(--app-font);
+  --font-utility: var(--app-font);
+  --font-data: var(--app-font);
+  --plan-scrim: color-mix(in srgb, var(--app-color-ink) 32%, transparent);
+  --plan-shadow: color-mix(in srgb, var(--app-color-ink) 14%, transparent);
+  position: relative;
+  min-width: 0;
+  padding: 0 0 32px;
+  background: var(--app-color-canvas);
+  color: var(--app-color-ink);
+  font: 400 14px/1.5 var(--app-font);
+  font-variant-numeric: tabular-nums;
+  color-scheme: light;
+}
+.root[data-theme="dark"] {
+  color-scheme: dark;
+  /* Ink is near-white in dark mode, so overlays use their own dark tint. */
+  --plan-scrim: rgb(0 0 0 / 55%);
+  --plan-shadow: rgb(0 0 0 / 40%);
+}
+/* An open drawer is a modal: lift the plan above the sticky mobile shell bar
+   (the shell gives each content child its own layer at z-index 1). */
+.root:not([data-plan-panel="none"]) {
+  z-index: 60;
+}
+.root :where(h1, h2, h3, h4, p, dl, dd, ul, ol, figure) {
+  margin: 0;
+}
+.root :is(a, button, summary, input, select, textarea):focus-visible {
+  outline: 2px solid var(--app-color-focus);
+  outline-offset: 2px;
+}
+
+.page {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 16px;
+  min-width: 0;
+}
+
+.visuallyHidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ---- page top ---------------------------------------------------------- */
+.top {
+  display: grid;
+  /* Neither a long approval note nor a translated action can consume the
+     title's track. Compact layouts stack before the sidebar crowds them. */
+  grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
+  gap: 24px;
+  align-items: start;
+}
+.topText {
+  display: grid;
+  gap: 4px;
+  max-width: 640px;
+  min-width: 0;
+}
+.backLink {
+  justify-self: start;
+  color: var(--app-color-secondary);
+  font-size: 14px;
+  text-decoration: none;
+}
+.backLink:hover {
+  color: var(--app-color-ink);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.kind {
+  margin-top: 8px;
+  color: color-mix(in srgb, var(--app-color-hero) 82%, var(--app-color-ink));
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+}
+.title {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 4px 12px;
+  font: 600 26px/1.2 var(--app-font);
+  letter-spacing: -0.02em;
+  overflow-wrap: anywhere;
+}
+.title:focus {
+  outline: none;
+}
+.status {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--app-color-secondary);
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0;
+}
+.statusDot {
+  flex-shrink: 0;
+  width: 9px;
+  height: 9px;
+  border: 1.5px solid currentColor;
+  border-radius: var(--app-radius-pill);
+}
+.statusApproved {
+  color: color-mix(in srgb, var(--app-color-hero) 82%, var(--app-color-ink));
+  font-weight: 600;
+}
+.statusApproved .statusDot {
+  background: currentColor;
+}
+.statusHistorical {
+  color: var(--app-color-ink);
+}
+.statusHistorical .statusDot {
+  border-color: var(--app-color-warn-edge);
+  background: var(--app-color-warn);
+}
+.purpose {
+  margin-top: 4px;
+  font-size: 14px;
+  line-height: 1.55;
+}
+.topAction {
+  display: grid;
+  justify-items: end;
+  justify-self: end;
+  gap: 8px;
+  padding-top: 22px;
+  min-width: 0;
+  width: 100%;
+  max-width: 640px;
+}
+.topAction .buttonHero {
+  max-width: 100%;
+  white-space: normal;
+}
+.heroNote {
+  display: block;
+  min-width: 0;
+  max-width: 100%;
+  overflow-wrap: anywhere;
+}
+.heroNoteText {
+  display: block;
+  color: var(--app-color-secondary);
+  font-size: 14px;
+  text-align: right;
+}
+.stepsLeft {
+  display: inline-flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 2px 6px;
+  padding: 4px 14px;
+  border-radius: 18px;
+  background: var(--app-color-warn);
+  color: var(--app-color-on-pastel);
+  font-size: 14px;
+}
+.linkButton {
+  min-height: 32px;
+  padding: 0 4px;
+  border: 0;
+  background: none;
+  color: inherit;
+  font: 600 14px/1.3 var(--app-font);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  white-space: nowrap;
+  cursor: pointer;
+}
+.stepsSep {
+  color: var(--app-color-on-pastel);
+}
+
+/* ---- buttons ----------------------------------------------------------- */
+/* Same spec as the kit's .application-button (application-ui.module.css). */
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 44px;
+  padding: 10px 18px;
+  border: 1px solid var(--app-color-secondary);
+  border-radius: var(--app-radius-pill);
+  background: var(--app-color-card);
+  color: var(--app-color-ink);
+  font: 600 14px/1.4 var(--app-font);
+  text-decoration: none;
+  white-space: nowrap;
+  cursor: pointer;
+  touch-action: manipulation;
+}
+.button:not(:disabled):hover {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.button:disabled {
+  background: var(--app-color-sunk);
+  border-color: var(--app-color-line);
+  color: var(--app-color-secondary);
+  cursor: not-allowed;
+}
+.buttonHero {
+  border-color: var(--app-color-hero);
+  background: var(--app-color-hero);
+  color: var(--app-color-hero-ink);
+}
+.buttonHero:not(:disabled):hover {
+  border-color: var(--app-color-hero);
+}
+.buttonAttention {
+  border-color: var(--app-color-warn-edge);
+  background: var(--app-color-warn);
+  color: var(--app-color-on-pastel);
+}
+.buttonCurrent {
+  border-color: var(--app-color-ink);
+}
+.buttonQuiet {
+  justify-self: start;
+}
+
+/* ---- scenario row ------------------------------------------------------ */
+.scenarioRow {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px 12px;
+}
+.scenarioLabel {
+  font-size: 14px;
+  font-weight: 600;
+}
+.segmented {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 2px;
+  padding: 3px;
+  border: 1px solid var(--app-color-line);
+  border-radius: var(--app-radius-pill);
+  background: var(--app-color-sunk);
+}
+.segment {
+  min-height: 36px;
+  padding: 0 14px;
+  border: 0;
+  border-radius: var(--app-radius-pill);
+  background: transparent;
+  color: var(--app-color-secondary);
+  font: 500 14px/1.2 var(--app-font);
+  white-space: nowrap;
+  cursor: pointer;
+}
+.segment[aria-pressed="true"] {
+  background: var(--app-color-card);
+  color: var(--app-color-ink);
+  font-weight: 600;
+  box-shadow: var(--app-shadow-card);
+}
+
+/* ---- grid and cards ---------------------------------------------------- */
+.grid {
+  display: grid;
+  grid-template-columns: 340px minmax(0, 1fr);
+  gap: 16px;
+  align-items: start;
+}
+.mainColumn {
+  display: grid;
+  gap: 16px;
+  min-width: 0;
+}
+.card {
+  min-width: 0;
+  border: 1px solid var(--app-color-line);
+  border-radius: var(--app-radius-card);
+  background: var(--app-color-card);
+  box-shadow: var(--app-shadow-card);
+}
+.card:focus-visible {
+  outline: 2px solid var(--app-color-focus);
+  outline-offset: 2px;
+}
+.cardTitle {
+  font: 600 15px/1.35 var(--app-font);
+}
+.small {
+  color: var(--app-color-secondary);
+  font-size: 14px;
+  line-height: 1.45;
+}
+.muted {
+  color: var(--app-color-secondary);
+  font-size: 14px;
+}
+.statusLine {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.dotDone,
+.dotTodo,
+.dotWarn,
+.dotUnavailable {
+  display: inline-block;
+  flex: 0 0 8px;
+  width: 8px;
+  height: 8px;
+  border-radius: var(--app-radius-pill);
+}
+.dotDone {
+  background: var(--app-color-hero);
+}
+.dotTodo {
+  border: 2px solid var(--app-color-warn-edge);
+  background: var(--app-color-card);
+}
+.dotWarn {
+  background: var(--app-color-warn-edge);
+}
+.dotUnavailable {
+  border: 1.5px dashed var(--app-color-secondary);
+}
+.warnText {
+  color: var(--app-color-ink);
+  font-weight: 600;
+}
+.candidates > .inlineAlert {
+  margin: 0 18px 10px;
+}
+.inlineAlert {
+  margin: 0;
+  padding: 10px 12px;
+  border-radius: 10px;
+  background: var(--app-color-warn);
+  color: var(--app-color-on-pastel);
+  font-size: 14px;
+}
+.inlineSuccess {
+  padding: 10px 12px;
+  border-radius: 10px;
+  background: var(--app-color-go);
+  color: var(--app-color-on-pastel);
+  font-size: 14px;
+}
+
+/* ---- steps card -------------------------------------------------------- */
+.steps {
+  display: grid;
+  gap: 8px;
+  padding: 18px 20px;
+}
+.stepsHead {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+}
+.stepList {
+  display: grid;
+  padding: 0;
+  list-style: none;
+}
+.step {
+  display: grid;
+  grid-template-columns: 24px minmax(0, 1fr) auto;
+  gap: 10px;
+  align-items: start;
+  padding: 12px 0;
+  border-top: 1px solid var(--app-color-line);
+}
+.stepNumber,
+.stepNumberNext {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  border-radius: var(--app-radius-pill);
+  font-size: 12px;
+  font-weight: 700;
+}
+.stepNumberDone {
+  background: var(--app-color-hero);
+  color: var(--app-color-hero-ink);
+}
+.stepNumberTodo {
+  border: 2px solid var(--app-color-warn-edge);
+  background: var(--app-color-warn);
+  color: var(--app-color-on-pastel);
+}
+.stepNumberQuiet {
+  border: 1.5px dashed var(--app-color-secondary);
+  color: var(--app-color-secondary);
+}
+.stepNumberNext {
+  border: 1.5px dashed var(--app-color-secondary);
+  color: var(--app-color-secondary);
+}
+.stepBody {
+  display: grid;
+  gap: 2px;
+  min-width: 0;
+}
+.stepTitle {
+  font: 600 14px/1.35 var(--app-font);
+}
+.stepSummary {
+  color: var(--app-color-secondary);
+  font-size: 14px;
+  line-height: 1.45;
+  overflow-wrap: anywhere;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+  overflow: hidden;
+}
+.stepCurrent {
+  margin: -6px -10px;
+  padding: 6px 10px;
+  border-radius: 12px;
+  background: var(--app-color-warn);
+}
+.stepDetail {
+  color: var(--app-color-secondary);
+  font-size: 14px;
+}
+.okWord {
+  color: var(--app-color-hero);
+  font-weight: 600;
+}
+.todoWord {
+  color: var(--app-color-ink);
+  font-weight: 600;
+}
+.quietWord {
+  color: var(--app-color-ink);
+  font-weight: 600;
+}
+.steps .button {
+  min-height: 34px;
+  padding: 0 13px;
+  font-size: 14px;
+}
+.stepsFooter {
+  display: grid;
+  grid-template-columns: 24px minmax(0, 1fr);
+  gap: 10px;
+  align-items: center;
+  padding-top: 12px;
+  border-top: 1px solid var(--app-color-line);
+}
+
+/* ---- forecast strip ---------------------------------------------------- */
+.forecast {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+.tile {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 0;
+  padding: 16px 18px;
+}
+.tile + .tile {
+  border-left: 1px solid var(--app-color-line);
+}
+.tileLabel {
+  color: var(--app-color-secondary);
+  font: 500 14px/1.3 var(--app-font);
+}
+.figureRow {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 4px 10px;
+}
+.figure {
+  font: 600 30px/1.1 var(--app-font);
+  letter-spacing: -0.03em;
+}
+.figureEmpty {
+  color: var(--app-color-secondary);
+  font-size: 18px;
+  letter-spacing: 0;
+}
+.pushDown {
+  margin-top: auto;
+  padding-top: 4px;
+}
+.band {
+  position: relative;
+  height: 14px;
+}
+.bandTrack {
+  position: absolute;
+  inset: 5px 0;
+  border-radius: 2px;
+  background: var(--app-color-sunk);
+}
+.bandRange {
+  position: absolute;
+  top: 2px;
+  height: 10px;
+  border-radius: 5px;
+  background: var(--app-color-info);
+  box-shadow: inset 0 0 0 1px var(--app-color-info-accent);
+}
+.bandMarker {
+  position: absolute;
+  top: 0;
+  width: 3px;
+  height: 14px;
+  margin-left: -1px;
+  border-radius: 2px;
+  background: var(--app-color-ink);
+}
+.bandTarget {
+  position: absolute;
+  top: -2px;
+  width: 2px;
+  height: 18px;
+  border-left: 2px dashed var(--app-color-secondary);
+}
+
+/* ---- candidates -------------------------------------------------------- */
+.candidates {
+  overflow: hidden;
+}
+.candidatesHead {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 14px 18px 10px;
+}
+.candidatesHead > div {
+  flex: 1 1 320px;
+  min-width: 0;
+}
+.candidatesHead > a {
+  flex: none;
+}
+.tableScroll {
+  overflow-x: auto;
+}
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+.table th {
+  padding: 6px 12px;
+  color: var(--app-color-secondary);
+  font-size: 11.5px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-align: left;
+  text-transform: uppercase;
+}
+.table td,
+.table tbody th {
+  padding: 10px 12px;
+  border-top: 1px solid var(--app-color-line);
+  vertical-align: middle;
+}
+.table tbody th {
+  color: var(--app-color-ink);
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0;
+  text-transform: none;
+}
+.table :is(th, td):first-child {
+  padding-left: 18px;
+}
+.table :is(th, td):last-child {
+  padding-right: 18px;
+}
+.numeric {
+  text-align: right !important;
+}
+.rowAttention {
+  background: color-mix(in srgb, var(--app-color-warn) 35%, transparent);
+}
+.checkbox {
+  width: 22px;
+  height: 22px;
+  accent-color: var(--app-color-hero);
+  cursor: pointer;
+}
+.creator {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 0;
+}
+.avatar {
+  display: inline-flex;
+  flex: 0 0 32px;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: var(--app-radius-pill);
+  background: var(--app-color-sunk);
+  color: var(--app-color-secondary);
+  font-size: 11px;
+  font-weight: 700;
+}
+.creatorText {
+  display: grid;
+  min-width: 0;
+}
+.terms {
+  display: block;
+  font-weight: 600;
+  white-space: nowrap;
+}
+.termsDetail {
+  display: block;
+}
+.actionCell {
+  text-align: right;
+}
+.actionCell .button {
+  min-height: 34px;
+  padding: 0 13px;
+  font-size: 14px;
+}
+.pillAttention,
+.pillDone,
+.pillUnavailable {
+  display: inline-flex;
+  align-items: center;
+  min-height: 22px;
+  padding: 0 9px;
+  border-radius: var(--app-radius-pill);
+  font-size: 12px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+.pillAttention {
+  background: var(--app-color-warn);
+  color: var(--app-color-on-pastel);
+}
+.pillDone {
+  background: var(--app-color-go);
+  color: var(--app-color-on-pastel);
+}
+.pillUnavailable {
+  border: 1.5px dashed var(--app-color-secondary);
+  color: var(--app-color-secondary);
+}
+.emptyState {
+  display: grid;
+  gap: 4px;
+  padding: 16px 18px;
+  border-top: 1px solid var(--app-color-line);
+}
+.cardFoot {
+  padding: 10px 18px 12px;
+  border-top: 1px solid var(--app-color-line);
+}
+
+/* ---- drawer ------------------------------------------------------------ */
+.drawerLayer {
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+}
+.drawerLayer[hidden] {
+  display: none;
+}
+.scrim {
+  position: absolute;
+  inset: 0;
+  background: var(--plan-scrim);
+}
+.drawer {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr) auto;
+  width: min(440px, 100vw);
+  background: var(--app-color-card);
+  color: var(--app-color-ink);
+  box-shadow:
+    0 18px 40px var(--plan-shadow),
+    var(--app-shadow-card);
+}
+.drawerHead {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 18px 22px 14px;
+  border-bottom: 1px solid var(--app-color-line);
+}
+.drawer.planDialog {
+  top: 50%;
+  left: 50%;
+  right: auto;
+  bottom: auto;
+  transform: translate(-50%, -50%);
+  width: min(800px, calc(100vw - 48px));
+  max-height: calc(100dvh - 48px);
+  border-radius: var(--app-radius-card);
+  overflow: hidden;
+}
+.planDialog .drawerHead > div {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+.planDialog .drawerFoot {
+  justify-content: flex-end;
+}
+.drawerTitle {
+  margin-top: 2px;
+  font: 600 20px/1.25 var(--app-font);
+  letter-spacing: -0.015em;
+}
+.drawerTitle:focus {
+  outline: none;
+}
+.drawerIntro {
+  margin-top: 6px;
+  color: var(--app-color-secondary);
+  font-size: 14px;
+  line-height: 1.45;
+}
+.closeButton {
+  display: inline-flex;
+  flex: 0 0 40px;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border: 1px solid var(--app-color-line);
+  border-radius: var(--app-radius-pill);
+  background: var(--app-color-card);
+  color: var(--app-color-ink);
+  cursor: pointer;
+}
+.drawerBody {
+  min-width: 0;
+  overflow: auto;
+  padding: 16px 22px 24px;
+  overscroll-behavior: contain;
+}
+.drawerFoot {
+  flex-shrink: 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 12px;
+  padding: 12px 22px;
+  border-top: 1px solid var(--app-color-line);
+  padding-bottom: max(12px, env(safe-area-inset-bottom));
+}
+.saveHint {
+  flex-basis: 100%;
+  color: var(--app-color-secondary);
+  font-size: 14px;
+  line-height: 1.45;
+}
+
+/* The modal owns attention and keyboard focus until the user closes it. */
+:global(.app-shell):has(.root:not([data-plan-panel="none"]))
+  :global(.guided-demo-launcher) {
+  display: none;
+}
+
+.termsSummary,
+.termsSummary dl {
+  display: grid;
+  gap: 16px;
+  min-width: 0;
+}
+.termsSummary dl > div {
+  min-width: 0;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--app-color-line);
+}
+.termsSummary dt {
+  font-weight: 600;
+}
+.termsSummary dd {
+  margin: 4px 0 0;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+.termsSummary details {
+  margin-top: 8px;
+}
+.termsOverview {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+}
+.termsCompensation {
+  min-width: 0;
+  display: grid;
+  align-content: start;
+  gap: 8px;
+}
+.termsSummary .termsDetails {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px 24px;
+}
+.termsSummary .termsDetails > div {
+  padding-bottom: 8px;
+}
+.panel {
+  display: grid;
+  gap: 16px;
+  min-width: 0;
+}
+.panel[hidden] {
+  display: none;
+}
+
+/* Forms inside drawers: one calm style for every hosted editor. */
+.drawer :is(input:not([type="checkbox"], [type="radio"]), select, textarea) {
+  width: 100%;
+  min-width: 0;
+  max-width: 100%;
+  min-height: 42px;
+  padding: 9px 12px;
+  border: 1px solid var(--app-color-grid);
+  border-radius: var(--app-radius-control);
+  background: var(--app-color-card);
+  color: var(--app-color-ink);
+  font: 400 15px/1.4 var(--app-font);
+  letter-spacing: 0;
+  text-transform: none;
+  color-scheme: light;
+}
+.drawer :is(input, select, textarea):disabled {
+  background: var(--app-color-sunk);
+  color: var(--app-color-secondary);
+}
+.drawer :is(input, select, textarea)[aria-invalid="true"] {
+  border-color: var(--app-color-bad);
+}
+.drawer :is(label, legend) {
+  color: var(--app-color-ink);
+  font: 600 14px/1.4 var(--app-font);
+  letter-spacing: 0;
+  text-transform: none;
+}
+.drawer label {
+  display: grid;
+  min-width: 0;
+  gap: 6px;
+}
+.drawer fieldset {
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+.drawer :is(p, li, dd, dt, small, span) {
+  letter-spacing: 0;
+  text-transform: none;
+}
+.drawer :is(h2, h3) {
+  font: 600 16px/1.35 var(--app-font);
+  letter-spacing: 0;
+  text-transform: none;
+}
+.drawer :global(.eyebrow) {
+  color: var(--app-color-secondary);
+  font: 500 12px/1.4 var(--app-font);
+  letter-spacing: 0;
+  text-transform: none;
+}
+.drawer :global(:is(.action-button, .action-link)) {
+  min-height: 44px;
+  padding: 0 18px;
+  border: 1px solid var(--app-color-hero);
+  border-radius: var(--app-radius-pill);
+  background: var(--app-color-hero);
+  color: var(--app-color-hero-ink);
+  font: 600 14px/1.2 var(--app-font);
+  letter-spacing: 0;
+  text-transform: none;
+  transform: none;
+}
+.drawer :global(:is(.action-button, .action-link)):hover {
+  background: var(--app-color-hero);
+  border-color: var(--app-color-hero);
+  filter: brightness(1.08);
+  transform: none;
+}
+.drawer :global(.action-button):disabled {
+  background: var(--app-color-sunk);
+  border-color: var(--app-color-line);
+  color: var(--app-color-secondary);
+  filter: none;
+}
+.drawer
+  :global(
+    :is(
+      .basket-builder__secondary,
+      .package-terms__text-action,
+      .package-terms__row-action,
+      .secondary-link
+    )
+  ) {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 38px;
+  padding: 0 14px;
+  border: 1px solid var(--app-color-grid);
+  border-radius: var(--app-radius-pill);
+  background: var(--app-color-card);
+  color: var(--app-color-ink);
+  font: 600 14px/1.2 var(--app-font);
+  letter-spacing: 0;
+  text-decoration: none;
+  text-transform: none;
+}
+.drawer :global(.directory-basket-notice) {
+  padding: 10px 12px;
+  border: 0;
+  border-radius: 10px;
+  background: var(--app-color-warn);
+  color: var(--app-color-on-pastel);
+  font: 400 14px/1.45 var(--app-font);
+  letter-spacing: 0;
+  text-transform: none;
+}
+.drawer :global(.package-terms) {
+  display: grid;
+  gap: 16px;
+  padding: 0;
+  border: 0;
+  background: none;
+}
+.drawer
+  :global(
+    :is(
+      .package-terms__header,
+      .package-terms__actions,
+      .package-terms__definition,
+      .package-terms__lines,
+      .compensation-line,
+      .compensation-line__grid
+    )
+  ) {
+  display: grid;
+  gap: 12px;
+  padding: 0;
+  border: 0;
+  background: none;
+}
+.drawer :global(.package-terms__actions) {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 8px;
+}
+.drawer :global(.package-terms__definition),
+.drawer :global(.compensation-line__grid) {
+  grid-template-columns: minmax(0, 1fr);
+}
+.drawer :global(.compensation-line) {
+  padding: 12px;
+  border: 1px solid var(--app-color-line);
+  border-radius: 12px;
+}
+.drawer :global(.package-terms__channel) {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  font-weight: 400;
+}
+.drawer :global(.package-terms) label > span,
+.drawer :global(.compensation-line) legend {
+  color: var(--app-color-ink);
+  font: 600 14px/1.3 var(--app-font);
+  letter-spacing: 0;
+  text-transform: none;
+}
+.drawer :global(.compensation-line) {
+  position: relative;
+  display: grid;
+  gap: 12px;
+}
+.drawer :global(.compensation-line__grid) {
+  grid-template-columns: minmax(0, 1fr);
+  gap: 12px;
+}
+.drawer :global(.compensation-line > .package-terms__remove) {
+  position: static;
+  justify-self: start;
+  min-height: 44px;
+  padding: 0 14px;
+  border: 1px solid var(--app-color-line);
+  border-radius: var(--app-radius-pill);
+  background: var(--app-color-card);
+  color: var(--app-color-ink);
+  font: 600 14px/1 var(--app-font);
+  text-transform: none;
+  letter-spacing: 0;
+}
+.drawer :global(.package-terms__empty) {
+  color: var(--app-color-secondary);
+  font: 400 14px/1.45 var(--app-font);
+  text-transform: none;
+}
+/* The dates panel and saved-plan review keep their own modules; inside the
+   drawer they read as part of the panel rather than nested cards. */
+.drawer :global(#basket-plan-review) {
+  border: 0;
+  padding: 0;
+  background: none;
+}
+.drawer :global(.commercial-approval__confirm) {
+  display: grid;
+  gap: 14px;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--app-color-ink);
+}
+.drawer :global(.commercial-approval__confirm) :is(header, footer) {
+  display: grid;
+  gap: 8px;
+  justify-content: stretch;
+}
+.drawer :global(.commercial-approval__confirm) h3 {
+  font: 600 16px/1.3 var(--app-font);
+  text-transform: none;
+  margin: 0;
+}
+.drawer :global(.basket-timing-panel) section {
+  padding: 0;
+  border: 0;
+  background: none;
+}
+.drawer :global(.basket-timing-panel) h2 {
+  font: 600 15px/1.3 var(--app-font);
+  margin: 0 0 6px;
+}
+
+/* ---- target form ------------------------------------------------------- */
+.form {
+  display: grid;
+  gap: 16px;
+}
+.form:focus {
+  outline: none;
+}
+.formIntro {
+  display: grid;
+  gap: 8px;
+  font-size: 14px;
+  line-height: 1.5;
+}
+.savedGoal {
+  display: grid;
+  justify-items: start;
+  gap: 8px;
+  padding: 12px;
+  border-radius: 12px;
+  background: var(--app-color-sunk);
+}
+.fields {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  align-items: start;
+}
+.field {
+  display: grid;
+  gap: 6px;
+  min-width: 0;
+}
+.fieldWide {
+  grid-column: 1 / -1;
+}
+.fieldError {
+  color: var(--app-color-bad);
+  font-size: 14px;
+  font-weight: 500;
+}
+.formFoot {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 8px;
+}
+.outcomeDefined {
+  display: grid;
+  gap: 8px;
+  justify-items: start;
+}
+.outcomeDefined:focus {
+  outline: none;
+}
+.outcomeObjective {
+  font: 600 16px/1.4 var(--app-font) !important;
+  overflow-wrap: anywhere;
+}
+.outcomeValues {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  width: 100%;
+  padding: 12px 0;
+  border-block: 1px solid var(--app-color-line);
+}
+.outcomeValues dt {
+  color: var(--app-color-secondary);
+  font-size: 14px;
+}
+.outcomeValues dd {
+  font: 600 20px/1.3 var(--app-font);
+  overflow-wrap: anywhere;
+  font-variant-numeric: tabular-nums;
+}
+.revisionAction {
+  display: grid;
+  gap: 8px;
+  justify-items: start;
+  flex: 1 1 100%;
+  min-width: 0;
+}
+
+/* ---- what counts ------------------------------------------------------- */
+.measure {
+  display: grid;
+  gap: 14px;
+}
+.measureSummary {
+  display: grid;
+  gap: 8px;
+  padding: 14px 16px;
+  border-radius: 14px;
+  background: var(--app-color-sunk);
+  font-size: 14px;
+  line-height: 1.5;
+}
+.measureHeading {
+  font: 600 14px/1.35 var(--app-font);
+}
+.measureHelp {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  padding-top: 14px;
+  border-top: 1px solid var(--app-color-line);
+}
+.measureHelp > :is(h4, p) {
+  flex-basis: 100%;
+}
+.measureHelp .button {
+  white-space: normal;
+  text-align: center;
+}
+.factList {
+  display: grid;
+  gap: 4px;
+  padding-left: 18px;
+}
+.choiceList {
+  display: grid;
+  gap: 8px;
+}
+.choiceLegend {
+  margin-bottom: 4px;
+}
+.choice {
+  display: grid !important;
+  grid-template-columns: 20px minmax(0, 1fr);
+  gap: 12px !important;
+  padding: 12px 14px;
+  border: 1.5px solid var(--app-color-line);
+  border-radius: 12px;
+  background: var(--app-color-card);
+  font-weight: 400 !important;
+  cursor: pointer;
+}
+.choice input {
+  width: 18px;
+  height: 18px;
+  margin: 2px 0 0;
+  accent-color: var(--app-color-hero);
+}
+.choiceSelected {
+  border-color: var(--app-color-hero);
+  box-shadow: 0 0 0 1px var(--app-color-hero);
+}
+.choiceOff {
+  background: var(--app-color-sunk);
+  cursor: not-allowed;
+}
+.choiceText {
+  display: grid;
+  gap: 3px;
+  min-width: 0;
+}
+.choiceName {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 4px 8px;
+}
+.advanced {
+  padding: 12px 14px;
+  border: 1px solid var(--app-color-line);
+  border-radius: 12px;
+  font-size: 14px;
+  line-height: 1.5;
+}
+.advanced summary {
+  min-height: 24px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.advanced[open] {
+  display: grid;
+  gap: 10px;
+}
+.advanced[open] > .button {
+  justify-self: start;
+}
+
+/* ---- terms panel and comparison --------------------------------------- */
+.termsPanel {
+  display: grid;
+  gap: 14px;
+}
+.termsSwitch {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+}
+.termsPanel .inlineAlert,
+.compare .inlineAlert {
+  margin: 0;
+}
+.compare {
+  display: grid;
+  gap: 14px;
+}
+.compare .table :is(th, td):first-child {
+  padding-left: 0;
+}
+
+/* ---- responsive -------------------------------------------------------- */
+.landedInline {
+  display: none;
+}
+@media (max-width: 1366px) {
+  .grid {
+    grid-template-columns: 300px minmax(0, 1fr);
+  }
+  /* Compact steps: the action sits under its summary. */
+  .step {
+    grid-template-columns: 24px minmax(0, 1fr);
+  }
+  .step > .button {
+    grid-column: 2;
+    justify-self: start;
+  }
+  /* The Landed record folds into the creator cell. */
+  .landedCol {
+    display: none;
+  }
+  .landedInline {
+    display: inline-flex;
+  }
+}
+@media (max-width: 1180px) {
+  .top {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 12px;
+  }
+  .topAction {
+    justify-items: start;
+    max-width: none;
+    padding-top: 0;
+  }
+  .heroNoteText {
+    text-align: left;
+  }
+  .stepsLeft {
+    justify-content: flex-start;
+  }
+  .grid {
+    grid-template-columns: 300px minmax(0, 1fr);
+  }
+  .figure {
+    font-size: 26px;
+  }
+}
+@media (max-width: 960px) {
+  .grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+@media (max-width: 760px) {
+  .root {
+    padding-bottom: 132px;
+  }
+  .top {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .title {
+    font-size: 24px;
+  }
+  .topAction {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 40;
+    justify-items: stretch;
+    max-width: none;
+    padding: 10px 16px 14px;
+    border-top: 1px solid var(--app-color-line);
+    background: var(--app-color-card);
+    box-shadow: 0 -8px 20px var(--plan-shadow);
+  }
+  .topAction .buttonHero {
+    width: 100%;
+    min-height: 48px;
+  }
+  .stepsLeft,
+  .heroNoteText {
+    justify-content: flex-start;
+    text-align: left;
+    border-radius: 12px;
+  }
+  .segmented {
+    flex-wrap: nowrap;
+    max-width: 100%;
+    overflow-x: auto;
+  }
+  .forecast {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .forecast .tile:first-child {
+    grid-column: 1 / -1;
+  }
+  .forecast .tile:nth-child(2) {
+    border-left: 0;
+    border-top: 1px solid var(--app-color-line);
+  }
+  .forecast .tile:nth-child(3) {
+    border-top: 1px solid var(--app-color-line);
+  }
+  .button {
+    min-height: 44px;
+  }
+  .steps .button,
+  .actionCell .button {
+    min-height: 44px;
+  }
+  .table thead {
+    display: none;
+  }
+  .table tbody tr {
+    display: grid;
+    grid-template-columns: 34px minmax(0, 1fr);
+    gap: 6px 10px;
+    padding: 12px 16px;
+    border-top: 1px solid var(--app-color-line);
+  }
+  .table tbody td {
+    padding: 0 !important;
+    border: 0;
+  }
+  .table tbody td:first-child {
+    grid-row: span 4;
+  }
+  .table tbody td.numeric {
+    text-align: left !important;
+  }
+  .actionCell {
+    text-align: left;
+  }
+  .drawer {
+    width: 100vw;
+  }
+  .fields {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .drawer :is(input:not([type="checkbox"], [type="radio"]), select, textarea) {
+    font-size: 16px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .root * {
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Detailed terms have room to edit on desktop; small screens get one column. */
+@media (min-width: 761px) {
+  .planDialog :global(.package-terms__definition),
+  .planDialog :global(.compensation-line__grid) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (max-width: 760px) {
+  .drawer.planDialog {
+    inset: 0;
+    transform: none;
+    width: 100%;
+    height: 100dvh;
+    max-height: 100dvh;
+    border-radius: 0;
+  }
+  .termsOverview,
+  .termsSummary .termsDetails {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+/* Review and approve (legacy, non-guided path) — board 03/01 composition. */
+.approve {
+  display: grid;
+  gap: 16px;
+  min-width: 0;
+}
+.approve:focus {
+  outline: none;
+}
+.approve a:not(.button) {
+  color: var(--app-color-ink);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.approveEffect {
+  margin: 0;
+  padding: 12px 14px;
+  border-radius: 10px;
+  background: var(--app-color-sunk);
+  font-weight: 500;
+}
+.approveFacts {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 12px;
+  margin: 0;
+}
+.approveFacts > div {
+  display: grid;
+  gap: 2px;
+  min-width: 0;
+}
+.approveFacts dt {
+  font-size: 14px;
+  color: var(--app-color-secondary);
+}
+.approveFacts dd {
+  margin: 0;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  overflow-wrap: anywhere;
+}
+.approveList {
+  display: grid;
+  gap: 8px;
+  margin: 8px 0 0;
+  padding: 0;
+  list-style: none;
+}
+.approveList li {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  gap: 10px;
+  align-items: center;
+  padding: 12px 14px;
+  border: 1px solid var(--app-color-line);
+  border-radius: 10px;
+}
+.approveListActions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: flex-end;
+}
+.approveListActions a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  white-space: nowrap;
+}
+.approveConfirm {
+  display: grid;
+  gap: 16px;
+  padding-top: 16px;
+  border-top: 1px solid var(--app-color-line);
+}
+.approveReview {
+  display: grid;
+  gap: 12px;
+}
+.approveTerms {
+  display: grid;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.approveTerms li {
+  display: grid;
+  gap: 4px;
+  padding: 12px 14px;
+  border: 1px solid var(--app-color-line);
+  border-radius: 10px;
+  overflow-wrap: anywhere;
+}
+.approveTerms dl {
+  display: grid;
+  gap: 6px;
+  margin: 4px 0 0;
+}
+.approveTerms dt {
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
+.approveTerms dd {
+  margin: 0;
+}
+.approveAck {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  min-height: 44px;
+  line-height: 1.5;
+  cursor: pointer;
+}
+.approveAck input {
+  flex: none;
+  width: 20px;
+  height: 20px;
+  margin-top: 2px;
+  accent-color: var(--app-color-ink);
+}
+@media (max-width: 760px) {
+  .approveList li {
+    grid-template-columns: auto minmax(0, 1fr);
+  }
+  .approveListActions {
+    grid-column: 2;
+    justify-content: flex-start;
+  }
+}
+
+/* Keep short status text on one line so long creator names get the room. */
+.table td .statusLine {
+  white-space: nowrap;
+}
+.figure.figureEmpty {
+  font-size: 18px;
+  line-height: 1.3;
+}
+.approve :is(.inlineAlert, .inlineSuccess) {
+  display: grid;
+  gap: 4px;
+}
+
+/* ---- approval decision / Plan approved (board 03b) ---------------------- */
+.decision {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 16px;
+  margin: 0 0 16px;
+  padding: 20px 24px;
+  border: 1px solid var(--app-color-line);
+  border-radius: var(--app-radius-card);
+  background: var(--app-color-card);
+}
+.decisionApproved {
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr) minmax(0, 1fr);
+  gap: 24px;
+  border-color: var(--app-color-go-edge);
+  background: var(--app-color-go);
+  color: var(--app-color-on-pastel);
+}
+.decisionMain {
+  display: grid;
+  align-content: start;
+  justify-items: start;
+  gap: 8px;
+  min-width: 0;
+}
+.decisionNext {
+  display: grid;
+  align-content: start;
+  justify-items: start;
+  gap: 8px;
+  padding: 16px 18px;
+  border-radius: 14px;
+  background: var(--app-color-card);
+  color: var(--app-color-ink);
+}
+.dashList {
+  display: grid;
+  gap: 6px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.dashList li::before {
+  content: "– ";
+}
+@media (max-width: 960px) {
+  .decisionApproved {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+.plainFieldset {
+  display: contents;
+}
+/* Pastel backgrounds take the on-pastel ink in both themes. */
+.stepCurrent,
+.stepCurrent
+  :is(.stepTitle, .stepSummary, .stepDetail, .okWord, .todoWord, .quietWord) {
+  color: var(--app-color-on-pastel);
+}
+:is(.inlineAlert, .inlineSuccess, .decisionApproved) .small {
+  color: var(--app-color-on-pastel);
+}

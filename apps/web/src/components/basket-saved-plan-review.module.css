@@ -1,0 +1,35 @@
+.root {
+  display: grid;
+  gap: 20px;
+  min-width: 0;
+}
+.root :is(h3, p, dl) {
+  margin: 0;
+}
+.root > button {
+  justify-self: start;
+}
+.notice {
+  display: grid;
+  gap: 8px;
+  padding: 16px;
+  border-radius: var(--app-radius-control);
+  background: var(--app-color-canvas);
+}
+.snapshot {
+  display: grid;
+  gap: 24px;
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+.heading,
+.terms {
+  display: grid;
+  gap: 12px;
+}
+.root .status:empty {
+  display: none;
+}
+.root .status {
+  color: var(--app-color-secondary);
+}

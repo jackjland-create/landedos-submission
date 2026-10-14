@@ -1,0 +1,54 @@
+{
+  "accountData": [
+    {
+      "account": "11111111111111111111111111111111",
+      "nativeBalanceChange": -5000,
+      "tokenBalanceChanges": [
+        {
+          "mint": "So11111111111111111111111111111111111111112",
+          "rawTokenAmount": {
+            "decimals": 9,
+            "tokenAmount": "4200000000"
+          },
+          "tokenAccount": "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA",
+          "userAccount": "11111111111111111111111111111111"
+        }
+      ]
+    }
+  ],
+  "description": "Sanitized programme action fixture",
+  "events": {
+    "custom": {
+      "programme": "So11111111111111111111111111111111111111112"
+    }
+  },
+  "fee": 5000,
+  "feePayer": "So11111111111111111111111111111111111111112",
+  "nativeTransfers": [
+    {
+      "amount": 1000000,
+      "fromUserAccount": "11111111111111111111111111111111",
+      "toUserAccount": "So11111111111111111111111111111111111111112"
+    }
+  ],
+  "signature": "5nNtjezQMYBHvgSQmoRmJPiXGsPAWmJPoGSa64xanqrauogiVzFyGQhKeFataHGXq51jR2hjbzNTkPUpP787HAmL",
+  "slot": 358000001,
+  "source": "SYSTEM_PROGRAM",
+  "timestamp": 1786473600,
+  "tokenTransfers": [
+    {
+      "fromTokenAccount": "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA",
+      "fromUserAccount": "11111111111111111111111111111111",
+      "mint": "So11111111111111111111111111111111111111112",
+      "toTokenAccount": "So11111111111111111111111111111111111111112",
+      "toUserAccount": "So11111111111111111111111111111111111111112",
+      "tokenAmount": 4.2,
+      "tokenStandard": "Fungible"
+    }
+  ],
+  "transactionError": null,
+  "type": "TRANSFER",
+  "providerFieldAddedLater": {
+    "retained": true
+  }
+}

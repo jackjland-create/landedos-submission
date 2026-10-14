@@ -1,0 +1,416 @@
+/* BRD-04 shares the scoped Clarity proposal; no production tokens changed. */
+.app {
+  min-height: 100dvh;
+}
+.app p {
+  margin-top: 8px;
+}
+.app h3 {
+  margin: 0;
+}
+.shell {
+  display: grid;
+  grid-template-columns: 180px minmax(0, 1fr);
+  max-width: 1800px;
+  margin: auto;
+}
+.rail {
+  padding: 24px;
+  border-right: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+.rail p {
+  font-weight: 600;
+  color: var(--ink);
+}
+.rail small {
+  display: block;
+  font-size: 12px;
+  font-weight: 400;
+  margin-top: 4px;
+}
+.rail > small {
+  margin-top: auto;
+}
+.rail nav {
+  display: grid;
+  gap: 4px;
+}
+.app .rail nav > * {
+  padding: 12px;
+  text-align: left;
+  border: 0;
+  text-decoration: none;
+  background: transparent;
+  font-size: 14px;
+}
+.app .rail nav > *:hover {
+  background: var(--raised);
+}
+.app .rail nav [aria-current] {
+  background: var(--raised);
+  border-left: 3px solid var(--accent);
+  font-weight: 650;
+}
+.main {
+  padding: 24px 32px;
+  min-width: 0;
+}
+.heading {
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.heading h1 {
+  max-width: 650px;
+}
+.heading p {
+  max-width: 650px;
+}
+.app .action {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 8px 16px;
+  border-radius: 8px;
+  background: var(--accent);
+  color: #161616;
+  font-weight: 600;
+  text-decoration: none;
+  white-space: nowrap;
+}
+.app .action:hover {
+  filter: brightness(1.08);
+}
+.scope {
+  display: flex;
+  gap: 24px;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.scope select {
+  min-width: 230px;
+}
+.scope p {
+  font-size: 13px;
+  max-width: 650px;
+}
+.grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.4fr);
+  gap: 16px;
+  align-items: start;
+}
+.grid > * {
+  min-width: 0;
+}
+.priority {
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--accent);
+  border-radius: 12px;
+  background: var(--surface);
+  padding: 24px;
+  display: grid;
+  gap: 12px;
+}
+.priority button {
+  justify-self: start;
+}
+.priority p {
+  margin: 0;
+}
+.tag {
+  font-size: 12px;
+  color: var(--secondary);
+  font-weight: 600;
+}
+.sectionHeading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+.sectionHeading a {
+  font-size: 14px;
+}
+.metrics {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  margin: 20px 0;
+}
+.metrics > div {
+  display: grid;
+  gap: 4px;
+}
+.metrics span {
+  color: var(--secondary);
+  font-size: 13px;
+}
+.metrics strong {
+  font-size: clamp(22px, 2.1vw, 30px);
+  letter-spacing: -0.035em;
+  overflow-wrap: anywhere;
+}
+.campaigns {
+  grid-column: auto;
+}
+.grid > :last-child {
+  grid-column: auto;
+}
+.journey {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  padding: 0;
+  margin: 20px 0;
+  border-bottom: 1px solid var(--border);
+}
+.journey li {
+  padding: 8px;
+  color: var(--secondary);
+  font-size: 14px;
+}
+.journey li:not(:last-child)::after {
+  content: "→";
+  display: block;
+  margin-top: 4px;
+}
+.campaignRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 16px 0;
+}
+.campaignRow + .campaignRow {
+  border-top: 1px solid var(--border);
+}
+.campaignRow p {
+  font-size: 13px;
+}
+.campaignRow a {
+  white-space: nowrap;
+}
+.tools {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+  margin: 16px 0 0;
+  list-style: none;
+  padding: 0;
+}
+.app .tools > button,
+.app .tools > a {
+  display: grid;
+  gap: 4px;
+  padding: 12px 16px;
+  text-align: left;
+  text-decoration: none;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+}
+.tools span {
+  color: var(--secondary);
+  font-size: 13px;
+}
+.notice {
+  background: var(--raised);
+  border-left: 3px solid var(--focus);
+  padding: 16px;
+  margin-bottom: 16px;
+}
+.footer {
+  margin-top: 24px;
+  font-size: 12px;
+  color: var(--secondary);
+}
+.boundary {
+  max-width: 650px;
+  padding: 48px 0;
+}
+.boundary > * + * {
+  margin-top: 20px;
+}
+.setup {
+  display: grid;
+  grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
+  gap: 32px;
+}
+.setupAside {
+  padding: 24px;
+}
+.setupAside ol {
+  padding-left: 20px;
+  display: grid;
+  gap: 24px;
+  margin: 24px 0;
+}
+.steps {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 24px;
+}
+.steps [aria-current] {
+  border-color: var(--focus);
+  font-weight: 600;
+}
+.app form {
+  display: grid;
+  gap: 16px;
+  margin-top: 16px;
+}
+.app form button {
+  justify-self: start;
+}
+.app input,
+.app textarea {
+  color: var(--ink);
+  background: var(--surface);
+  border: 1px solid var(--secondary);
+  border-radius: 8px;
+  padding: 12px;
+  font: inherit;
+  width: 100%;
+  min-width: 0;
+}
+.app textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+.app input::placeholder,
+.app textarea::placeholder {
+  color: var(--secondary);
+}
+.formRow {
+  display: flex;
+  gap: 16px;
+  align-items: end;
+}
+.formRow > label {
+  flex: 1;
+  min-width: 0;
+}
+.review {
+  display: grid;
+  grid-template-columns: 120px minmax(0, 1fr);
+  gap: 12px;
+  margin: 24px 0;
+}
+.review dt {
+  color: var(--secondary);
+}
+.review dd {
+  margin: 0;
+  overflow-wrap: anywhere;
+}
+.dialog {
+  overscroll-behavior: contain;
+}
+.dialog > p,
+.dialog > form {
+  margin-top: 16px;
+}
+.dialog .tools {
+  grid-template-columns: 1fr;
+}
+.app :target {
+  scroll-margin-top: 24px;
+}
+@media (max-width: 1100px) {
+  .shell {
+    grid-template-columns: 140px minmax(0, 1fr);
+  }
+  .rail {
+    padding: 24px 12px;
+  }
+  .main {
+    padding: 24px;
+  }
+  .grid {
+    grid-template-columns: 1fr;
+  }
+  .setup {
+    gap: 16px;
+  }
+  .heading {
+    align-items: start;
+  }
+}
+@media (max-width: 700px) {
+  .shell {
+    display: block;
+  }
+  .rail {
+    padding: 16px;
+    gap: 12px;
+    border-right: 0;
+    border-bottom: 1px solid var(--border);
+  }
+  .rail > p,
+  .rail > small {
+    display: none;
+  }
+  .rail nav {
+    display: flex;
+    overflow-x: auto;
+    gap: 4px;
+  }
+  .app .rail nav > * {
+    flex-shrink: 0;
+    padding: 8px;
+  }
+  .main {
+    padding: 20px 16px max(16px, env(safe-area-inset-bottom));
+  }
+  .heading,
+  .scope {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+  }
+  .scope select {
+    min-width: 0;
+  }
+  .tools,
+  .setup {
+    grid-template-columns: 1fr;
+  }
+  .journey {
+    grid-template-columns: 1fr;
+    margin: 12px 0;
+  }
+  .journey li {
+    padding: 4px;
+  }
+  .journey li:not(:last-child)::after {
+    content: "↓";
+    float: right;
+    margin-top: 0;
+  }
+  .campaignRow {
+    align-items: start;
+    flex-direction: column;
+  }
+  .priority {
+    padding: 16px;
+  }
+  .setupAside {
+    padding: 16px 0;
+  }
+  .app input,
+  .app textarea,
+  .app select {
+    font-size: 16px;
+  }
+  .steps button {
+    flex: 1;
+  }
+}

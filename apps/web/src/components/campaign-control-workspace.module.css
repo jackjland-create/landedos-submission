@@ -1,0 +1,231 @@
+/* CMP-01–04 / BRD-06 / UI-03: bounded campaign workspace. The frame
+   (campaign-workspace-frame.module.css) owns header, tiles and navigation on
+   the application tokens; this file owns the Status view and the narrow
+   adaptations of retained legacy interiors. */
+.workspace.workspace {
+  min-height: 0;
+  height: calc(100dvh - 96px);
+  display: flex;
+  flex-direction: column;
+  overflow: auto;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+}
+.workspace.workspace[data-detail-scroll="page"] {
+  height: auto;
+  overflow: visible;
+}
+
+/* Status view */
+.controlGrid {
+  display: grid;
+  align-items: start;
+  grid-template-columns: minmax(0, 1.45fr) minmax(0, 1fr);
+  gap: 16px;
+}
+.column {
+  display: grid;
+  gap: 16px;
+  min-width: 0;
+}
+.panel,
+.workspace :global(.panel) {
+  padding: 16px 18px;
+  background: var(--app-color-card, var(--surface));
+  border: 1px solid var(--app-color-line, var(--border));
+  border-radius: var(--app-radius-card);
+  min-width: 0;
+}
+.workspace .panel h2 {
+  margin-bottom: 12px;
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: var(--app-color-ink);
+}
+.workspace .panel p {
+  color: var(--app-color-secondary);
+}
+.workspace .panel > :global(.application-button) {
+  margin-top: 12px;
+  text-decoration: none;
+}
+.panelHead {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 12px;
+}
+.workspace .panelHead h2 {
+  margin-bottom: 8px;
+}
+.roster article {
+  display: grid;
+  grid-template-columns: 36px minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 0;
+  border-top: 1px solid var(--app-color-line);
+}
+.roster article:first-child {
+  border-top: 0;
+  padding-top: 0;
+}
+.roster strong {
+  font-weight: 600;
+  color: var(--app-color-ink);
+  overflow-wrap: anywhere;
+}
+.workspace .roster p {
+  margin-top: 2px;
+}
+.roster a,
+.workspace .panel details a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  color: var(--app-color-ink);
+  font-weight: 500;
+  text-underline-offset: 3px;
+}
+.avatar {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 999px;
+  background: var(--app-color-sunk);
+  color: var(--app-color-ink);
+  font-size: 13px;
+  font-weight: 600;
+}
+.facts {
+  display: grid;
+  grid-template-columns: minmax(120px, auto) minmax(0, 1fr);
+  gap: 8px 16px;
+  margin: 0;
+}
+.facts dt {
+  color: var(--app-color-secondary);
+}
+.facts dd {
+  margin: 0;
+  overflow-wrap: anywhere;
+  color: var(--app-color-ink);
+}
+.checklist {
+  display: grid;
+  margin: 0;
+}
+.checklist > div {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 4px 12px;
+  padding-block: 8px;
+  min-height: 40px;
+  border-top: 1px solid var(--app-color-line);
+}
+.checklist > div:first-child {
+  border-top: 0;
+}
+.checklist dt {
+  color: var(--app-color-ink);
+}
+.checklist dd {
+  margin: 0;
+  color: var(--app-color-ink);
+  text-align: right;
+}
+.unrecorded {
+  border-style: dashed !important;
+  background: transparent !important;
+}
+.workspace summary {
+  min-height: 44px;
+  padding-block: 10px;
+  cursor: pointer;
+  color: var(--app-color-ink);
+}
+.workspace code {
+  overflow-wrap: anywhere;
+}
+
+/* Retained legacy interiors (roster, brief, content, tracking, history). */
+.workspace :global(.campaign-roster-row) {
+  grid-template-columns: 24px 1fr 1.6fr 1fr;
+}
+.workspace :global(.campaign-roster-row__evidence) {
+  grid-column: 2 / -1;
+}
+.workspace :global(.campaign-roster-row) :is(strong, span, small),
+.workspace :global(.campaign-asset-row) :is(strong, span, small) {
+  text-transform: none;
+  overflow-wrap: anywhere;
+}
+.workspace :global(.campaign-asset-row) {
+  grid-template-columns: 24px 1.4fr 1fr 1fr;
+}
+.workspace :global(.panel__header) {
+  margin-bottom: 16px;
+  padding-bottom: 12px;
+}
+.workspace :global(.campaign-assets-readiness) {
+  display: none;
+}
+.workspace :global(.campaign-roster-row) > :nth-child(4) {
+  min-width: 0;
+}
+@media (max-width: 1100px) {
+  .controlGrid {
+    grid-template-columns: 1fr;
+  }
+  .workspace :global(.campaign-roster-row),
+  .workspace :global(.campaign-asset-row) {
+    grid-template-columns: 24px 1fr 1fr;
+  }
+  .workspace :global(.campaign-roster-row) > :nth-child(4) {
+    grid-column: 2;
+  }
+  .workspace :global(.campaign-roster-row__evidence) {
+    grid-column: 3;
+  }
+}
+@media (max-width: 1100px), (max-height: 650px) {
+  .workspace.workspace {
+    height: auto;
+    overflow: visible;
+  }
+}
+@media (max-width: 700px) {
+  .checklist dd {
+    text-align: left;
+  }
+  .roster article {
+    grid-template-columns: 36px minmax(0, 1fr);
+  }
+  .roster a {
+    grid-column: 2;
+    justify-self: start;
+  }
+  .facts {
+    grid-template-columns: 1fr;
+    gap: 2px;
+  }
+  .facts dd {
+    margin-bottom: 10px;
+  }
+  .panel,
+  .workspace :global(.panel) {
+    padding: 14px;
+  }
+  .workspace :global(.campaign-roster-row),
+  .workspace :global(.campaign-asset-row) {
+    display: flex;
+    flex-direction: column;
+  }
+}

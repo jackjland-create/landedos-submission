@@ -1,0 +1,27 @@
+/* WAL-01 / UI-03: optional navigation, using canonical application controls. */
+.panel {
+  composes: theme from "./application-ui.module.css";
+  display: grid;
+  justify-items: start;
+  gap: 12px;
+  margin-top: 20px;
+  padding: 20px;
+  border: 1px solid var(--app-color-line);
+  border-radius: var(--app-radius-card);
+  background: var(--app-color-card);
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+.panel.panel h2 {
+  margin: 0;
+  font: 600 18px/1.3 var(--app-font);
+  text-wrap: balance;
+}
+.panel.panel p {
+  margin: 0;
+  font: 400 14px/1.5 var(--app-font);
+  color: var(--app-color-secondary);
+}
+.panel :global(.application-button) {
+  white-space: normal;
+}

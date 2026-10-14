@@ -1,0 +1,1692 @@
+/* BRD-02 proposed Clarity tokens. Isolated reference, not production Brand OS. */
+.app {
+  --text: var(--ink);
+  --muted: var(--secondary);
+  --grid: var(--border);
+  --surface-raised: var(--raised);
+  --font-display: Inter, Arial, sans-serif;
+  --font-utility: Inter, Arial, sans-serif;
+  --font-data: Inter, Arial, sans-serif;
+  --verified: #287746;
+  --clarity-qualified: #176a7b;
+  --canvas: #f5f5f2;
+  --surface: #ffffff;
+  --raised: #f0f1ee;
+  --ink: #202522;
+  --secondary: #525c56;
+  --border: #d7ddd7;
+  --accent: #ff462e;
+  --focus: #07667a;
+  --warning: #784018;
+  --warning-surface: #fff1e7;
+  --report-chart-qualified: #176a7b;
+  --report-chart-activated: #287746;
+  --report-chart-grid: #d7ddd7;
+  --report-chart-surface: #ffffff;
+  --report-chart-crosshair: #525c56;
+  --report-funnel-observed: #176a7b;
+  --action: #ad3808;
+  --intelligence: #176a7b;
+  --chart-foreground: #202522;
+  --chart-muted: #525c56;
+  background: var(--canvas);
+  color: var(--ink);
+  min-height: 100dvh;
+  font-family: Inter, Arial, sans-serif;
+  font-size: 15px;
+  line-height: 1.5;
+  color-scheme: light;
+  font-variant-numeric: tabular-nums;
+}
+.app[data-theme="dark"] {
+  --verified: #92cfaa;
+  --clarity-qualified: #aecacd;
+  --canvas: #161616;
+  --surface: #222524;
+  --raised: #2c302e;
+  --ink: #f2f4f0;
+  --secondary: #b6c2ba;
+  --border: #505b54;
+  --focus: #aecacd;
+  --warning: #ffd1ad;
+  --warning-surface: #392a21;
+  --report-chart-qualified: #aecacd;
+  --report-chart-activated: #92cfaa;
+  --report-chart-grid: #46524a;
+  --report-chart-surface: #222524;
+  --report-chart-crosshair: #b6c2ba;
+  --report-funnel-observed: #aecacd;
+  --action: #ff9466;
+  --intelligence: #aecacd;
+  --chart-foreground: #f2f4f0;
+  --chart-muted: #b6c2ba;
+  color-scheme: dark;
+}
+.app * {
+  box-sizing: border-box;
+}
+.app
+  :is(
+    h1,
+    h2,
+    h3,
+    p,
+    span,
+    small,
+    strong,
+    b,
+    label,
+    button,
+    select,
+    input,
+    th,
+    td,
+    summary,
+    dt,
+    dd,
+    a
+  ) {
+  font-family: var(--font-utility);
+}
+.app pre,
+.app code {
+  font-family: ui-monospace, monospace;
+}
+.app h1,
+.app h2,
+.app h3,
+.app p {
+  margin: 0;
+}
+.app h1 {
+  font-size: clamp(25px, 2.3vw, 34px);
+  line-height: 1.16;
+  letter-spacing: -0.035em;
+  font-weight: 750;
+  text-wrap: balance;
+}
+.app h2 {
+  font-size: 20px;
+  font-weight: 650;
+  line-height: 1.3;
+  letter-spacing: -0.02em;
+  text-wrap: balance;
+}
+.app h3 {
+  font-size: 16px;
+  margin-top: 20px;
+  margin-bottom: 8px;
+}
+.app small,
+.small {
+  font-size: 13px;
+  color: var(--secondary);
+}
+.app p {
+  color: var(--secondary);
+}
+.app button,
+.app select,
+.app a {
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+}
+.app button,
+.app select {
+  font: inherit;
+  font-size: 14px;
+  border: 1px solid var(--secondary);
+  border-radius: 8px;
+  background: var(--surface);
+  color: var(--ink);
+  padding: 9px 12px;
+  min-height: 40px;
+  cursor: pointer;
+}
+.app button:hover,
+.app a:hover {
+  background: var(--raised);
+}
+.app button:disabled {
+  cursor: not-allowed;
+  opacity: 0.65;
+}
+.app a {
+  color: var(--ink);
+  text-underline-offset: 4px;
+  border-radius: 6px;
+}
+.app :focus-visible {
+  outline: 3px solid var(--focus);
+  outline-offset: 3px;
+}
+.app button.primary,
+.app a.primary {
+  background: var(--accent);
+  color: #161616;
+  border-color: var(--accent);
+  font-weight: 650;
+}
+.app button.primary:hover {
+  filter: brightness(1.08);
+}
+.app input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  accent-color: var(--focus);
+  flex-shrink: 0;
+}
+.app label {
+  color: var(--secondary);
+  font-size: 13px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.app pre {
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  background: var(--raised);
+  border-radius: 8px;
+  padding: 16px;
+  font-size: 13px;
+  max-height: 360px;
+  overflow: auto;
+}
+.app details summary {
+  cursor: pointer;
+  padding: 12px 0;
+  font-size: 14px;
+  font-weight: 600;
+}
+.app details p {
+  margin-bottom: 12px;
+}
+.app details[open] summary {
+  color: var(--ink);
+}
+.skip {
+  position: fixed;
+  z-index: 10;
+  left: 16px;
+  top: -100px;
+  padding: 12px;
+  background: var(--surface);
+}
+.skip:focus {
+  top: 10px;
+}
+.preview {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  min-height: 60px;
+  padding: 8px 24px;
+  border-bottom: 1px solid var(--border);
+  color: var(--secondary);
+  background: var(--raised);
+  font-size: 13px;
+  flex-wrap: wrap;
+}
+.preview > span {
+  margin-right: auto;
+}
+.preview .inlineLabel {
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+}
+.app .themeToggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border: 0;
+  background: transparent;
+  min-height: 44px;
+}
+.toggleTrack {
+  width: 40px;
+  height: 24px;
+  padding: 3px;
+  border-radius: 999px;
+  background: var(--secondary);
+}
+.toggleTrack > span {
+  display: block;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--surface);
+  transition: transform 160ms ease;
+}
+.themeToggle[aria-checked="true"] .toggleTrack > span {
+  transform: translateX(16px);
+}
+.detailWorkspace {
+  display: grid;
+  grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
+  gap: 16px;
+  align-items: start;
+}
+.journeyLinks {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+  margin-bottom: 16px;
+}
+.journeyLinks button {
+  text-align: left;
+  display: grid;
+  gap: 4px;
+}
+.journeyLinks span {
+  font-size: 12px;
+  color: var(--secondary);
+}
+.detailWorkspace .twoPanels {
+  grid-template-columns: 1fr;
+}
+.detailWorkspace .economics {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px 0;
+}
+.app .creatorSummary {
+  display: grid;
+  grid-template-columns:
+    minmax(140px, 1fr) minmax(110px, 0.6fr) minmax(170px, 1fr)
+    auto;
+  gap: 12px;
+  align-items: center;
+  min-height: 56px;
+}
+.creatorSummary::after {
+  content: "+";
+  grid-column: 4;
+  justify-self: end;
+}
+.creator[open] > .creatorSummary::after {
+  content: "−";
+}
+.creatorSummary .small {
+  display: none;
+}
+.creatorSummary > span {
+  font-size: 14px;
+  font-weight: 400;
+}
+.preview details {
+  position: relative;
+}
+.preview details nav {
+  position: absolute;
+  right: 0;
+  z-index: 5;
+  min-width: 180px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  padding: 8px;
+  border-radius: 10px;
+}
+.preview details a {
+  display: block;
+  padding: 9px;
+  text-transform: capitalize;
+}
+.shell {
+  display: grid;
+  grid-template-columns: 180px minmax(0, 1fr);
+  max-width: 1800px;
+  margin: auto;
+}
+.rail {
+  border-right: 1px solid var(--border);
+  padding: 28px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
+  background: var(--raised);
+}
+.wordmark {
+  font-size: 23px;
+  font-weight: 850;
+  letter-spacing: -0.06em;
+}
+.wordmark span {
+  font-size: 12px;
+  vertical-align: top;
+  margin-left: 3px;
+}
+.rail p {
+  color: var(--ink);
+  font-weight: 600;
+}
+.rail p small {
+  display: block;
+  font-weight: 400;
+  margin-top: 3px;
+}
+.rail nav {
+  display: grid;
+  gap: 7px;
+}
+.rail nav > * {
+  padding: 10px 12px;
+  font-size: 14px;
+}
+.rail nav > .navCaption {
+  padding: 0 12px 8px;
+  font-size: 11px;
+  letter-spacing: 0.06em;
+}
+.rail nav > span,
+.rail nav > a {
+  border-radius: 8px;
+  padding: 12px;
+}
+.rail nav small {
+  display: block;
+  font-size: 11px;
+  font-weight: 400;
+  margin-top: 2px;
+}
+.rail nav a[aria-current="page"] {
+  background: var(--ink);
+  color: var(--canvas);
+  border-left: 4px solid var(--accent);
+}
+.rail nav a[aria-current="page"] small {
+  color: inherit;
+}
+.rail nav > span {
+  color: var(--secondary);
+}
+.rail nav a {
+  background: var(--raised);
+  font-weight: 650;
+  text-decoration: none;
+  border-left: 3px solid var(--accent);
+}
+.rail > small {
+  margin-top: auto;
+  font-size: 12px;
+}
+.main {
+  padding: 28px 32px 16px;
+  min-width: 0;
+}
+.heading {
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+  align-items: center;
+  margin-bottom: 24px;
+}
+.heading p:not(.eyebrow) {
+  font-size: 13px;
+  margin-top: 8px;
+}
+.eyebrow {
+  font-size: 11px;
+  font-weight: 650;
+  letter-spacing: 0.12em;
+  margin-bottom: 6px !important;
+}
+.actions {
+  display: flex;
+  gap: 8px;
+  flex-shrink: 0;
+}
+.context {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  padding-bottom: 16px;
+  flex-wrap: wrap;
+}
+.context > div {
+  display: grid;
+  gap: 6px;
+}
+.context span {
+  color: var(--secondary);
+  font-size: 13px;
+}
+.context strong {
+  font-size: 14px;
+  font-weight: 500;
+}
+.app .check {
+  flex-direction: row;
+  gap: 8px;
+  align-items: center;
+  min-height: 44px;
+  color: var(--ink);
+}
+.trust {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 20px;
+  align-items: center;
+  padding: 12px 0;
+  border-top: 1px solid var(--border);
+  color: var(--secondary);
+  font-size: 12px;
+}
+.trust button {
+  padding: 4px 8px;
+  min-height: 32px;
+  font-size: 12px;
+  margin-left: auto;
+}
+.warning {
+  background: var(--warning-surface);
+  border: 1px solid var(--warning);
+  border-radius: 10px;
+  color: var(--warning);
+  padding: 12px 16px;
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  margin: 8px 0 16px;
+  flex-wrap: wrap;
+}
+.warning span {
+  flex: 1;
+  font-size: 14px;
+}
+.kpis {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  padding: 20px 4px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+}
+.metric {
+  display: grid;
+  gap: 6px;
+  padding: 0 20px;
+  min-width: 0;
+}
+.metric + .metric {
+  border-left: 1px solid var(--border);
+}
+.metric > span {
+  font-size: 13px;
+  color: var(--secondary);
+}
+.metric > strong {
+  font-size: clamp(22px, 2vw, 30px);
+  line-height: 1.2;
+  font-weight: 600;
+  letter-spacing: -0.035em;
+  overflow-wrap: anywhere;
+}
+.metric small {
+  font-size: 12px;
+}
+.tabs {
+  display: flex;
+  gap: 4px;
+  margin-top: 22px;
+  margin-bottom: 18px;
+  padding: 4px;
+  background: var(--raised);
+  border-radius: 10px;
+  width: fit-content;
+  max-width: 100%;
+  flex-wrap: wrap;
+}
+.tabs button {
+  border-color: transparent;
+  background: transparent;
+  font-weight: 550;
+  padding-inline: 16px;
+}
+.tabs button[aria-selected="true"] {
+  background: var(--surface);
+  border-color: var(--secondary);
+  font-weight: 700;
+}
+.workspace {
+  border-radius: 12px;
+  min-width: 0;
+}
+.workspace > * + * {
+  margin-top: 16px;
+}
+.performance {
+  display: grid;
+  grid-template-columns: minmax(0, 1.8fr) minmax(270px, 1fr);
+  gap: 20px;
+  align-items: start;
+}
+.panel {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 22px;
+  min-width: 0;
+}
+.panelHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+}
+.panel > p {
+  margin: 12px 0;
+  font-size: 14px;
+}
+.badge {
+  font-size: 12px;
+  color: var(--secondary);
+  padding: 4px 8px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+}
+.twoMetrics,
+.twoPanels {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+.twoMetrics .metric {
+  padding: 0;
+}
+.twoMetrics .metric + .metric {
+  padding-left: 16px;
+}
+.benchmark {
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 4px 12px;
+  font-size: 14px;
+}
+.benchmark small {
+  grid-column: 1/-1;
+  font-size: 12px;
+}
+.filter {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  padding: 12px 0;
+}
+.filter label {
+  min-width: 210px;
+}
+.filter p {
+  font-size: 13px;
+  max-width: 580px;
+}
+.creatorList {
+  display: grid;
+  gap: 20px;
+}
+.creator {
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 20px;
+}
+.creator:last-child {
+  border-bottom: 0;
+  padding-bottom: 0;
+}
+.creator header {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.creator header strong {
+  font-size: 17px;
+}
+.creator header > span {
+  color: var(--secondary);
+  font-size: 13px;
+}
+.creator > p {
+  font-size: 14px;
+  margin: 0 0 16px;
+}
+.rowMetrics {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0;
+  padding: 16px 0;
+  background: var(--raised);
+  border-radius: 10px;
+  margin-bottom: 12px;
+}
+.rowMetrics strong {
+  font-size: 22px;
+}
+.creatorFooter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 12px;
+  gap: 12px;
+  font-size: 14px;
+}
+.content {
+  display: grid;
+  gap: 4px;
+  border-top: 1px solid var(--border);
+  padding: 12px 0;
+}
+.economics {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  margin: 24px 0;
+}
+.economics .metric strong {
+  font-size: 24px;
+}
+.gap {
+  padding: 16px;
+  border: 1px dashed var(--border);
+  border-radius: 10px;
+  margin-top: 20px;
+  font-size: 14px;
+}
+.gap p {
+  margin-top: 6px;
+}
+.definitionGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+}
+.definitionGrid h3 {
+  margin-top: 0;
+}
+.definitionGrid p {
+  font-size: 14px;
+  margin-bottom: 8px;
+}
+.tableWrap {
+  overflow-x: auto;
+}
+.app table {
+  border-collapse: collapse;
+  width: 100%;
+  font-size: 14px;
+  text-align: left;
+}
+.app th,
+.app td {
+  border-bottom: 1px solid var(--border);
+  padding: 12px 14px;
+}
+.app th {
+  font-weight: 600;
+}
+.app td {
+  font-variant-numeric: tabular-nums;
+}
+.notice {
+  min-height: 24px;
+  font-size: 13px;
+  margin-top: 12px !important;
+}
+.footer {
+  color: var(--secondary);
+  font-size: 12px;
+  padding: 12px 0;
+}
+.dialog {
+  margin: 0 0 0 auto;
+  height: 100dvh;
+  max-height: 100dvh;
+  width: min(620px, 100%);
+  max-width: 100%;
+  background: var(--surface);
+  color: var(--ink);
+  padding: 24px;
+  border: 0;
+  border-left: 1px solid var(--border);
+  overflow-y: auto;
+  overscroll-behavior: contain;
+}
+.dialog::backdrop {
+  background: rgb(0 0 0 / 0.55);
+}
+.dialog > header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+.dialog > p {
+  margin: 16px 0;
+}
+.dialog li {
+  margin-bottom: 12px;
+}
+.dialog .gap {
+  margin-bottom: 20px;
+}
+.path {
+  border-top: 1px solid var(--border);
+  padding: 8px 0;
+}
+.path dl {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 12px;
+  font-size: 14px;
+}
+.path dt {
+  color: var(--secondary);
+}
+.path dd {
+  margin: 0;
+  overflow-wrap: anywhere;
+}
+.boundary {
+  max-width: 760px;
+  margin: 10vh auto;
+  padding: 40px;
+}
+.boundary > p {
+  margin: 20px 0;
+}
+.boundary a {
+  display: inline-block;
+  padding: 12px;
+}
+.skeleton {
+  height: 180px;
+  background: var(--raised);
+  border-radius: 12px;
+  margin: 24px 0;
+}
+.srOnly {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+/* Reuse existing Bklit-backed chart behaviours, with isolated legible theming. */
+.app :global(.report-snapshot-chart) {
+  --report-chart-qualified: var(--clarity-qualified);
+  --report-chart-surface: var(--surface);
+  --chart-label: var(--secondary);
+  background: transparent;
+  color: var(--ink);
+  padding: 0;
+  margin: 0;
+}
+.app :global(.report-snapshot-chart__legend),
+.app :global(.report-snapshot-chart__summary),
+.app :global(.report-snapshot-chart__points) {
+  text-transform: none;
+  letter-spacing: normal;
+  font-family: inherit;
+}
+.app :global(.report-snapshot-chart__visual > div) {
+  max-height: 230px;
+}
+.app :global(.report-snapshot-chart__caption) {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+}
+.app :global(.report-snapshot-chart__caption > div:first-child) {
+  display: none;
+}
+.app :global(.report-snapshot-chart__legend) {
+  display: flex;
+  gap: 16px;
+  font-size: 12px;
+  color: var(--secondary);
+}
+.app :global(.is-qualified)::before,
+.app :global(.is-activated)::before {
+  content: "";
+  display: inline-block;
+  width: 9px;
+  height: 9px;
+  background: var(--report-chart-qualified);
+  margin-right: 6px;
+  border-radius: 2px;
+}
+.app :global(.is-activated)::before {
+  background: var(--report-chart-activated);
+}
+.app :global(.report-snapshot-chart__summary) {
+  margin: 12px 0;
+  font-size: 12px;
+  color: var(--secondary);
+}
+.app :global(.report-snapshot-chart__visual) {
+  min-height: 220px;
+}
+.app :global(.report-snapshot-chart__points) {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  gap: 8px;
+  padding: 0;
+  margin: 12px 0;
+}
+.app :global(.report-snapshot-chart__points li > span) {
+  display: grid;
+  gap: 3px;
+  padding: 8px;
+  background: var(--raised);
+  border-radius: 6px;
+  font-size: 11px;
+  color: var(--ink);
+}
+.app :global(.report-snapshot-chart__points b) {
+  font-size: 12px;
+}
+.app :global(.report-funnel-chart__visual) {
+  padding: 12px;
+  height: 240px;
+  min-height: 0;
+  overflow: visible;
+}
+.app :global(.bklit-funnel-chart) {
+  height: 100%;
+  min-height: 0;
+  aspect-ratio: auto;
+}
+.app :global(.report-funnel-chart) {
+  margin-top: 16px;
+}
+.app :global(.report-funnel-chart .chart-legend) {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+.app :global(.report-funnel-chart__mobile-visual) {
+  display: none;
+}
+.app :global(.report-funnel-chart__retention) {
+  display: flex;
+  gap: 16px;
+  padding: 16px;
+  margin-top: 16px;
+  border: 1px dashed var(--border);
+  color: var(--secondary);
+  border-radius: 10px;
+}
+.app :global(.report-funnel-chart__retention div) {
+  display: grid;
+  flex: 1;
+}
+.app :global(.report-funnel-chart__retention b) {
+  font-size: 14px;
+}
+.app :global(.report-funnel-chart__boundary) {
+  padding: 24px;
+  border: 1px dashed var(--border);
+  border-radius: 10px;
+}
+@media (max-width: 1150px) {
+  .detailWorkspace {
+    grid-template-columns: 1fr;
+  }
+  .shell {
+    grid-template-columns: 140px minmax(0, 1fr);
+  }
+  .rail {
+    padding: 24px 12px;
+  }
+  .main {
+    padding: 24px;
+  }
+  .heading {
+    align-items: flex-start;
+  }
+  .actions {
+    flex-direction: column;
+  }
+  .performance {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .metric {
+    padding: 0 12px;
+  }
+}
+@media (max-width: 700px) {
+  .app .creatorSummary {
+    grid-template-columns: 1fr auto;
+    gap: 8px;
+  }
+  .creatorSummary > span:nth-child(3) {
+    grid-column: 1;
+  }
+  .creatorSummary::after {
+    grid-column: 2;
+    grid-row: 2;
+  }
+  .app :global(.report-funnel-chart .chart-legend) {
+    grid-template-columns: 1fr;
+  }
+  .preview {
+    padding: 12px 16px;
+    gap: 8px 20px;
+  }
+  .preview > span {
+    width: 100%;
+  }
+  .shell {
+    display: block;
+  }
+  .rail {
+    padding: 16px;
+    border-bottom: 1px solid var(--border);
+    border-right: 0;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+  }
+  .rail p {
+    text-align: right;
+  }
+  .rail nav,
+  .rail > small {
+    display: none;
+  }
+  .main {
+    padding: 24px 16px max(16px, env(safe-area-inset-bottom));
+  }
+  .heading {
+    flex-direction: column;
+    gap: 16px;
+  }
+  .actions {
+    flex-direction: row;
+    width: 100%;
+  }
+  .actions button {
+    flex: 1;
+  }
+  .context {
+    gap: 16px;
+  }
+  .context strong {
+    font-size: 13px;
+  }
+  .trust {
+    gap: 8px;
+  }
+  .trust > span {
+    width: 100%;
+  }
+  .trust button {
+    margin-left: 0;
+  }
+  .kpis,
+  .rowMetrics,
+  .economics {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px 0;
+  }
+  .metric:nth-child(odd) {
+    border-left: 0;
+  }
+  .metric strong {
+    font-size: 23px;
+  }
+  .tabs {
+    width: 100%;
+  }
+  .tabs button {
+    padding-inline: 10px;
+    flex: 1 0 auto;
+    min-height: 44px;
+    font-size: 13px;
+  }
+  .panel {
+    padding: 18px;
+  }
+  .twoPanels,
+  .definitionGrid {
+    grid-template-columns: 1fr;
+  }
+  .filter {
+    align-items: stretch;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .creatorFooter {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+  .app select {
+    font-size: 16px;
+  }
+  .dialog {
+    padding: 20px;
+  }
+  .app :global(.report-funnel-chart__desktop-visual) {
+    display: none;
+  }
+  .app :global(.report-funnel-chart__mobile-visual) {
+    display: block;
+  }
+  .app :global(.report-funnel-chart__visual) {
+    height: 300px;
+  }
+  .app :global(.report-funnel-chart__retention) {
+    flex-wrap: wrap;
+  }
+  .app :global(.report-snapshot-chart__visual) {
+    min-height: 150px;
+  }
+  .boundary {
+    padding: 24px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .app *,
+  .app *::before,
+  .app *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+/* RPT-06 / BRD-04: retain Clarity, bound the application rather than the page.
+   Small/zoomed viewports reflow naturally; no content is clipped to force fit. */
+.primaryChart {
+  min-height: 0;
+}
+.primaryChart > .panel {
+  padding: 16px;
+}
+.primaryChart :global(.report-snapshot-chart__details) {
+  position: relative;
+  flex-shrink: 0;
+}
+.primaryChart :global(.report-snapshot-chart) {
+  overflow: visible;
+}
+.primaryChart :global(.report-snapshot-chart__details > summary) {
+  padding: 4px 0;
+  font-size: 14px;
+}
+.primaryChart :global(.report-snapshot-chart__details[open] > ol) {
+  position: absolute;
+  bottom: 100%;
+  left: 0;
+  right: 0;
+  z-index: 3;
+  max-height: 180px;
+  overflow: auto;
+  padding: 12px;
+  margin: 0;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+}
+.primaryChart :global(.report-snapshot-chart__summary) {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+.notice:empty {
+  display: none;
+}
+.workspace {
+  scroll-padding: 12px;
+  position: relative;
+}
+/* FND-06: one functional shell; the existing analysis canvas remains bounded. */
+@media (min-width: 900px) and (min-height: 700px) {
+  .app > :global(.app-shell):has(.sharedMain) {
+    min-height: 0;
+    flex: 1;
+  }
+  .app .sharedMain {
+    height: 100dvh;
+    min-height: 0;
+    padding: 12px 20px 8px;
+  }
+}
+@media (min-width: 900px) and (min-height: 700px) {
+  .app:has(.sharedMain) {
+    height: 100dvh;
+    min-height: 0;
+    display: flex;
+    flex-direction: column;
+  }
+  .preview {
+    min-height: 44px;
+    padding: 0 16px;
+    flex: 0 0 auto;
+    gap: 16px;
+  }
+  .shell {
+    width: 100%;
+    min-height: 0;
+    flex: 1;
+  }
+  .rail {
+    min-height: 0;
+    overflow-y: auto;
+    padding: 20px 12px;
+    gap: 24px;
+  }
+  .main {
+    min-height: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 12px 20px 8px;
+  }
+  .main > * {
+    flex-shrink: 0;
+  }
+  .heading {
+    margin: 0;
+    gap: 16px;
+    align-items: center;
+  }
+  .heading h1 {
+    font-size: 28px;
+  }
+  .heading .eyebrow {
+    margin-bottom: 0 !important;
+  }
+  .heading p:not(.eyebrow) {
+    margin-top: 2px;
+  }
+  .actions {
+    flex-direction: row;
+  }
+  .context {
+    padding: 0;
+    gap: 16px;
+  }
+  .context > div {
+    gap: 2px;
+  }
+  .context label {
+    gap: 2px;
+  }
+  .context select {
+    min-height: 36px;
+    padding-block: 6px;
+  }
+  .trust {
+    padding: 4px 0;
+    gap: 8px 16px;
+  }
+  .warning {
+    margin: 0;
+    padding: 8px 12px;
+    gap: 8px;
+  }
+  .warning button {
+    min-height: 32px;
+    padding-block: 4px;
+  }
+  .kpis {
+    padding: 10px 4px;
+  }
+  .metric {
+    gap: 4px;
+    padding-inline: 16px;
+  }
+  .metric strong {
+    font-size: 26px;
+  }
+  .primaryChart {
+    flex: 1 1 240px;
+    min-height: 192px;
+    max-height: 320px;
+  }
+  .primaryChart > .panel {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    padding: 12px 16px;
+  }
+  .primaryChart .panelHeader {
+    margin: 0;
+    flex-shrink: 0;
+  }
+  .primaryChart .panelHeader h2 {
+    font-size: 18px;
+  }
+  .primaryChart :global(.report-snapshot-chart) {
+    flex: 1;
+    min-height: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  .primaryChart :global(.report-snapshot-chart__caption) {
+    flex-shrink: 0;
+  }
+  .primaryChart :global(.report-snapshot-chart__visual) {
+    flex: 1;
+    min-height: 80px;
+    margin: 0;
+  }
+  .primaryChart :global(.report-snapshot-chart__visual > div) {
+    height: 100%;
+    max-height: none;
+    min-height: 0;
+    aspect-ratio: auto !important;
+  }
+  .tabs {
+    margin: 0;
+    padding: 2px;
+    flex-wrap: nowrap;
+    width: 100%;
+  }
+  .tabs button {
+    min-height: 36px;
+    padding: 6px 12px;
+    flex: 1;
+  }
+  .workspace {
+    flex: 1 1 220px;
+    min-height: 104px;
+    overflow: auto;
+    overscroll-behavior: contain;
+    scrollbar-gutter: stable;
+    padding: 3px;
+  }
+  .workspace .panel {
+    padding: 16px;
+  }
+  .workspace .panelHeader {
+    margin-bottom: 12px;
+  }
+  .workspace .panelHeader h2 {
+    font-size: 18px;
+  }
+  .performance {
+    grid-template-columns: minmax(0, 1.3fr) minmax(250px, 1fr);
+    gap: 12px;
+  }
+  .detailWorkspace {
+    grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
+    gap: 12px;
+  }
+  .footer {
+    padding: 0;
+  }
+  .notice {
+    margin: 0 !important;
+    min-height: 0;
+  }
+  .app th,
+  .app td {
+    padding: 8px;
+  }
+}
+@media (max-width: 899px), (max-height: 699px) {
+  .primaryChart :global(.report-snapshot-chart__visual) {
+    height: 200px;
+    min-height: 0;
+  }
+  .primaryChart :global(.report-snapshot-chart__visual > div) {
+    height: 100%;
+    max-height: none;
+    aspect-ratio: auto !important;
+  }
+  .workspace {
+    max-height: 70dvh;
+    overflow: auto;
+    overscroll-behavior: contain;
+    padding: 4px;
+  }
+  .performance,
+  .detailWorkspace {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* BRD-02 / RPT-06 founder-requested ribbon proposal: each view owns its canvas. */
+.creatorModes {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  margin-block: 12px;
+}
+.creatorModes button[aria-pressed="true"] {
+  border: 2px solid var(--focus);
+  font-weight: 750;
+  background: var(--raised);
+}
+.creatorHandle {
+  display: block;
+  font-weight: 400;
+  color: var(--secondary);
+}
+@media (min-width: 900px) and (min-height: 700px) {
+  .creatorCanvas .creatorModes {
+    margin-block: 6px;
+  }
+  .creatorCanvas button {
+    min-height: 32px;
+    padding: 4px 8px;
+  }
+}
+.contentGrid {
+  display: grid;
+  gap: 12px;
+}
+.contentCard {
+  display: grid;
+  grid-template-columns: 120px minmax(0, 1fr);
+  gap: 16px;
+  padding: 12px;
+  background: var(--raised);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+}
+.contentCard img {
+  width: 120px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 6px;
+}
+.thumbnailMissing {
+  display: grid;
+  place-items: center;
+  min-height: 80px;
+  padding: 8px;
+  font-size: 12px;
+  border: 1px dashed var(--border);
+}
+.termsSection {
+  padding-block: 16px;
+  border-top: 1px solid var(--border);
+}
+.termsSection p {
+  margin-block: 12px;
+}
+@media (max-width: 599px) {
+  .contentCard {
+    grid-template-columns: 1fr;
+  }
+}
+.reportControls {
+  position: relative;
+}
+.reportControls > summary {
+  cursor: pointer;
+  padding: 8px;
+  font-size: 14px;
+}
+.reportControlsBody {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  z-index: 10;
+  width: min(420px, 85vw);
+  padding: 16px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  display: grid;
+  gap: 12px;
+}
+.reportControlsBody label {
+  display: grid;
+  gap: 6px;
+}
+.reportControlsBody .check {
+  display: flex;
+}
+.targetContext {
+  margin-top: 12px !important;
+}
+.journeyDetails {
+  margin-top: 12px;
+}
+.journeyDetails > summary {
+  cursor: pointer;
+  font-weight: 650;
+}
+.filterScope {
+  font-size: 13px;
+}
+.performanceWorkspace {
+  display: grid;
+  gap: 12px;
+}
+.chartControls {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.chartControls select {
+  min-height: 32px;
+  padding: 4px 8px;
+  max-width: 210px;
+}
+.metricChoices {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  padding: 16px;
+  margin-block: 16px;
+  border: 1px solid var(--border);
+}
+.metricOrder {
+  padding: 0;
+  list-style-position: inside;
+}
+.metricOrder li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  padding-block: 8px;
+  border-bottom: 1px solid var(--border);
+}
+.metricOrder li div {
+  display: flex;
+  gap: 8px;
+}
+.kpis {
+  grid-template-columns: repeat(var(--metric-count, 4), minmax(0, 1fr));
+}
+.metric strong {
+  overflow-wrap: anywhere;
+}
+@media (min-width: 900px) and (max-width: 1199px) {
+  .kpis:has(.metric:nth-child(5)) {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    row-gap: 12px;
+  }
+}
+@media (max-width: 899px) {
+  .kpis {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    row-gap: 24px;
+  }
+  .kpis > .metric:nth-child(odd) {
+    border-left: 0;
+  }
+}
+@media (max-width: 599px) {
+  .metricChoices {
+    grid-template-columns: 1fr;
+  }
+}
+.performanceWorkspace > * + * {
+  margin-top: 0;
+}
+.performanceWorkspace .primaryChart {
+  min-height: 240px;
+}
+.performanceWorkspace .primaryChart > .panel {
+  height: 100%;
+}
+@media (min-width: 900px) and (min-height: 700px) {
+  .heading h1 {
+    font-size: 22px;
+  }
+  .heading p {
+    font-size: 13px;
+  }
+  .heading .eyebrow {
+    font-size: 11px;
+  }
+  .actions {
+    align-items: center;
+    gap: 8px;
+  }
+  .actions button {
+    min-height: 36px;
+    padding: 6px 10px;
+  }
+  .trust {
+    padding: 0;
+    min-height: 28px;
+    font-size: 12px;
+  }
+  .trust button {
+    min-height: 28px;
+    padding: 2px 8px;
+  }
+  .kpis {
+    min-height: 88px;
+    padding: 8px 4px;
+  }
+  .workspace {
+    flex: 1 1 auto;
+    min-height: 0;
+  }
+  .performanceWorkspace {
+    grid-template-rows: minmax(180px, 1fr) auto;
+    align-content: start;
+  }
+  .performanceWorkspace .primaryChart {
+    min-height: 180px;
+    max-height: none;
+  }
+  .performance {
+    grid-template-columns: minmax(0, 1.8fr) minmax(270px, 1fr);
+  }
+  .performance > .panel {
+    padding: 12px;
+  }
+  .performance .panelHeader {
+    margin-bottom: 8px;
+  }
+  .performance .panelHeader button {
+    min-height: 32px;
+    padding: 4px 8px;
+  }
+  .performance th,
+  .performance td {
+    padding: 5px 8px;
+    font-size: 14px;
+  }
+  .performance th button {
+    min-height: 32px;
+    padding: 4px 0;
+    border: 0;
+    background: transparent;
+    text-align: left;
+  }
+  .performance p {
+    font-size: 14px;
+  }
+  .performanceWorkspace .reportControlsBody {
+    position: absolute;
+  }
+  .tabs button {
+    min-height: 32px;
+  }
+  .workspace :global(.report-funnel-chart__visual) {
+    height: clamp(240px, 36dvh, 360px);
+  }
+}
+@media (max-width: 899px), (max-height: 699px) {
+  /* RPT-06 / UI-03: compact headers reflow without a tall action column. */
+  .preview {
+    padding: 8px 16px;
+    gap: 8px 16px;
+  }
+  .preview > span {
+    flex: 1 1 320px;
+    min-width: 0;
+    width: auto;
+  }
+  .preview .themeToggle {
+    flex: 0 0 auto;
+    white-space: nowrap;
+  }
+  .heading {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+    margin: 12px 0 16px;
+  }
+  .actions {
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    width: 100%;
+  }
+  .actions > button {
+    flex: 0 0 auto;
+    white-space: nowrap;
+  }
+  .actions > a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+  }
+  .actions .reportControls {
+    flex-basis: auto;
+    min-width: 0;
+  }
+  .actions .reportControls[open] {
+    flex-basis: 100%;
+  }
+  .reportControlsBody {
+    position: static;
+    width: 100%;
+  }
+  .workspace {
+    max-height: none;
+    overflow: visible;
+  }
+  .performanceWorkspace .primaryChart {
+    min-height: 300px;
+  }
+  /* DEM-01 / RPT-06 / UI-03: let the collapsed guide follow the report
+     in reflow layouts, so it cannot cover content or keyboard focus. */
+  .app :global(.guided-demo-launcher) {
+    position: static;
+    inset: auto;
+    width: auto;
+    min-height: 48px;
+    margin: 16px 16px max(16px, env(safe-area-inset-bottom));
+    margin-left: calc(var(--app-layout-sidebar, 232px) + 16px);
+    z-index: auto;
+  }
+}
+@media (max-width: 760px) {
+  .app :global(.guided-demo-launcher) {
+    margin-left: 16px;
+  }
+}

@@ -1,0 +1,34 @@
+[
+  {
+    "id": "61990000-0000-4000-8000-000000000001",
+    "name": "Qualified action",
+    "chain": "solana",
+    "rule_id": "60990000-0000-4000-8000-000000000001",
+    "version": 1,
+    "created_at": "2026-09-11T14:31:21.794+00:00",
+    "created_by": "30990000-0000-4000-8000-000000000001",
+    "program_id": null,
+    "project_id": "20990000-0000-4000-8000-000000000001",
+    "description": "First finalized qualifying action with explicit wallet binding.",
+    "workspace_id": "10990000-0000-4000-8000-000000000001",
+    "change_reason": "Synthetic BSK09 measurement fixture",
+    "template_code": "first_qualifying_transaction",
+    "value_mapping": "transfer_amount",
+    "effective_from": "2026-09-01T00:00:00+00:00",
+    "effective_until": null,
+    "revenue_mapping": "none",
+    "match_conditions": {
+      "chain": "solana",
+      "eventNames": ["solana.native_transfer", "solana.token_transfer"],
+      "minimumFinality": "finalized",
+      "requiresWalletBinding": true
+    },
+    "minimum_finality": "finalized",
+    "attribution_model": "last_eligible_creator_touch",
+    "change_request_id": "62990000-0000-4000-8000-000000000001",
+    "event_discriminator": null,
+    "evidence_capability": "ready",
+    "requires_wallet_binding": true,
+    "attribution_window_seconds": 604800
+  }
+]
